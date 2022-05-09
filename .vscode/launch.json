@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "GRV Development",
+            "request": "launch",
+            "server": "https://businesscentral.dynamics.com/",
+            "tenant": "504c0cd1-a7ee-4826-aff0-e93458fe586c",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Development",
+            //"startupObjectId": 50004,
+            //"startupObjectType": "Page",
+
+            //"schemaUpdateMode": "ForceSync",
+
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true
+        }
+        /*
+        ,
+        {
+            "name": "GRV Formation",
+            "request": "launch",
+            "server": "https://businesscentral.dynamics.com/",
+            "tenant": "504c0cd1-a7ee-4826-aff0-e93458fe586c",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Formation",
+            //"startupObjectId": 50004,
+            //"startupObjectType": "Page",
+
+            //"schemaUpdateMode": "ForceSync",
+
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true
+        }
+        */
+
+    ]
+}
