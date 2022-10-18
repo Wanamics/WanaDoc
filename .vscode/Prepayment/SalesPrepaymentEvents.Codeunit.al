@@ -86,6 +86,10 @@ codeunit 87000 "wan Sales Prepayment Events"
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeUpdatePrepmtSetupFields', '', false, false)]
 
     local procedure OnBeforeUpdatePrepmtSetupFields(var SalesLine: Record "Sales Line"; var IsHandled: Boolean; CurrentFieldNo: Integer)
+    /*
+    var
+        VATPostingSetup: Record "VAT Posting Setup";
+    */
     begin
         // Handle SalesLine.UpdatePrepmtSetupFields() to inherit VAT % from Line (not from VATPostingSetup)
         if (SalesLine."Prepayment %" <> 0) and (SalesLine.Type <> SalesLine.Type::" ") then begin
@@ -94,6 +98,16 @@ codeunit 87000 "wan Sales Prepayment Events"
             if CurrentFieldNo = SalesLine.FieldNo("Prepayment %") then
                 if SalesLine."System-Created Entry" and not SalesLine.IsServiceChargeLine() then
                     exit;
+            /* TODO or not TODO ?
+            Autre solution ?
+            * utiliser un GCM TVA distinct selon que les acomptes sont ou non soumis à TVA
+              et si pas de GCP TVA sur le compte acompte défini en PostingSetup appliquer à l'acompte la TVA de la ligne
+            
+            VATPostingSetup.SetLoadFields("Unrealized VAT Type");
+            if VATPostingSetup.Get(SalesLine."VAT Bus. Posting Group", SalesLine."VAT Prod. Posting Group") and
+                (VATPostingSetup."Unrealized VAT Type" = VATPostingSetup."Unrealized VAT Type"::" ") then
+                exit;
+            */
             if SalesLine."System-Created Entry" and not SalesLine.IsServiceChargeLine() then
                 SalesLine."Prepayment %" := 0;
             SalesLine."Prepayment VAT %" := SalesLine."VAT %";
@@ -120,10 +134,8 @@ codeunit 87000 "wan Sales Prepayment Events"
     begin
         if SalesInvHeader."wan Compress Prepayment" then
             exit;
-        //SalesHeader.LoadFields("Document Date", "Language Code");
         SalesHeader.Get(SalesLine."Document Type"::Order, SalesInvHeader."Prepayment Order No.");
-        //SalesLine.LoadFields(Type, "No.");
-        SalesLine.Get(SalesLine."Document Type"::Order, SalesInvHeader."Prepayment Order No.", SalesInvLine."Line No.");
+        SalesLine.Get(SalesLine."Document Type"::Order, SalesInvHeader."Prepayment Order No.", PrepmtInvLineBuffer."Line No.");
         ExtendedLine."Document No." := SalesInvLine."Document No.";
         ExtendedLine."Line No." := SalesInvLine."Line No.";
         ExtendedLine."Attached to Line No." := SalesInvLine."Line No.";

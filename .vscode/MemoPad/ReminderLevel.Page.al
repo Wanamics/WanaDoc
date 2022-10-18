@@ -4,6 +4,7 @@ page 87421 "wan Reminder Level"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "Reminder Level";
+    Caption = 'Reminder Level';
 
     layout
     {
@@ -11,7 +12,7 @@ page 87421 "wan Reminder Level"
         {
             group(Beginning)
             {
-                CaptionML = ENU = 'Beginning Text', FRA = 'Texte début';
+                Caption = 'Beginning Text';
 
                 field(BeginningMemo; BeginningMemo)
                 {
@@ -28,7 +29,7 @@ page 87421 "wan Reminder Level"
             }
             group(EndingText)
             {
-                CaptionML = ENU = 'Ending Text', FRA = 'Texte fin';
+                Caption = 'Ending Text';
                 field(EndingMemo; EndingMemo)
                 {
                     ApplicationArea = All;
@@ -56,7 +57,7 @@ page 87421 "wan Reminder Level"
         EndingMemo := GetMemo(ReminderText.Position::Ending);
     end;
 
-    local procedure GetMemo(pPosition: Integer) ReturnValue: Text;
+    local procedure GetMemo(pPosition: Enum "Reminder Text Position") ReturnValue: Text;
     var
         ReminderText: Record "Reminder Text";
     begin
@@ -69,7 +70,7 @@ page 87421 "wan Reminder Level"
             until ReminderText.Next() = 0;
     end;
 
-    local procedure SetMemo(pPosition: Integer; pMemo: Text)
+    local procedure SetMemo(pPosition: Enum "Reminder Text Position"; pMemo: Text)
     var
         ReminderText: Record "Reminder Text";
         TempExtendedTextLine: Record "Extended Text Line" temporary;

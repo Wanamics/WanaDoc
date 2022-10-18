@@ -1,6 +1,6 @@
 page 87420 "wan MemoPad"
 {
-    CaptionML = ENU = 'MemoPad', FRA = 'MemoPad';
+    Caption = 'MemoPad';
     DataCaptionExpression = gCaption;
     Editable = true;
     LinksAllowed = false;

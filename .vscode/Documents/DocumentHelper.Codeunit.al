@@ -102,7 +102,7 @@ codeunit 87001 "wan Document Helper"
 
     procedure GetVersion(pNoOfArchivedVersions: Integer): Text;
     var
-        tVersion: TextConst ENU = ' R%1', FRA = ' R%1';
+        tVersion: Label ' R%1';
     begin
         if pNoOfArchivedVersions = 0 then
             exit;
@@ -124,13 +124,15 @@ codeunit 87001 "wan Document Helper"
     procedure Tariff(pItemNo: Code[20]; pShipToCountryRegionCode: Code[10]) ReturnValue: Text;
     var
         Item: Record Item;
+        IntraStatErr: TextConst
+            ENU = '%1 and %2 of item %3 are mandatory for an intrastat operation.',
+            FRA = '%1 et %2 de l''article %3 doivent être définis pour une opération intracommunautaire.';
     begin
         Item.Get(pItemNo);
         if Item.IsInventoriableType() then begin
-            if IsIntrastat(pShipToCountryRegionCode) then begin
-                Item.TestField("Tariff No.");
-                Item.TestField("Country/Region of Origin Code");
-            end;
+            if IsIntrastat(pShipToCountryRegionCode) and
+                ((Item."Tariff No." = '') or (Item."Country/Region of Origin Code" = '')) then
+                error(IntraStatErr, Item.FieldCaption("Tariff No."), Item.FieldCaption("Country/Region of Origin Code"), Item."No.");
             if Item."Tariff No." <> '' then
                 ReturnValue += LineFeed() +
                     Item.FieldCaption("Tariff No.") + ' ' + Item."Tariff No." + ', ' +

@@ -107,11 +107,11 @@ reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoi
     var
         MemoPad: Codeunit "wan MemoPad Sales Invoice";
         FormatAddress: Codeunit "Format Address";
-        SellToAddress_Lbl: TextConst ENU = 'Sell-to', FRA = 'Donneur d''ordre';
+        SellToAddress_Lbl: Label 'Sell-to';
         SellToAddress: Text;
-        ShipToAddress_Lbl: TextConst ENU = 'Ship-to', FRA = 'Livraison';
+        ShipToAddress_Lbl: Label 'Ship-to';
         ShipToAddress: Text;
-        BillToAddress_Lbl: TextConst ENU = 'Bill-to', FRA = 'Facturation';
+        BillToAddress_Lbl: Label 'Bill-to';
         BillToAddress: Text;
         CompanyAddress: Text;
         CompanyContactInfo: Text;
@@ -165,7 +165,7 @@ reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoi
     local procedure ShipmentLines() ReturnValue: Text
     var
         ShipmentHeader: Record "Sales Shipment Header";
-        Shipment_Lbl: TextConst ENU = 'Shipment No. %1 %2', FRA = 'Livraison N° %1 %2';
+        Shipment_Lbl: Label 'Shipment No. %1 %2', Comment = '%1: Document No., %2: Posting Date';
         Tab: Text[1];
     begin
         Tab[1] := 9;

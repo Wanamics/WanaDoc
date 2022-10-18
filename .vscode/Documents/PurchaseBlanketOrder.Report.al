@@ -2,7 +2,7 @@ report 87410 "wan Purchase - Blanket Order"
 // Copy from "Standard Purchase - Order", 'Order' replaced by 'Quote' + '[+ wan Extension +]
 {
     WordLayout = './wanPurchaseBlanketOrder.docx';
-    CaptionML = ENU = 'Purchase - Blanket Order', FRA = 'Commande cadre achat';
+    Caption = 'Purchase - Blanket Order';
     DefaultLayout = Word;
     EnableHyperlinks = true;
     PreviewMode = PrintLayout;
@@ -14,7 +14,7 @@ report 87410 "wan Purchase - Blanket Order"
         {
             DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST("Blanket Order"));
             RequestFilterFields = "No.", "Buy-from Vendor No.", "No. Printed";
-            RequestFilterHeadingML = ENU = 'Purchase - Blanket Order', FRA = 'Commande cadre achat';
+            RequestFilterHeading = 'Purchase - Blanket Order';
             CalcFields = "No. of Archived Versions";
             column(CompanyAddress1; CompanyAddr[1])
             {
@@ -458,9 +458,11 @@ report 87410 "wan Purchase - Blanket Order"
             column(wanShipToAddress; ShipToAddress) { }
             column(wanPayToAddress_Lbl; PayToAddress_Lbl) { }
             column(wanPayToAddress; PayToAddress) { }
+            /*
             column(wanMailGreetingLbl; wanMailGreeting_Lbl) { }
             column(wanMailBodyLbl; wanMailBody_Lbl) { }
             column(wanMailClosingLbl; wanMailClosing_Lbl) { }
+            */
             column(wanVersion; DocumentHelper.GetVersion("No. of Archived Versions")) { }
             //+]
             dataitem("Purchase Line"; "Purchase Line")
@@ -920,6 +922,7 @@ report 87410 "wan Purchase - Blanket Order"
                     SetRange(Number, 1, TempPrepmtVATAmountLine.Count);
                 end;
             }
+            /*
             dataitem(LetterText; "Integer")
             {
                 DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
@@ -933,6 +936,7 @@ report 87410 "wan Purchase - Blanket Order"
                 {
                 }
             }
+            */
 
             trigger OnAfterGetRecord()
             begin
@@ -968,17 +972,17 @@ report 87410 "wan Purchase - Blanket Order"
             {
                 group(Options)
                 {
-                    CaptionML = ENU = 'Options', FRA = 'Options';
+                    Caption = 'Options';
                     field(ArchiveDocument; ArchiveDocument)
                     {
                         ApplicationArea = Suite;
-                        CaptionML = ENU = 'Archive Document', FRA = 'Archiver devis';
+                        Caption = 'Archive Document';
                         ToolTip = 'Specifies whether to archive the Quote.';
                     }
                     field(LogInteraction; LogInteraction)
                     {
                         ApplicationArea = Suite;
-                        CaptionML = ENU = 'Log Interaction', FRA = 'Créer interaction';
+                        Caption = 'Log Interaction';
                         Enabled = LogInteractionEnable;
                         ToolTip = 'Specifies if you want to log this interaction.';
                     }
@@ -1035,50 +1039,50 @@ report 87410 "wan Purchase - Blanket Order"
     end;
 
     var
-        VATAmountSpecificationLbl: TextConst ENU = 'VAT Amount Specification in ';
-        LocalCurrentyLbl: TextConst ENU = 'Local Currency', FRA = '€';
-        ExchangeRateLbl: TextConst ENU = 'Exchange rate: %1/%2', FRA = 'Taux de change: %1/%2', Comment = '%1 = CurrExchRate."Relational Exch. Rate Amount", %2 = CurrExchRate."Exchange Rate Amount"';
-        CompanyInfoPhoneNoCaptionLbl: TextConst ENU = 'Phone No.', FRA = 'N° téléphone';
-        CompanyInfoGiroNoCaptionLbl: TextConst ENU = 'Giro No.';
-        CompanyInfoBankNameCaptionLbl: TextConst ENU = 'Bank', FRA = 'Banque';
-        CompanyInfoBankAccNoCaptionLbl: TextConst ENU = 'Account No.', FRA = 'N° compte';
-        QuoteNoCaptionLbl: TextConst ENU = 'Quote No.', FRA = 'N° demande de prix';
-        PageCaptionLbl: TextConst ENU = 'Page', FRA = 'Page';
-        DocumentDateCaptionLbl: TextConst ENU = 'Document Date', FRA = 'Date document';
-        DirectUniCostCaptionLbl: TextConst ENU = 'Direct Unit Cost', FRA = 'Coût unit. direct';
-        PurchLineLineDiscCaptionLbl: TextConst ENU = 'Discount %', FRA = '% remise';
-        VATDiscountAmountCaptionLbl: TextConst ENU = 'Payment Discount on VAT';
-        PaymentDetailsCaptionLbl: TextConst ENU = 'Payment Details';
-        VendNoCaptionLbl: TextConst ENU = 'Vendor No.', FRA = 'N° fournisseur';
-        ShiptoAddressCaptionLbl: TextConst ENU = 'Ship-to Address', FRA = 'Adresse de livraison';
-        PrepmtInvBuDescCaptionLbl: TextConst ENU = 'Description', FRA = 'Description';
-        PrepmtInvBufGLAccNoCaptionLbl: TextConst ENU = 'G/L Account No.';
-        PrepaymentSpecCaptionLbl: TextConst ENU = 'Prepayment Specification';
-        PrepymtVATAmtSpecCaptionLbl: TextConst ENU = 'Prepayment VAT Amount Specification';
-        AmountCaptionLbl: TextConst ENU = 'Amount', FRA = 'Montant';
-        PurchLineInvDiscAmtCaptionLbl: TextConst ENU = 'Invoice Discount Amount', FRA = 'Montant remise';
-        SubtotalCaptionLbl: TextConst ENU = 'Subtotal', FRA = 'Sous-total';
-        VATAmtLineVATCaptionLbl: TextConst ENU = 'VAT %', FRA = '% TVA';
-        VATAmtLineVATAmtCaptionLbl: TextConst ENU = 'VAT Amount', FRA = 'Montant TVA';
-        VATAmtSpecCaptionLbl: TextConst ENU = 'VAT Amount Specification';
-        VATIdentifierCaptionLbl: TextConst ENU = 'VAT Identifier';
-        VATAmtLineInvDiscBaseAmtCaptionLbl: TextConst ENU = 'Invoice Discount Base Amount';
-        VATAmtLineLineAmtCaptionLbl: TextConst ENU = 'Line Amount';
-        VALVATBaseLCYCaptionLbl: TextConst ENU = 'VAT Base';
-        PricesInclVATtxtLbl: TextConst ENU = 'Prices Including VAT';
-        TotalCaptionLbl: TextConst ENU = 'Total', FRA = 'Total';
-        PaymentTermsDescCaptionLbl: TextConst ENU = 'Payment Terms', FRA = 'Conditions de paiement';
-        ShipmentMethodDescCaptionLbl: TextConst ENU = 'Shipment Method', FRA = 'Conditions de livraison';
-        PrepymtTermsDescCaptionLbl: TextConst ENU = 'Prepmt. Payment Terms';
-        HomePageCaptionLbl: TextConst ENU = 'Home Page', FRA = 'Page d''accueil';
-        EmailIDCaptionLbl: TextConst ENU = 'Email', FRA = 'E-mail';
-        AllowInvoiceDiscCaptionLbl: TextConst ENU = 'Allow Invoice Discount';
-        BuyFromContactPhoneNoLbl: TextConst ENU = 'Buy-from Contact Phone No.';
-        BuyFromContactMobilePhoneNoLbl: TextConst ENU = 'Buy-from Contact Mobile Phone No.';
-        BuyFromContactEmailLbl: TextConst ENU = 'Buy-from Contact E-Mail';
-        PayToContactPhoneNoLbl: TextConst ENU = 'Pay-to Contact Phone No.';
-        PayToContactMobilePhoneNoLbl: TextConst ENU = 'Pay-to Contact Mobile Phone No.';
-        PayToContactEmailLbl: TextConst ENU = 'Pay-to Contact E-Mail';
+        VATAmountSpecificationLbl: Label 'VAT Amount Specification in ';
+        LocalCurrentyLbl: Label 'Local Currency';
+        ExchangeRateLbl: Label 'Exchange rate: %1/%2', Comment = '%1 = CurrExchRate."Relational Exch. Rate Amount", %2 = CurrExchRate."Exchange Rate Amount"';
+        CompanyInfoPhoneNoCaptionLbl: Label 'Phone No.';
+        CompanyInfoGiroNoCaptionLbl: Label 'Giro No.';
+        CompanyInfoBankNameCaptionLbl: Label 'Bank';
+        CompanyInfoBankAccNoCaptionLbl: Label 'Account No.';
+        QuoteNoCaptionLbl: Label 'Quote No.',;
+        PageCaptionLbl: Label 'Page';
+        DocumentDateCaptionLbl: Label 'Document Date';
+        DirectUniCostCaptionLbl: Label 'Direct Unit Cost';
+        PurchLineLineDiscCaptionLbl: Label 'Discount %';
+        VATDiscountAmountCaptionLbl: Label 'Payment Discount on VAT';
+        PaymentDetailsCaptionLbl: Label 'Payment Details';
+        VendNoCaptionLbl: Label 'Vendor No.';
+        ShiptoAddressCaptionLbl: Label 'Ship-to Address';
+        PrepmtInvBuDescCaptionLbl: Label 'Description';
+        PrepmtInvBufGLAccNoCaptionLbl: Label 'G/L Account No.';
+        PrepaymentSpecCaptionLbl: Label 'Prepayment Specification';
+        PrepymtVATAmtSpecCaptionLbl: Label 'Prepayment VAT Amount Specification';
+        AmountCaptionLbl: Label 'Amount';
+        PurchLineInvDiscAmtCaptionLbl: Label 'Invoice Discount Amount';
+        SubtotalCaptionLbl: Label 'Subtotal';
+        VATAmtLineVATCaptionLbl: Label 'VAT %';
+        VATAmtLineVATAmtCaptionLbl: Label 'VAT Amount';
+        VATAmtSpecCaptionLbl: Label 'VAT Amount Specification';
+        VATIdentifierCaptionLbl: Label 'VAT Identifier';
+        VATAmtLineInvDiscBaseAmtCaptionLbl: Label 'Invoice Discount Base Amount';
+        VATAmtLineLineAmtCaptionLbl: Label 'Line Amount';
+        VALVATBaseLCYCaptionLbl: Label 'VAT Base';
+        PricesInclVATtxtLbl: Label 'Prices Including VAT';
+        TotalCaptionLbl: Label 'Total';
+        PaymentTermsDescCaptionLbl: Label 'Payment Terms';
+        ShipmentMethodDescCaptionLbl: Label 'Shipment Method';
+        PrepymtTermsDescCaptionLbl: Label 'Prepmt. Payment Terms';
+        HomePageCaptionLbl: Label 'Home Page';
+        EmailIDCaptionLbl: Label 'Email';
+        AllowInvoiceDiscCaptionLbl: Label 'Allow Invoice Discount';
+        BuyFromContactPhoneNoLbl: Label 'Buy-from Contact Phone No.';
+        BuyFromContactMobilePhoneNoLbl: Label 'Buy-from Contact Mobile Phone No.';
+        BuyFromContactEmailLbl: Label 'Buy-from Contact E-Mail';
+        PayToContactPhoneNoLbl: Label 'Pay-to Contact Phone No.';
+        PayToContactMobilePhoneNoLbl: Label 'Pay-to Contact Mobile Phone No.';
+        PayToContactEmailLbl: Label 'Pay-to Contact E-Mail';
         GLSetup: Record "General Ledger Setup";
         CompanyInfo: Record "Company Information";
         ShipmentMethod: Record "Shipment Method";
@@ -1137,57 +1141,61 @@ report 87410 "wan Purchase - Blanket Order"
         TotalSubTotal: Decimal;
         TotalAmount: Decimal;
         TotalInvoiceDiscountAmount: Decimal;
-        DocumentTitleLbl: TextConst ENU = 'Blanket Order', FRA = 'Commande cadre';
+        DocumentTitleLbl: Label 'Blanket Order';
         CompanyLogoPosition: Integer;
-        ReceivebyCaptionLbl: TextConst ENU = 'Receive By';
-        BuyerCaptionLbl: TextConst ENU = 'Buyer', FRA = 'Acheteur';
-        ItemNumberCaptionLbl: TextConst ENU = 'Item No.', FRA = 'N° article';
-        ItemDescriptionCaptionLbl: TextConst ENU = 'Description', FRA = 'Description';
-        ItemQuantityCaptionLbl: TextConst ENU = 'Quantity', FRA = 'Quantité';
-        ItemUnitCaptionLbl: TextConst ENU = 'Unit', FRA = 'Unité';
-        ItemUnitPriceCaptionLbl: TextConst ENU = 'Unit Price', FRA = 'Prix unitaire';
-        ItemLineAmountCaptionLbl: TextConst ENU = 'Line Amount', FRA = 'Montant';
-        PricesIncludingVATCaptionLbl: TextConst ENU = 'Prices Including VAT';
-        ItemUnitOfMeasureCaptionLbl: TextConst ENU = 'Unit', FRA = 'Unité';
-        ToCaptionLbl: TextConst ENU = 'To:', FRA = 'à:';
-        VendorIDCaptionLbl: TextConst ENU = 'Vendor ID';
-        ConfirmToCaptionLbl: TextConst ENU = 'Confirm To';
-        PurchQuoteCaptionLbl: TextConst ENU = 'PURCHASE QUOTE';
-        PurchQuoteNumCaptionLbl: TextConst ENU = 'Purchase Quote Number:';
-        PurchQuoteDateCaptionLbl: TextConst ENU = 'Purchase Quote Date:';
-        TaxIdentTypeCaptionLbl: TextConst ENU = 'Tax Ident. Type';
-        TotalPriceCaptionLbl: TextConst ENU = 'Total Price';
-        InvDiscCaptionLbl: TextConst ENU = 'Invoice Discount:';
-        GreetingLbl: TextConst ENU = 'Hello', FRA = 'Bonjour';
-        ClosingLbl: TextConst ENU = 'Sincerely', FRA = 'Cordialement';
-        BodyLbl: TextConst ENU = 'The blanket order is attached to this message.', FRA = 'La commande cadre est jointe à ce message';
-        QuoteDateLbl: TextConst ENU = 'Quote Date';
+        ReceivebyCaptionLbl: Label 'Receive By';
+        BuyerCaptionLbl: Label 'Buyer';
+        ItemNumberCaptionLbl: Label 'Item No.';
+        ItemDescriptionCaptionLbl: Label 'Description';
+        ItemQuantityCaptionLbl: Label 'Quantity';
+        ItemUnitCaptionLbl: Label 'Unit';
+        ItemUnitPriceCaptionLbl: Label 'Unit Price';
+        ItemLineAmountCaptionLbl: Label 'Line Amount';
+        PricesIncludingVATCaptionLbl: Label 'Prices Including VAT';
+        ItemUnitOfMeasureCaptionLbl: Label 'Unit';
+        ToCaptionLbl: Label 'To:';
+        VendorIDCaptionLbl: Label 'Vendor ID';
+        ConfirmToCaptionLbl: Label 'Confirm To';
+        PurchQuoteCaptionLbl: Label 'PURCHASE QUOTE';
+        PurchQuoteNumCaptionLbl: Label 'Purchase Quote Number:';
+        PurchQuoteDateCaptionLbl: Label 'Purchase Quote Date:';
+        TaxIdentTypeCaptionLbl: Label 'Tax Ident. Type';
+        TotalPriceCaptionLbl: Label 'Total Price';
+        InvDiscCaptionLbl: Label 'Invoice Discount:';
+        /*
+        GreetingLbl: Label 'Hello', FRA = 'Bonjour';
+        ClosingLbl: Label 'Sincerely', FRA = 'Cordialement';
+        BodyLbl: Label 'The blanket order is attached to this message.', FRA = 'La commande cadre est jointe à ce message';
+        */
+        QuoteDateLbl: Label 'Quote Date';
         ArchiveDocument: Boolean;
-        VendorQuoteNoLbl: TextConst ENU = 'Vendor Quote No.';
-        VendorInvoiceNoLbl: TextConst ENU = 'Vendor Invoice No.';
-        UnitPriceLbl: TextConst ENU = 'Unit Price (LCY)';
-        JobNoLbl: TextConst ENU = 'Job No.', FRA = 'N° affaire';
-        JobTaskNoLbl: TextConst ENU = 'Job Task No.', FRA = 'N° tâche affaire';
-        PromisedReceiptDateLbl: TextConst ENU = 'Promised Receipt Date';
-        RequestedReceiptDateLbl: TextConst ENU = 'Requested Receipt Date', FRA = 'Date réception demandée';
-        ExpectedReceiptDateLbl: TextConst ENU = 'Expected Receipt Date', FRA = 'Date réception souhaitée';
-        PlannedReceiptDateLbl: TextConst ENU = 'Planned Receipt Date';
+        VendorQuoteNoLbl: Label 'Vendor Quote No.';
+        VendorInvoiceNoLbl: Label 'Vendor Invoice No.';
+        UnitPriceLbl: Label 'Unit Price (LCY)';
+        JobNoLbl: Label 'Job No.';
+        JobTaskNoLbl: Label 'Job Task No.';
+        PromisedReceiptDateLbl: Label 'Promised Receipt Date';
+        RequestedReceiptDateLbl: Label 'Requested Receipt Date';
+        ExpectedReceiptDateLbl: Label 'Expected Receipt Date';
+        PlannedReceiptDateLbl: Label 'Planned Receipt Date';
         ItemNo: Text;
         //[+
         MemoPad: Codeunit "wan MemoPad Purchase";
-        BuyFromAddress_Lbl: TextConst ENU = 'Buy-from', FRA = 'Preneur d''ordre';
+        BuyFromAddress_Lbl: Label 'Buy-from';
         BuyFromAddress: Text;
-        ShipToAddress_Lbl: TextConst ENU = 'Ship-to', FRA = 'Livraison';
+        ShipToAddress_Lbl: Label 'Ship-to';
         ShipToAddress: Text;
-        PayToAddress_Lbl: TextConst ENU = 'Pay-to', FRA = 'Paiement';
+        PayToAddress_Lbl: Label 'Pay-to';
         PayToAddress: Text;
         CompanyAddress: Text;
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
         DocumentHelper: Codeunit "wan Document Helper";
-        wanMailGreeting_Lbl: TextConst ENU = 'Dear vendor', FRA = 'Bonjour,';
-        wanMailBody_Lbl: TextConst ENU = 'Please find attached our blanket order is attached to this message.', FRA = 'Veuillez trouver ci-joint notre commande cadre dont vous voudrez bien accuser réception :';
-        wanMailClosing_Lbl: TextConst ENU = 'Sincerely', FRA = 'Bonne réception.';
+    /*
+    wanMailGreeting_Lbl: Label 'Dear vendor', FRA = 'Bonjour,';
+    wanMailBody_Lbl: Label 'Please find attached our blanket order is attached to this message.', FRA = 'Veuillez trouver ci-joint notre commande cadre dont vous voudrez bien accuser réception :';
+    wanMailClosing_Lbl: Label 'Sincerely', FRA = 'Bonne réception.';
+    */
     //+]
 
     procedure InitializeRequest(LogInteractionParam: Boolean)

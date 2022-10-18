@@ -65,7 +65,7 @@ reportextension 87308 "Standard Sales - Shipment" extends "Standard Sales - Ship
                 field(wanShowLinesWithoutQuantity; ShowLinesWithoutQuantity)
                 {
                     ApplicationArea = All;
-                    CaptionML = ENU = 'Show lines without quantity', FRA = 'Afficher lignes sans quantité';
+                    Caption = 'Show lines without quantity';
                 }
             }
         }
@@ -73,18 +73,18 @@ reportextension 87308 "Standard Sales - Shipment" extends "Standard Sales - Ship
     var
         MemoPad: Codeunit "wan MemoPad Sales Shipment";
         FormatAddress: Codeunit "Format Address";
-        SellToAddress_Lbl: TextConst ENU = 'Sell-to', FRA = 'Donneur d''ordre';
+        SellToAddress_Lbl: Label 'Sell-to';
         SellToAddress: Text;
-        ShipToAddress_Lbl: TextConst ENU = 'Ship-to', FRA = 'Livraison';
+        ShipToAddress_Lbl: Label 'Ship-to';
         ShipToAddress: Text;
-        BillToAddress_Lbl: TextConst ENU = 'Bill-to', FRA = 'Facturation';
+        BillToAddress_Lbl: Label 'Bill-to';
         BillToAddress: Text;
         CompanyAddress: Text;
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
         DocumentHelper: Codeunit "wan Document Helper";
         Customer: Record Customer;
-        PhoneNo_Lbl: TextConst ENU = 'Phone No.', FRA = 'N° téléphone';
+        PhoneNo_Lbl: Label 'Phone No.';
         ShippingAgent: Record "Shipping Agent";
         ShippingAgentServices: Record "Shipping Agent Services";
         ShowLinesWithoutQuantity: Boolean;

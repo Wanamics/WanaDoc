@@ -1,0 +1,1379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="WanaDoc">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 2793207324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Buffer Extended</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2793207324 - Field 1389794395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Column No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Column No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2793207324 - Field 3909759354 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extended Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Extended Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2793207324 - Field 1997869518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cell Value as Text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Extended Text - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2793207324 - Field 2782707039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Row No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Row No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 46548859 - Method 2268252984 - NamedType 823609282" size-unit="char" translate="yes" xml:space="preserve">
+          <source> R%1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method GetVersion - NamedType tVersion</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 818474978 - NamedType 4104898276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - NamedType SheetName</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 818474978 - Method 36190024 - NamedType 2981352172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do-you want to create an Excel book for %1 %2(s)?</source>
+          <note from="Developer" annotates="general" priority="2">%1: Count, %2: TableCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method Export - NamedType lblConfirm</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 818474978 - Method 3201496503 - NamedType 804005424" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Excel File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method Import - NamedType ImportFromExcelTitle</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 818474978 - Method 3201496503 - NamedType 3713533041" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Files (*.xlsx)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method Import - NamedType ExcelFileCaption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 818474978 - Method 562255948 - NamedType 1387521371" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analyzing Data...\\</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method ImportLines - NamedType ltAnalyzing</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2010319027 - NamedType 4104898276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - NamedType SheetName</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2010319027 - Method 846556168 - NamedType 1387521371" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analyzing Data...\\</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method AnalyzeData - NamedType ltAnalyzing</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2010319027 - Method 36190024 - NamedType 2981352172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do-you want to create an Excel book for %1 %2(s)?</source>
+          <note from="Developer" annotates="general" priority="2">%1: Count, %2: TableCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method Export - NamedType lblConfirm</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2010319027 - Method 3201496503 - NamedType 804005424" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Excel File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method Import - NamedType ImportFromExcelTitle</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2010319027 - Method 3201496503 - NamedType 3713533041" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Files (*.xlsx)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method Import - NamedType ExcelFileCaption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1299705622 - NamedType 4104898276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - NamedType SheetName</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1299705622 - Method 846556168 - NamedType 1387521371" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analyzing Data...\\</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method AnalyzeData - NamedType ltAnalyzing</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1299705622 - Method 36190024 - NamedType 2981352172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do-you want to create an Excel book for %1 %2(s)?</source>
+          <note from="Developer" annotates="general" priority="2">%1: Count, %2: TableCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method Export - NamedType lblConfirm</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1299705622 - Method 3201496503 - NamedType 804005424" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Excel File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method Import - NamedType ImportFromExcelTitle</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1299705622 - Method 3201496503 - NamedType 3713533041" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Files (*.xlsx)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method Import - NamedType ExcelFileCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 812580689 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan MemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2793444556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder Level</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Reminder Level - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2793444556 - Control 1629502811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Beginning Text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Reminder Level - Control Beginning - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2793444556 - Control 2618466334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Reminder Level - Control EndingText - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase - Blanket Order</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2189117947" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow Invoice Discount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType AllowInvoiceDiscCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3285233284" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType AmountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1930263167" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buyer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType BuyerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3808264029" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType BuyFromAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2609547522" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Contact E-Mail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType BuyFromContactEmailLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2182502985" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Contact Mobile Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType BuyFromContactMobilePhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2508934449" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Contact Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType BuyFromContactPhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2438826717" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType CompanyInfoBankAccNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1275674192" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType CompanyInfoBankNameCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1454106313" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Giro No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType CompanyInfoGiroNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2826867220" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType CompanyInfoPhoneNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 75049271" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Confirm To</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ConfirmToCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3801332884" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Unit Cost</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType DirectUniCostCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2728513993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType DocumentDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2623093095" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Blanket Order</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType DocumentTitleLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3897674943" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType EmailIDCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1909269221" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exchange rate: %1/%2</source>
+          <note from="Developer" annotates="general" priority="2">%1 = CurrExchRate."Relational Exch. Rate Amount", %2 = CurrExchRate."Exchange Rate Amount"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ExchangeRateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 340642376" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Expected Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ExpectedReceiptDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2862688884" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Home Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType HomePageCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1170285572" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Discount:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType InvDiscCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3392267841" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ItemDescriptionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3269490021" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ItemLineAmountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 41194798" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ItemNumberCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1497765590" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ItemQuantityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 313566497" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ItemUnitCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 198682506" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ItemUnitOfMeasureCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1072087502" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ItemUnitPriceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3184947576" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType JobNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1742294907" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Task No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType JobTaskNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2134599625" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Local Currency</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType LocalCurrentyLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 650077689" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PageCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2893846144" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PaymentDetailsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3169568710" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Terms</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PaymentTermsDescCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1523102124" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PayToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2079014799" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Contact E-Mail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PayToContactEmailLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3401923736" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Contact Mobile Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PayToContactMobilePhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1854022560" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Contact Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PayToContactPhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3626250946" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Planned Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PlannedReceiptDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3013644840" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Specification</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PrepaymentSpecCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2780112871" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PrepmtInvBuDescCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1225323363" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PrepmtInvBufGLAccNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2677110465" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Payment Terms</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PrepymtTermsDescCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 182229247" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment VAT Amount Specification</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PrepymtVATAmtSpecCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 611284396" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prices Including VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PricesIncludingVATCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1332311937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prices Including VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PricesInclVATtxtLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 122545475" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Promised Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PromisedReceiptDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 634581238" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Discount Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PurchLineInvDiscAmtCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3411081103" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Discount %</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PurchLineLineDiscCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1979824598" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PURCHASE QUOTE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PurchQuoteCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3503384786" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Quote Date:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PurchQuoteDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2051172992" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Quote Number:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType PurchQuoteNumCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 4116304336" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType QuoteDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1745962921" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType QuoteNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 415620768" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receive By</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ReceivebyCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2291760470" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Requested Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType RequestedReceiptDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 203962742" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Method</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ShipmentMethodDescCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 232471621" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ShiptoAddressCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 496978630" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ShipToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3126303398" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subtotal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType SubtotalCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1729335317" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Ident. Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType TaxIdentTypeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2566983481" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType ToCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1583171122" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType TotalCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1349122805" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType TotalPriceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2786556803" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Price (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType UnitPriceLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2096959425" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Base</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VALVATBaseLCYCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3915137156" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount Specification in </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VATAmountSpecificationLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1223243188" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Discount Base Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VATAmtLineInvDiscBaseAmtCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 3691499681" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VATAmtLineLineAmtCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 977652710" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VATAmtLineVATAmtCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1210262078" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT %</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VATAmtLineVATCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1396908878" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount Specification</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VATAmtSpecCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 232398666" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Discount on VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VATDiscountAmountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2012124496" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Identifier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VATIdentifierCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 132160432" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VendNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 361562039" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VendorIDCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 1397476154" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Invoice No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VendorInvoiceNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - NamedType 2627513719" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Quote No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - NamedType VendorQuoteNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - ReportDataItem 2072992664 - Property 1806354803" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase - Blanket Order</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - ReportDataItem Purchase Header - Property RequestFilterHeading</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - Control 3255118903 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether to archive the Quote.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - Control ArchiveDocument - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - Control 3255118903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - Control ArchiveDocument - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - Control 816368762 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want to log this interaction.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - Control LogInteraction - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 166933541 - Control 816368762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Log Interaction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Blanket Order - Control LogInteraction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase - Quote</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2189117947" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow Invoice Discount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType AllowInvoiceDiscCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3285233284" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType AmountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1908025102" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The purchase quote is attached to this message.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType BodyLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1930263167" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buyer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType BuyerCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3808264029" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType BuyFromAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2609547522" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Contact E-Mail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType BuyFromContactEmailLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2182502985" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Contact Mobile Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType BuyFromContactMobilePhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2508934449" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Contact Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType BuyFromContactPhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2771379227" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sincerely</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ClosingLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2438826717" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType CompanyInfoBankAccNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1275674192" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType CompanyInfoBankNameCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1454106313" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Giro No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType CompanyInfoGiroNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2826867220" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType CompanyInfoPhoneNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 75049271" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Confirm To</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ConfirmToCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3801332884" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Unit Cost</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType DirectUniCostCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2728513993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType DocumentDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2623093095" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Quote</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType DocumentTitleLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3897674943" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType EmailIDCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1909269221" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exchange rate: %1/%2</source>
+          <note from="Developer" annotates="general" priority="2">%1 = CurrExchRate."Relational Exch. Rate Amount", %2 = CurrExchRate."Exchange Rate Amount"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ExchangeRateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 340642376" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Expected Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ExpectedReceiptDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 514421613" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hello</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType GreetingLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2862688884" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Home Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType HomePageCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1170285572" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Discount:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType InvDiscCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3392267841" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ItemDescriptionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3269490021" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ItemLineAmountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 41194798" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ItemNumberCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1497765590" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ItemQuantityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 313566497" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ItemUnitCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 198682506" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ItemUnitOfMeasureCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1072087502" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ItemUnitPriceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3184947576" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType JobNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1742294907" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Task No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType JobTaskNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2134599625" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Local Currency</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType LocalCurrentyLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 650077689" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PageCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2893846144" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PaymentDetailsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3169568710" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Terms</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PaymentTermsDescCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1523102124" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PayToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2079014799" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Contact E-Mail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PayToContactEmailLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3401923736" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Contact Mobile Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PayToContactMobilePhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1854022560" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Contact Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PayToContactPhoneNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3626250946" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Planned Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PlannedReceiptDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3013644840" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Specification</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PrepaymentSpecCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2780112871" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PrepmtInvBuDescCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1225323363" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PrepmtInvBufGLAccNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2677110465" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepmt. Payment Terms</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PrepymtTermsDescCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 182229247" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment VAT Amount Specification</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PrepymtVATAmtSpecCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 611284396" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prices Including VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PricesIncludingVATCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1332311937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prices Including VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PricesInclVATtxtLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 122545475" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Promised Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PromisedReceiptDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 634581238" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Discount Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PurchLineInvDiscAmtCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3411081103" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Discount %</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PurchLineLineDiscCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1979824598" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PURCHASE QUOTE</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PurchQuoteCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3503384786" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Quote Date:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PurchQuoteDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2051172992" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Quote Number:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType PurchQuoteNumCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 4116304336" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType QuoteDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1745962921" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quote No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType QuoteNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 415620768" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receive By</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ReceivebyCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2291760470" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Requested Receipt Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType RequestedReceiptDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 203962742" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment Method</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ShipmentMethodDescCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 232471621" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ShiptoAddressCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 496978630" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ShipToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3126303398" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subtotal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType SubtotalCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1729335317" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Ident. Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType TaxIdentTypeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2566983481" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType ToCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1583171122" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType TotalCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1349122805" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType TotalPriceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2786556803" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Price (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType UnitPriceLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2096959425" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Base</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VALVATBaseLCYCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3915137156" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount Specification in </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VATAmountSpecificationLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1223243188" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Discount Base Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VATAmtLineInvDiscBaseAmtCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 3691499681" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VATAmtLineLineAmtCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 977652710" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VATAmtLineVATAmtCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1210262078" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT %</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VATAmtLineVATCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1396908878" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount Specification</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VATAmtSpecCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 232398666" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Discount on VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VATDiscountAmountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2012124496" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Identifier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VATIdentifierCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 132160432" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VendNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 361562039" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VendorIDCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 1397476154" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Invoice No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VendorInvoiceNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - NamedType 2627513719" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Quote No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - NamedType VendorQuoteNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - ReportDataItem 2072992664 - Property 1806354803" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase - Quote</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - ReportDataItem Purchase Header - Property RequestFilterHeading</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - Control 3255118903 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether to archive the Quote.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - Control ArchiveDocument - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - Control 3255118903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive Document</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - Control ArchiveDocument - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - Control 816368762 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want to log this interaction.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - Control LogInteraction - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4176662504 - Control 816368762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Log Interaction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purchase - Quote - Control LogInteraction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1963565798 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1843696368">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blank. Purch. Order Sub. - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1963565798 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1843696368">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blank. Purch. Order Sub. - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1963565798 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1843696368">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blank. Purch. Order Sub. - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2161972249 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 884441745">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blanket Sales Order Sub. - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2161972249 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 884441745">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blanket Sales Order Sub. - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2161972249 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 884441745">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blanket Sales Order Sub. - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1343711391 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Cr. Memo Subform - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1343711391 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Cr. Memo Subform - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1343711391 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Cr. Memo Subform - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2017729059 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Invoice Subform - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2017729059 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Invoice Subform - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2017729059 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Invoice Subform - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3363731502 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Quote Subform - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3363731502 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Quote Subform - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3363731502 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Quote Subform - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2219346849 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Order Subform - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2219346849 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Order Subform - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2219346849 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Order Subform - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4011560429 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3010059981">
+          <source>Texts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Reminder Levels - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1643932369 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Cr.Memo Subform - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1643932369 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Cr.Memo Subform - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1643932369 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Cr.Memo Subform - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 800839125 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Invoice Subform - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 800839125 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Invoice Subform - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 800839125 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Invoice Subform - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 894427016 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Order Subform - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 894427016 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Order Subform - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 894427016 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Order Subform - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 418562748 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Quote Subform - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 418562748 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Quote Subform - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 418562748 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Quote Subform - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 232223884 - Action 2913175975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
+          <source>Export Extended text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan_ Item List - Action wanExportExtendedTexts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 232223884 - Action 940699584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
+          <source>Import Extended text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan_ Item List - Action wanImportExtendedTexts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 809936682 - Field 2999603277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 809936682">
+          <source>Compress Prepayment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Header - Field wan Compress Prepayment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 2730686926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Order Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Order Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 198785311 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Order Qty.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Order Quantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 4015541076 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Prepayment %</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Prepayment % - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 172253960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Prepmt. Amount Inv. (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Prepmt. Amount Inv. (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 3727247757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Prepmt. Amt. Incl. VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Prepmt. Amt. Incl. VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 2287865035 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Prepmt. Amt. Inv.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Prepmt. Amt. Inv. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 3412583726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Prepmt. Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Prepmt. Line Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 2405490351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Prepmt. VAT Amount Inv. (LCY)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Prepmt. VAT Amt. Inv.(LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1705351577 - Field 2317900962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 624876957">
+          <source>Late Payment Text Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Bus. Posting Group - Field wan Late Payment Text Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 505023743 - Method 2871892153 - NamedType 484017086" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 505023743">
+          <source>%1 %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purchase Line - Method wanMemoPad - NamedType tCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 192179042 - Method 2871892153 - NamedType 484017086" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 192179042">
+          <source>%1 %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Sales Line - Method wanMemoPad - NamedType tCaption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 3147185419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>WanaDoc Permission Set</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet WanaDoc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2244614141 - NamedType 3808264029" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2244614141">
+          <source>Buy-from</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Purchase - Order - NamedType BuyFromAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2244614141 - NamedType 1523102124" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2244614141">
+          <source>Pay-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Purchase - Order - NamedType PayToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2244614141 - NamedType 496978630" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2244614141">
+          <source>Ship-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Purchase - Order - NamedType ShipToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2400634003 - NamedType 2057050429" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2400634003">
+          <source>Bill-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Credit Memo - NamedType BillToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2400634003 - NamedType 2604352426" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2400634003">
+          <source>Sell-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Credit Memo - NamedType SellToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2400634003 - NamedType 496978630" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2400634003">
+          <source>Ship-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Credit Memo - NamedType ShipToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2226024577 - NamedType 2057050429" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2226024577">
+          <source>Bill-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Invoice - NamedType BillToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2226024577 - NamedType 2604352426" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2226024577">
+          <source>Sell-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Invoice - NamedType SellToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2226024577 - NamedType 496978630" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2226024577">
+          <source>Ship-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Invoice - NamedType ShipToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2226024577 - Method 894501855 - NamedType 4233250767" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2226024577">
+          <source>Shipment No. %1 %2</source>
+          <note from="Developer" annotates="general" priority="2">%1: Document No., %2: Posting Date</note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Invoice - Method ShipmentLines - NamedType Shipment_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2043161662 - NamedType 2057050429" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2043161662">
+          <source>Bill-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Order Conf. - NamedType BillToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2043161662 - NamedType 2604352426" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2043161662">
+          <source>Sell-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Order Conf. - NamedType SellToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2043161662 - NamedType 496978630" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2043161662">
+          <source>Ship-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Order Conf. - NamedType ShipToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1069139127 - NamedType 2057050429" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 1069139127">
+          <source>Bill-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Pro Forma Inv - NamedType BillToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1069139127 - NamedType 3770688312" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 1069139127">
+          <source>Proforma invoice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Pro Forma Inv - NamedType Invoice_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1069139127 - NamedType 2828131738" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 1069139127">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Pro Forma Inv - NamedType Page_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1069139127 - NamedType 2604352426" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 1069139127">
+          <source>Sell-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Pro Forma Inv - NamedType SellToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1069139127 - NamedType 496978630" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 1069139127">
+          <source>Ship-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Pro Forma Inv - NamedType ShipToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1069139127 - NamedType 1667486000" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 1069139127">
+          <source>Thank you for your business. Our order confirmation is attached to this message.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Pro Forma Inv - NamedType wanMailBody_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1069139127 - NamedType 2594115217" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 1069139127">
+          <source>Sincerely</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Pro Forma Inv - NamedType wanMailClosing_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1069139127 - NamedType 3913905143" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 1069139127">
+          <source>Dear customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Pro Forma Inv - NamedType wanMailGreeting_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 843575944 - NamedType 2057050429" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 843575944">
+          <source>Bill-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Quote - NamedType BillToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 843575944 - NamedType 2604352426" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 843575944">
+          <source>Sell-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Quote - NamedType SellToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 843575944 - NamedType 496978630" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 843575944">
+          <source>Ship-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Quote - NamedType ShipToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 843575944 - NamedType 1667486000" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 843575944">
+          <source>Thank you for your business. Your quote is attached to this message.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Quote - NamedType wanMailBody_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 843575944 - NamedType 2594115217" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 843575944">
+          <source>Sincerely</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Quote - NamedType wanMailClosing_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 843575944 - NamedType 3913905143" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 843575944">
+          <source>Dear customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Quote - NamedType wanMailGreeting_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 168188058 - NamedType 2057050429" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 168188058">
+          <source>Bill-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Shipment - NamedType BillToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 168188058 - NamedType 308138980" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 168188058">
+          <source>Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Shipment - NamedType PhoneNo_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 168188058 - NamedType 2604352426" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 168188058">
+          <source>Sell-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Shipment - NamedType SellToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 168188058 - NamedType 496978630" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 168188058">
+          <source>Ship-to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Shipment - NamedType ShipToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 168188058 - Control 1675120515 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 168188058">
+          <source>Show lines without quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Shipment - Control wanShowLinesWithoutQuantity - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

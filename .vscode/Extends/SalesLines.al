@@ -63,7 +63,7 @@ pageextension 87046 "wan Sales Order Subform" extends "Sales Order Subform"
             action(wanMemoPad)
             {
                 ApplicationArea = All;
-                CaptionML = ENU = 'MemoPad', FRA = 'MemoPad';
+                Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
                 Promoted = true;
@@ -73,6 +73,33 @@ pageextension 87046 "wan Sales Order Subform" extends "Sales Order Subform"
                 begin
                     if Rec.wanMemoPad(true) then
                         CurrPage.Update(false);
+                end;
+            }
+        }
+        addlast("F&unctions")
+        {
+            action(wanExcelExport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Export';
+                Image = ExportToExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Sales Lines";
+                begin
+                    ExcelLines.Export(Rec);
+                end;
+            }
+            action(wanExcelImport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Import';
+                Image = ImportExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Sales Lines";
+                begin
+                    ExcelLines.Import(Rec);
                 end;
             }
         }
@@ -87,7 +114,7 @@ pageextension 87047 "wan Sales Invoice Subform" extends "Sales Invoice Subform"
             action(wanMemoPad)
             {
                 ApplicationArea = All;
-                CaptionML = ENU = 'MemoPad', FRA = 'MemoPad';
+                Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
                 Promoted = true;
@@ -97,6 +124,33 @@ pageextension 87047 "wan Sales Invoice Subform" extends "Sales Invoice Subform"
                 begin
                     if Rec.wanMemoPad(true) then
                         CurrPage.Update(false);
+                end;
+            }
+        }
+        addlast("F&unctions")
+        {
+            action(wanExcelExport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Export';
+                Image = ExportToExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Sales Lines";
+                begin
+                    ExcelLines.Export(Rec);
+                end;
+            }
+            action(wanExcelImport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Import';
+                Image = ImportExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Sales Lines";
+                begin
+                    ExcelLines.Import(Rec);
                 end;
             }
         }
@@ -111,7 +165,7 @@ pageextension 87095 "wan Sales Quote Subform" extends "Sales Quote Subform"
             action(wanMemoPad)
             {
                 ApplicationArea = All;
-                CaptionML = ENU = 'MemoPad', FRA = 'MemoPad';
+                Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
                 Promoted = true;
@@ -121,6 +175,33 @@ pageextension 87095 "wan Sales Quote Subform" extends "Sales Quote Subform"
                 begin
                     if Rec.wanMemoPad(true) then
                         CurrPage.Update(false);
+                end;
+            }
+        }
+        addlast("F&unctions")
+        {
+            action(wanExcelExport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Export';
+                Image = ExportToExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Sales Lines";
+                begin
+                    ExcelLines.Export(Rec);
+                end;
+            }
+            action(wanExcelImport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Import';
+                Image = ImportExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Sales Lines";
+                begin
+                    ExcelLines.Import(Rec);
                 end;
             }
         }
@@ -135,7 +216,7 @@ pageextension 87096 "wan Sales Cr.Memo Subform" extends "Sales Cr. Memo Subform"
             action(wanMemoPad)
             {
                 ApplicationArea = All;
-                CaptionML = ENU = 'MemoPad', FRA = 'MemoPad';
+                Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
                 Promoted = true;
@@ -145,6 +226,33 @@ pageextension 87096 "wan Sales Cr.Memo Subform" extends "Sales Cr. Memo Subform"
                 begin
                     if Rec.wanMemoPad(true) then
                         CurrPage.Update(false);
+                end;
+            }
+        }
+        addlast("F&unctions")
+        {
+            action(wanExcelExport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Export';
+                Image = ExportToExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Sales Lines";
+                begin
+                    ExcelLines.Export(Rec);
+                end;
+            }
+            action(wanExcelImport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Import';
+                Image = ImportExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Sales Lines";
+                begin
+                    ExcelLines.Import(Rec);
                 end;
             }
         }
@@ -159,7 +267,7 @@ pageextension 87508 "wan Blanket Sales Order Sub." extends "Blanket Sales Order 
             action(wanMemoPad)
             {
                 ApplicationArea = All;
-                CaptionML = ENU = 'MemoPad', FRA = 'MemoPad';
+                Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
                 Promoted = true;
@@ -169,6 +277,33 @@ pageextension 87508 "wan Blanket Sales Order Sub." extends "Blanket Sales Order 
                 begin
                     if Rec.wanMemoPad(true) then
                         CurrPage.Update(false);
+                end;
+            }
+        }
+        addlast("F&unctions")
+        {
+            action(wanExcelExport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Export';
+                Image = ExportToExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Sales Lines";
+                begin
+                    ExcelLines.Export(Rec);
+                end;
+            }
+            action(wanExcelImport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Import';
+                Image = ImportExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Sales Lines";
+                begin
+                    ExcelLines.Import(Rec);
                 end;
             }
         }

@@ -4,7 +4,7 @@ tableextension 87000 "wan Gen. Bus. Posting Group" extends "Gen. Business Postin
     {
         field(87000; "wan Late Payment Text Code"; Code[20])
         {
-            CaptionML = ENU = 'Late Payment Text Code', FRA = 'Code texte retard de paiement';
+            Caption = 'Late Payment Text Code';
             DataClassification = ToBeClassified;
             TableRelation = "Standard Text";
         }

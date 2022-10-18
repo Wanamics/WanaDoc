@@ -126,24 +126,24 @@ reportextension 87302 "Standard Sales - Pro Forma Inv" extends "Standard Sales -
     var
         MemoPad: Codeunit "wan MemoPad Sales";
         FormatAddress: Codeunit "Format Address";
-        SellToAddress_Lbl: TextConst ENU = 'Sell-to', FRA = 'Donneur d''ordre';
+        SellToAddress_Lbl: Label 'Sell-to';
         SellToAddress: Text;
-        ShipToAddress_Lbl: TextConst ENU = 'Ship-to', FRA = 'Livraison';
+        ShipToAddress_Lbl: Label 'Ship-to';
         ShipToAddress: Text;
-        BillToAddress_Lbl: TextConst ENU = 'Bill-to', FRA = 'Facturation';
+        BillToAddress_Lbl: Label 'Bill-to';
         BillToAddress: Text;
         wanCompanyAddress: Text;
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
         DocumentHelper: Codeunit "wan Document Helper";
         Customer: Record Customer;
-        wanMailGreeting_Lbl: TextConst ENU = 'Dear customer', FRA = 'Cher client,';
-        wanMailBody_Lbl: TextConst ENU = 'Thank you for your business. Our order confirmation is attached to this message.', FRA = 'Ci-joint la confirmation de votre commande :';
-        wanMailClosing_Lbl: TextConst ENU = 'Sincerely', FRA = 'Bonne réception.';
+        wanMailGreeting_Lbl: Label 'Dear customer';
+        wanMailBody_Lbl: Label 'Thank you for your business. Our order confirmation is attached to this message.';
+        wanMailClosing_Lbl: Label 'Sincerely';
 
         wanVATClause: Record "VAT Clause";
-        Invoice_Lbl: TextConst ENU = 'Proforma invoice', FRA = 'Facture proforma';
-        Page_Lbl: TextConst ENU = 'Page', FRA = 'Page';
+        Invoice_Lbl: Label 'Proforma invoice';
+        Page_Lbl: Label 'Page';
         SalepersonPurchaser: Record "Salesperson/Purchaser";
         ShipmentMethod: Record "Shipment Method";
         PaymentTerms: Record "Payment Terms";

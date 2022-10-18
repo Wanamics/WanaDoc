@@ -53,11 +53,11 @@ reportextension 87305 "Standard Sales - Order Conf." extends "Standard Sales - O
     var
         MemoPad: Codeunit "wan MemoPad Sales";
         FormatAddress: Codeunit "Format Address";
-        SellToAddress_Lbl: TextConst ENU = 'Sell-to', FRA = 'Donneur d''ordre';
+        SellToAddress_Lbl: Label 'Sell-to';
         SellToAddress: Text;
-        ShipToAddress_Lbl: TextConst ENU = 'Ship-to', FRA = 'Livraison';
+        ShipToAddress_Lbl: Label 'Ship-to';
         ShipToAddress: Text;
-        BillToAddress_Lbl: TextConst ENU = 'Bill-to', FRA = 'Facturation';
+        BillToAddress_Lbl: Label 'Bill-to';
         BillToAddress: Text;
         CompanyAddress: Text;
         CompanyContactInfo: Text;

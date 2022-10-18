@@ -63,7 +63,7 @@ pageextension 87054 "wan Purchase Order Subform" extends "Purchase Order Subform
             action(wanMemoPad)
             {
                 ApplicationArea = All;
-                CaptionML = ENU = 'MemoPad', FRA = 'MemoPad';
+                Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
                 Promoted = true;
@@ -73,6 +73,33 @@ pageextension 87054 "wan Purchase Order Subform" extends "Purchase Order Subform
                 begin
                     if Rec.wanMemoPad(true) then
                         CurrPage.Update(false);
+                end;
+            }
+        }
+        addlast("F&unctions")
+        {
+            action(wanExcelExport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Export';
+                Image = ExportToExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Purchase Lines";
+                begin
+                    ExcelLines.Export(Rec);
+                end;
+            }
+            action(wanExcelImport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Import';
+                Image = ImportExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Purchase Lines";
+                begin
+                    ExcelLines.Import(Rec);
                 end;
             }
         }
@@ -87,7 +114,7 @@ pageextension 87055 "wan Purch. Invoice Subform" extends "Purch. Invoice Subform
             action(wanMemoPad)
             {
                 ApplicationArea = All;
-                CaptionML = ENU = 'MemoPad', FRA = 'MemoPad';
+                Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
                 Promoted = true;
@@ -97,6 +124,33 @@ pageextension 87055 "wan Purch. Invoice Subform" extends "Purch. Invoice Subform
                 begin
                     if Rec.wanMemoPad(true) then
                         CurrPage.Update(false);
+                end;
+            }
+        }
+        addlast("F&unctions")
+        {
+            action(wanExcelExport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Export';
+                Image = ExportToExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Purchase Lines";
+                begin
+                    ExcelLines.Export(Rec);
+                end;
+            }
+            action(wanExcelImport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Import';
+                Image = ImportExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Purchase Lines";
+                begin
+                    ExcelLines.Import(Rec);
                 end;
             }
         }
@@ -111,7 +165,7 @@ pageextension 87097 "wan Purch. Quote Subform" extends "Purchase Quote Subform"
             action(wanMemoPad)
             {
                 ApplicationArea = All;
-                CaptionML = ENU = 'MemoPad', FRA = 'MemoPad';
+                Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
                 Promoted = true;
@@ -121,6 +175,33 @@ pageextension 87097 "wan Purch. Quote Subform" extends "Purchase Quote Subform"
                 begin
                     if Rec.wanMemoPad(true) then
                         CurrPage.Update(false);
+                end;
+            }
+        }
+        addlast("F&unctions")
+        {
+            action(wanExcelExport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Export';
+                Image = ExportToExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Purchase Lines";
+                begin
+                    ExcelLines.Export(Rec);
+                end;
+            }
+            action(wanExcelImport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Import';
+                Image = ImportExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Purchase Lines";
+                begin
+                    ExcelLines.Import(Rec);
                 end;
             }
         }
@@ -135,7 +216,7 @@ pageextension 87098 "wan Purch. Cr. Memo Subform" extends "Purch. Cr. Memo Subfo
             action(wanMemoPad)
             {
                 ApplicationArea = All;
-                CaptionML = ENU = 'MemoPad', FRA = 'MemoPad';
+                Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
                 Promoted = true;
@@ -145,6 +226,33 @@ pageextension 87098 "wan Purch. Cr. Memo Subform" extends "Purch. Cr. Memo Subfo
                 begin
                     if Rec.wanMemoPad(true) then
                         CurrPage.Update(false);
+                end;
+            }
+        }
+        addlast("F&unctions")
+        {
+            action(wanExcelExport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Export';
+                Image = ExportToExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Purchase Lines";
+                begin
+                    ExcelLines.Export(Rec);
+                end;
+            }
+            action(wanExcelImport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Import';
+                Image = ImportExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Purchase Lines";
+                begin
+                    ExcelLines.Import(Rec);
                 end;
             }
         }
@@ -159,7 +267,7 @@ pageextension 87510 "wan Blank. Purch. Order Sub." extends "Blanket Purchase Ord
             action(wanMemoPad)
             {
                 ApplicationArea = All;
-                CaptionML = ENU = 'MemoPad', FRA = 'MemoPad';
+                Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
                 Promoted = true;
@@ -169,6 +277,33 @@ pageextension 87510 "wan Blank. Purch. Order Sub." extends "Blanket Purchase Ord
                 begin
                     if Rec.wanMemoPad(true) then
                         CurrPage.Update(false);
+                end;
+            }
+        }
+        addlast("F&unctions")
+        {
+            action(wanExcelExport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Export';
+                Image = ExportToExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Purchase Lines";
+                begin
+                    ExcelLines.Export(Rec);
+                end;
+            }
+            action(wanExcelImport)
+            {
+                ApplicationArea = All;
+                Caption = 'Excel Import';
+                Image = ImportExcel;
+                trigger OnAction()
+                var
+                    ExcelLines: Codeunit "wan Excel Purchase Lines";
+                begin
+                    ExcelLines.Import(Rec);
                 end;
             }
         }

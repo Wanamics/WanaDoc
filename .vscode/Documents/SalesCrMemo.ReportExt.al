@@ -40,11 +40,11 @@ reportextension 87307 "Standard Sales - Credit Memo" extends "Standard Sales - C
     var
         MemoPad: Codeunit "wan MemoPad Sales Cr. Memo";
         FormatAddress: Codeunit "Format Address";
-        SellToAddress_Lbl: TextConst ENU = 'Sell-to', FRA = 'Donneur d''ordre';
+        SellToAddress_Lbl: Label 'Sell-to';
         SellToAddress: Text;
-        ShipToAddress_Lbl: TextConst ENU = 'Ship-to', FRA = 'Livraison';
+        ShipToAddress_Lbl: Label 'Ship-to';
         ShipToAddress: Text;
-        BillToAddress_Lbl: TextConst ENU = 'Bill-to', FRA = 'Facturation';
+        BillToAddress_Lbl: Label 'Bill-to';
         BillToAddress: Text;
         CompanyAddress: Text;
         CompanyContactInfo: Text;

@@ -48,20 +48,20 @@ reportextension 87322 "Standard Purchase - Order" extends "Standard Purchase - O
     var
         MemoPad: Codeunit "wan MemoPad Purchase";
         FormatAddress: Codeunit "Format Address";
-        BuyFromAddress_Lbl: TextConst ENU = 'Buy-from', FRA = 'Preneur d''ordre';
+        BuyFromAddress_Lbl: Label 'Buy-from';
         BuyFromAddress: Text;
-        ShipToAddress_Lbl: TextConst ENU = 'Ship-to', FRA = 'Livraison';
+        ShipToAddress_Lbl: Label 'Ship-to';
         ShipToAddress: Text;
-        PayToAddress_Lbl: TextConst ENU = 'Pay-to', FRA = 'Paiement';
+        PayToAddress_Lbl: Label 'Pay-to';
         PayToAddress: Text;
         CompanyAddress: Text;
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
         DocumentHelper: Codeunit "wan Document Helper";
     /*
-    wanMailGreeting_Lbl: TextConst ENU = 'Dear vendor', FRA = 'Cher fournisseur,';
-    wanMailBody_Lbl: TextConst ENU = 'Please find enclosed an order, to which we kindly ask you to acknowledge receipt as soon as possible.', FRA = 'Veuillez trouver ci-joint une commande, à laquelle nous vous demandons de bien vouloir accuser réception dès que possible';
-    wanMailClosing_Lbl: TextConst ENU = 'Sincerely', FRA = 'Bonne réception.';7
+    wanMailGreeting_Lbl: Label 'Dear vendor', FRA = 'Cher fournisseur,';
+    wanMailBody_Lbl: Label 'Please find enclosed an order, to which we kindly ask you to acknowledge receipt as soon as possible.', FRA = 'Veuillez trouver ci-joint une commande, à laquelle nous vous demandons de bien vouloir accuser réception dès que possible';
+    wanMailClosing_Lbl: Label 'Sincerely', FRA = 'Bonne réception.';7
     */
 
     trigger OnPreReport()

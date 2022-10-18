@@ -4,42 +4,42 @@ tableextension 87113 "Sales Invoice Line" extends "Sales Invoice Line"
     {
         field(87015; "wan Order Quantity"; Decimal)
         {
-            CaptionML = ENU = 'Order Qty.', FRA = 'Qté. commande';
+            Caption = 'Order Qty.';
             DataClassification = ToBeClassified;
         }
         field(87029; "wan Order Amount"; Decimal)
         {
-            CaptionML = ENU = 'Order Amount', FRA = 'Mnt. commande';
+            Caption = 'Order Amount';
             DataClassification = ToBeClassified;
         }
         field(87109; "wan Prepayment %"; Decimal)
         {
-            CaptionML = ENU = 'Prepayment %', FRA = '% acompte';
+            Caption = 'Prepayment %';
             DataClassification = ToBeClassified;
         }
         field(87110; "wan Prepmt. Line Amount"; Decimal)
         {
-            CaptionML = ENU = 'Prepmt. Amount', FRA = 'Mnt. acompte';
+            Caption = 'Prepmt. Amount';
             DataClassification = ToBeClassified;
         }
         field(87111; "wan Prepmt. Amt. Inv."; Decimal)
         {
-            CaptionML = ENU = 'Prepmt. Amt. Inv.', FRA = 'Mnt. acompte fact.';
+            Caption = 'Prepmt. Amt. Inv.';
             DataClassification = ToBeClassified;
         }
         field(87112; "wan Prepmt. Amt. Incl. VAT"; Decimal)
         {
-            CaptionML = ENU = 'Prepmt. Amt. Incl. VAT', FRA = 'Mnt. acompte TTC';
+            Caption = 'Prepmt. Amt. Incl. VAT';
             DataClassification = ToBeClassified;
         }
         field(87129; "wan Prepmt. Amount Inv. (LCY)"; Decimal)
         {
-            CaptionML = ENU = 'Prepmt. Amount Inv. (LCY)', FRA = 'Montant acompte antérieur (DS)';
+            Caption = 'Prepmt. Amount Inv. (LCY)';
             DataClassification = ToBeClassified;
         }
         field(87132; "wan Prepmt. VAT Amt. Inv.(LCY)"; Decimal)
         {
-            CaptionML = ENU = 'Prepmt. VAT Amount Inv. (LCY)', FRA = 'Montant acompte antérieur TTC (DS)';
+            Caption = 'Prepmt. VAT Amount Inv. (LCY)';
             DataClassification = ToBeClassified;
         }
     }
