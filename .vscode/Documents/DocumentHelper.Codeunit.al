@@ -5,20 +5,14 @@ codeunit 87001 "wan Document Helper"
         AutoFormat: Codeunit "Auto Format";
         Item: Record Item;
         CountryRegion: Record "Country/Region";
-
-    [EventSubscriber(ObjectType::Table, Database::"Custom Report Selection", 'OnBeforeInsertEvent', '', false, false)]
-    local procedure OnBeforeInsertCustomReportSelection(var Rec: Record "Custom Report Selection")
-    var
-        ReportSelections: Record "Report Selections";
-    begin
-        ReportSelections.SetRange(Usage, Rec.Usage);
-        if ReportSelections.FindFirst() then
-            Rec."Report ID" := ReportSelections."Report ID";
-    end;
+        CompanyInfo: Record "Company Information";
+        BankAccount: Record "Bank Account";
+        DefaultBankAccount: Record "Bank Account";
+        PaymentMethod: Record "Payment Method";
 
     procedure GetCompanyInfo(var pCompanyAddress: Text; var pCompanyContactInfo: Text; var pCompanyLegalInfo: Text)
     var
-        CompanyInfo: Record "Company Information";
+        //CompanyInfo: Record "Company Information";
         Addr: array[8] of Text[100];
     begin
         CompanyInfo.Get();
@@ -42,6 +36,48 @@ codeunit 87001 "wan Document Helper"
             pCompanyLegalInfo += LineFeed() + CompanyInfo.FieldCaption("Trade Register") + ' ' + CompanyInfo."Trade Register";
         if CompanyInfo."VAT Registration No." <> '' then
             pCompanyLegalInfo += LineFeed() + CompanyInfo.FieldCaption("VAT Registration No.") + ' ' + CompanyInfo."VAT Registration No.";
+        if CompanyInfo."Default Bank Account No." <> '' then
+            DefaultBankAccount.Get(CompanyInfo."Default Bank Account No.");
+    end;
+
+    procedure PaymentMethodText(pLanguageCode: Code[10]; pPaymentMethodCode: Code[10]; pCompanyBankAccountNo: Code[20]; pCustomerNo: Code[20]; pSDDMandateId: Code[35]): Text;
+    var
+        PaymentMethodLbl: Label 'Pay by %1 to our bank account %2, IBAN %3, Code SWIFT %4';
+        DirectDebitLbl: Label 'Direct Debit ID %1 from your bank account %2 IBAN %3';
+        SDDMandate: Record "SEPA Direct Debit Mandate";
+        CustomerBankAccount: Record "Customer Bank Account";
+    begin
+        if pPaymentMethodCode <> PaymentMethod.Code then
+            if pPaymentMethodCode = '' then
+                PaymentMethod.Init()
+            else begin
+                PaymentMethod.Get(pPaymentMethodCode);
+                if pLanguageCode <> '' then
+                    PaymentMethod.TranslateDescription(pLanguageCode);
+            end;
+        if PaymentMethod."Direct Debit" then begin
+            if SDDMandate.Get(pSDDMandateId) then
+                if CustomerBankAccount.Get(pCustomerNo, SDDMandate."Customer Bank Account Code") then;
+            exit(StrSubstNo(DirectDebitLbl, pSDDMandateId, CustomerBankAccount.Name, FormatIBAN(CustomerBankAccount.IBAN)));
+        end else begin
+            if pCompanyBankAccountNo = '' then
+                BankAccount := DefaultBankAccount
+            else
+                if pCompanyBankAccountNo <> BankAccount."No." then
+                    BankAccount.Get(pCompanyBankAccountNo);
+            exit(StrSubstNo(PaymentMethodLbl, PaymentMethod.Description, BankAccount.Name, FormatIBAN(BankAccount.IBAN), BankAccount."SWIFT Code"))
+        end;
+    end;
+
+    local procedure FormatIBAN(pIBAN: Text) ReturnValue: Text
+    var
+        i: Integer;
+    begin
+        for i := 1 to StrLen(pIBAN) do begin
+            if (i - 1) mod 4 = 0 then
+                ReturnValue += ' ';
+            ReturnValue += pIBAN[i]
+        end;
     end;
 
     procedure LineFeed() ReturnValue: Text[2];
@@ -124,9 +160,7 @@ codeunit 87001 "wan Document Helper"
     procedure Tariff(pItemNo: Code[20]; pShipToCountryRegionCode: Code[10]) ReturnValue: Text;
     var
         Item: Record Item;
-        IntraStatErr: TextConst
-            ENU = '%1 and %2 of item %3 are mandatory for an intrastat operation.',
-            FRA = '%1 et %2 de l''article %3 doivent être définis pour une opération intracommunautaire.';
+        IntraStatErr: Label '%1 and %2 of item %3 are mandatory for an intrastat operation.';
     begin
         Item.Get(pItemNo);
         if Item.IsInventoriableType() then begin

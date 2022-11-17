@@ -1,5 +1,6 @@
 reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoice"
 {
+    WordLayout = './wanSalesInvoice.docx';
     dataset
     {
         add(Header)
@@ -18,6 +19,7 @@ reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoi
             column(wanExternalDocumentNo_Lbl; DocumentHelper.iif("External Document No." = '', '', Fieldcaption("External Document No."))) { }
             column(wanVATClause; wanVATClause.Description) { }
             column(wanLatePaymentClause; wanLatePaymentClause) { }
+            column(wanPaymentMethodText; DocumentHelper.PaymentMethodText("Language Code", "Payment Method Code", "Company Bank Account Code", "Bill-to Customer No.", "Direct Debit Mandate ID")) { }
 
             column(wanColumn1_Lbl; wanColumn_Lbl[1]) { }
             column(wanColumn2_Lbl; wanColumn_Lbl[2]) { }
@@ -46,7 +48,7 @@ reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoi
                 else
                     Clear(wanVATClause);
                 if Header."Gen. Bus. Posting Group" <> wanGenBusPostingGroup.Code then begin
-                    clear(wanLatePaymentClause);
+                    Clear(wanLatePaymentClause);
                     if wanGenBusPostingGroup.Get(Header."Gen. Bus. Posting Group") then
                         wanLatePaymentClause := GetExtendedText(Header."Posting Date", Header."Language Code", wanGenBusPostingGroup."wan Late Payment Text Code");
                 end;
@@ -118,6 +120,8 @@ reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoi
         CompanyLegalInfo: Text;
         DocumentHelper: Codeunit "wan Document Helper";
         Customer: Record Customer;
+        //wanPaymentMethod : Record "Payment Method";
+        //BankAccount : Record "Bank Account";
 
         wanColumn_Lbl: array[3] of Text;
         wanColumn: array[3] of Text;
@@ -137,6 +141,7 @@ reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoi
         AttachedLines: Text;
         Item: Record Item;
         ItemLedgerEntry: Record "Item Ledger Entry";
+        OrderLine: Record "Sales Line";
     begin
         ReturnValue := pLine.Description;
         OnBeforeGetMemo(pHeader, pLine, ReturnValue);
@@ -144,7 +149,14 @@ reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoi
             ReturnValue += DocumentHelper.ItemReferences(pLine."No.", pLine."Item Reference No.");
             ReturnValue += DocumentHelper.Tariff(pLine."No.", pHeader."Ship-to Country/Region Code");
             ReturnValue += ShipmentLines;
-        end;
+        end else
+            if pHeader."Prepayment Invoice" and (pLine.Type = pLine.Type::"G/L Account") then begin
+                if OrderLine.Get(OrderLine."Document Type"::Order, pHeader."Prepayment Order No.", pLine."Line No.") and
+                   (OrderLine.Type = OrderLine.Type::Item) then begin
+                    ReturnValue += DocumentHelper.ItemReferences(OrderLine."No.", pLine."Item Reference No.");
+                    ReturnValue += DocumentHelper.Tariff(OrderLine."No.", pHeader."Ship-to Country/Region Code");
+                end;
+            end;
         AttachedLines := MemoPad.GetAttachedLines(pLine);
         if AttachedLines = '' then
             AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);

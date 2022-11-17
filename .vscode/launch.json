@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+        /*
         {
             "name": "Wanamics Development",
             "request": "launch",
@@ -18,6 +19,7 @@
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true
         },
+        */
         {
             "name": "GRV Development",
             "request": "launch",
@@ -25,11 +27,11 @@
             "tenant": "504c0cd1-a7ee-4826-aff0-e93458fe586c",
             "type": "al",
             "environmentType": "Sandbox",
-            "environmentName": "Development",
+            "environmentName": "DevGervois",
             //"startupObjectId": 50004,
             //"startupObjectType": "Page",
             //"schemaUpdateMode": "ForceSync",
-            "breakOnError": true,
+            "breakOnError": "ExcludeTry",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true
