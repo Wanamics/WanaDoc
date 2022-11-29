@@ -1,6 +1,6 @@
 reportextension 87305 "Standard Sales - Order Conf." extends "Standard Sales - Order Conf."
 {
-    WordLayout = './wanSalesOrderConf.docx';
+    WordLayout = './ReportLayouts/wanSalesOrderConf.docx';
     dataset
     {
         add(Header)

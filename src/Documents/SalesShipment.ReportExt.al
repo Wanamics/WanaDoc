@@ -1,6 +1,6 @@
 reportextension 87308 "Standard Sales - Shipment" extends "Standard Sales - Shipment"
 {
-    WordLayout = './wanSalesShipment.docx';
+    WordLayout = './ReportLayouts/wanSalesShipment.docx';
     dataset
     {
         add(Header)

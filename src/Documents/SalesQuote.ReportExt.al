@@ -1,6 +1,6 @@
 reportextension 87304 "Standard Sales - Quote" extends "Standard Sales - Quote"
 {
-    WordLayout = './wanSalesQuote.docx';
+    WordLayout = './ReportLayouts/wanSalesQuote.docx';
     dataset
     {
 

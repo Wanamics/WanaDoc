@@ -1,6 +1,6 @@
 reportextension 87322 "Standard Purchase - Order" extends "Standard Purchase - Order"
 {
-    WordLayout = './wanPurchaseOrder.docx';
+    WordLayout = './ReportLayouts/wanPurchaseOrder.docx';
     dataset
     {
         add("Purchase Header")

@@ -1,6 +1,6 @@
 reportextension 87307 "Standard Sales - Credit Memo" extends "Standard Sales - Credit Memo"
 {
-    WordLayout = './wanSalesCrMemo.docx';
+    WordLayout = './ReportLayouts/wanSalesCrMemo.docx';
     dataset
     {
         add(Header)

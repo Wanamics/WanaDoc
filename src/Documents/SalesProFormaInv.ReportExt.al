@@ -1,6 +1,6 @@
 reportextension 87302 "Standard Sales - Pro Forma Inv" extends "Standard Sales - Pro Forma Inv"
 {
-    WordLayout = './wanSalesProFormaInvoice.docx';
+    WordLayout = './ReportLayouts/wanSalesProFormaInvoice.docx';
     dataset
     {
         add(Header)

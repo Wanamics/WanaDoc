@@ -1,7 +1,7 @@
 report 87304 "wan Purchase - Quote"
 // Copy from "Standard Purchase - Order", 'Order' replaced by 'Quote' + '[+ wan Extension +]
 {
-    WordLayout = './wanPurchaseQuote.docx';
+    WordLayout = './ReportLayouts/wanPurchaseQuote.docx';
     Caption = 'Purchase - Quote';
     DefaultLayout = Word;
     EnableHyperlinks = true;

@@ -1,7 +1,7 @@
 report 87310 "wan Purchase - Blanket Order"
 // Copy from "Standard Purchase - Order", 'Order' replaced by 'Quote' + '[+ wan Extension +]
 {
-    WordLayout = './wanPurchaseBlanketOrder.docx';
+    WordLayout = './ReportLayouts/wanPurchaseBlanketOrder.docx';
     Caption = 'Purchase - Blanket Order';
     DefaultLayout = Word;
     EnableHyperlinks = true;

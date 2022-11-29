@@ -1,6 +1,6 @@
 reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoice"
 {
-    WordLayout = './wanSalesInvoice.docx';
+    WordLayout = './ReportLayouts/wanSalesInvoice.docx';
     dataset
     {
         add(Header)
