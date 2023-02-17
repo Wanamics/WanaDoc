@@ -1168,11 +1168,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan_ Item List - Action wanImportExtendedTexts - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 809936682 - Field 2999603277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 809936682">
-          <source>Compress Prepayment</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Header - Field wan Compress Prepayment - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 2079186865 - Field 2730686926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Order Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1222,6 +1217,11 @@
           <source>%1 %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purchase Line - Method wanMemoPad - NamedType tCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3017902538 - Field 2999603277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 809936682">
+          <source>Compress Prepayment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Sales Invoice Header - Field wan Compress Prepayment - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192179042 - Method 2871892153 - NamedType 484017086" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 192179042">
           <source>%1 %2</source>

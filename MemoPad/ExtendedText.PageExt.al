@@ -1,4 +1,4 @@
-pageextension 87320 "Extended Text" extends "Extended Text"
+pageextension 87320 "wan Extended Text" extends "Extended Text"
 {
     layout
     {

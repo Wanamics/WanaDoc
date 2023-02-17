@@ -2,7 +2,7 @@ tableextension 87300 "wan Gen. Bus. Posting Group" extends "Gen. Business Postin
 {
     fields
     {
-        field(87000; "wan Late Payment Text Code"; Code[20])
+        field(87300; "wan Late Payment Text Code"; Code[20])
         {
             Caption = 'Late Payment Text Code';
             DataClassification = ToBeClassified;

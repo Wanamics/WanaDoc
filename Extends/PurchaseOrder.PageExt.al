@@ -1,4 +1,4 @@
-pageextension 87301 "Purchase Order" extends "Purchase Order"
+pageextension 87301 "wan Purchase Order" extends "Purchase Order"
 {
     layout
     {

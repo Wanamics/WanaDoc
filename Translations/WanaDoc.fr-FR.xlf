@@ -33,6 +33,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Row No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 453050756 - Method 2664287289 - NamedType 1167231360" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment Invoice</source>
+          <target state="needs-translation">Facture d'acompte</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Events - Method OnBeforeGetDocumentCaption - NamedType PrepaymentInvoice</note>
+        </trans-unit>
         <trans-unit id="Codeunit 46548859 - Method 2268252984 - NamedType 823609282" size-unit="char" translate="yes" xml:space="preserve">
           <source> R%1</source>
           <target>R%1 </target>
@@ -43,15 +49,19 @@
           <source>Pay by %1 to our bank account %2, IBAN %3, Code SWIFT %4</source>
           <target state="needs-translation">Paiement par %1 sur notre compte %2, IBAN %3, code Swift %4.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Translated with Xliff Editor</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method PaymentMethodText - NamedType PaymentMethodLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 46548859 - Method 1518894916 - NamedType 4089536611" size-unit="char" translate="yes" xml:space="preserve">
           <source>Direct Debit ID %1 from your bank account %2 IBAN %3</source>
           <target state="needs-translation">Prélèvement selon mandat (RUM) %1 sur votre compte %2, IBAN %3.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Translated with Xliff Editor</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method PaymentMethodText - NamedType DirectDebitLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 46548859 - Method 3764847370 - NamedType 3083516713" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 and %2 of item %3 are mandatory for an intrastat operation.</source>
+          <target state="needs-translation">%1 et %2 de l'article %3 sont obligatoires pour une opération intracommunautaire.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method Tariff - NamedType IntraStatErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 818474978 - NamedType 4104898276" size-unit="char" translate="yes" xml:space="preserve">
           <source>Data</source>

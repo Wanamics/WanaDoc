@@ -1,8 +1,8 @@
-tableextension 87312 "Sales Invoice Header" extends "Sales Invoice Header"
+tableextension 87312 "wan Sales Invoice Header" extends "Sales Invoice Header"
 {
     fields
     {
-        field(87132; "wan Compress Prepayment"; Boolean)
+        field(87332; "wan Compress Prepayment"; Boolean)
         {
             Caption = 'Compress Prepayment';
         }

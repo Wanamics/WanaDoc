@@ -3,7 +3,7 @@
   "id": "c1143780-9ae5-4f2c-85a5-6aaf42a8da39",
   "name": "WanaDoc",
   "publisher": "Wanamics",
-  "version": "21.0.0.1",
+  "version": "21.0.0.12",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -16,6 +16,7 @@
   "screenshots": [],
   "platform": "20.0.0.0",
   "application": "20.0.0.0",
+  "contextSensitiveHelpUrl": "https://www.wanamics.fr/WanaDoc/",
   "idRanges": [
     {
       "from": 87300,
