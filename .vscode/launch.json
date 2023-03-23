@@ -43,7 +43,7 @@
             "environmentType": "Sandbox",
             "environmentName": "Development",
             "startupObjectType": "Page",
-            "startupObjectId": 81510,
+            //"startupObjectId": 81510,
             //"schemaUpdateMode": "ForceSync",
             "breakOnError": true,
             "launchBrowser": true,
