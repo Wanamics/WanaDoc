@@ -148,4 +148,12 @@ codeunit 87300 "wan Sales Prepayment Events"
             until TempExtendedTextLine.Next() = 0;
         SalesInvLine."Line No." := ExtendedLine."Line No.";
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnCreatePrepaymentLinesOnBeforeInsertedPrepmtVATBaseToDeduct', '', false, false)]
+    local procedure OnCreatePrepaymentLinesOnBeforeInsertedPrepmtVATBaseToDeduct(var TempPrepmtSalesLine: Record "Sales Line" temporary; var SalesHeader: Record "Sales Header"; var TempSalesLine: Record "Sales Line" temporary)
+    begin
+        if SalesHeader."Compress Prepayment" then
+            exit;
+        TempPrepmtSalesLine.Validate("VAT Prod. Posting Group", TempSalesLine."VAT Prod. Posting Group");
+    end;
 }

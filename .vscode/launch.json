@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+        /*
         {
             "name": "Wanamics Development",
             "request": "launch",
@@ -34,6 +35,7 @@
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true
         },
+        */
         {
             "name": "SYN Development",
             "request": "launch",
@@ -43,7 +45,7 @@
             "environmentType": "Sandbox",
             "environmentName": "Development",
             "startupObjectType": "Page",
-            //"startupObjectId": 81510,
+            "startupObjectId": 9305,
             //"schemaUpdateMode": "ForceSync",
             "breakOnError": true,
             "launchBrowser": true,
