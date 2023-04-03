@@ -58,8 +58,8 @@ reportextension 87302 "Standard Sales - Pro Forma Inv" extends "Standard Sales -
                     PaymentTerms.TranslateDescription(PaymentTerms, "Language Code")
                 else
                     PaymentTerms.Init();
-                CalcFields("Work Description");
-                ShowWorkDescription := "Work Description".HasValue;
+                //Added in BC22 CalcFields("Work Description"); 
+                //Added in BC22 ShowWorkDescription := "Work Description".HasValue;
                 //[
                 if VATPostingSetup.Get("VAT Bus. Posting Group", '') and (VATPostingSetup."VAT Clause Code" <> '') then
                     wanVATClause.Get(VATPostingSetup."VAT Clause Code")
@@ -92,6 +92,7 @@ reportextension 87302 "Standard Sales - Pro Forma Inv" extends "Standard Sales -
         }
         addlast(Header)
         {
+            /* added in BC22
             //+ Copy from StandardSalesOrderConf report
             dataitem(WorkDescriptionLines; "Integer")
             {
@@ -122,6 +123,7 @@ reportextension 87302 "Standard Sales - Pro Forma Inv" extends "Standard Sales -
                     Header."Work Description".CreateInStream(WorkDescriptionInstream, TextEncoding::UTF8);
                 end;
             }
+            */
         }
     }
     var
@@ -148,9 +150,11 @@ reportextension 87302 "Standard Sales - Pro Forma Inv" extends "Standard Sales -
         SalepersonPurchaser: Record "Salesperson/Purchaser";
         ShipmentMethod: Record "Shipment Method";
         PaymentTerms: Record "Payment Terms";
-        WorkDescriptionInstream: InStream;
-        WorkDescriptionLine: Text;
-        ShowWorkDescription: Boolean;
+    /* Added in BC22
+    WorkDescriptionInstream: InStream;
+    WorkDescriptionLine: Text;
+    ShowWorkDescription: Boolean;
+    */
 
     trigger OnPreReport()
     begin

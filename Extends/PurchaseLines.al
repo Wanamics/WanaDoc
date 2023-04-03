@@ -66,8 +66,6 @@ pageextension 87354 "wan Purchase Order Subform" extends "Purchase Order Subform
                 Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 begin
@@ -117,8 +115,6 @@ pageextension 87355 "wan Purch. Invoice Subform" extends "Purch. Invoice Subform
                 Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 begin
@@ -168,8 +164,6 @@ pageextension 87397 "wan Purch. Quote Subform" extends "Purchase Quote Subform"
                 Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 begin
@@ -219,8 +213,6 @@ pageextension 87398 "wan Purch. Cr. Memo Subform" extends "Purch. Cr. Memo Subfo
                 Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 begin
@@ -270,8 +262,6 @@ pageextension 87310 "wan Blank. Purch. Order Sub." extends "Blanket Purchase Ord
                 Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 begin

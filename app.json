@@ -3,7 +3,7 @@
   "id": "c1143780-9ae5-4f2c-85a5-6aaf42a8da39",
   "name": "WanaDoc",
   "publisher": "Wanamics",
-  "version": "21.0.0.14",
+  "version": "21.0.0.17",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -27,9 +27,10 @@
     "allowDebugging": true, 
     "allowDownloadingSource": true, 
     "includeSourceInSymbolFile": true},
-  "runtime": "10.0",
+  "runtime": "10.2",
   "features": [
     "NoImplicitWith",
-    "TranslationFile", "GenerateCaptions"
+    "TranslationFile", 
+    "GenerateCaptions"
   ]
 }

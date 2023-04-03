@@ -19,6 +19,25 @@
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true
         },
+        */
+        {
+            "name": "Wanamics BC22",
+            "request": "launch",
+            "type": "al",
+            "server": "https://businesscentral.dynamics.com/",
+            "environmentType": "Sandbox",
+            "environmentName": "BC22",
+            "tenant": "e58e4362-4ba1-46f8-b9da-326a8fa42dc7",
+            "port": 7049,
+            "authentication": "AAD",
+            //"startupObjectType": "Page",
+            //"startupObjectId": 902,
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true
+        },
+        /*
         {
             "name": "GRV Development",
             "request": "launch",

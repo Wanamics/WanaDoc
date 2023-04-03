@@ -66,8 +66,6 @@ pageextension 87346 "wan Sales Order Subform" extends "Sales Order Subform"
                 Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 begin
@@ -117,8 +115,6 @@ pageextension 87347 "wan Sales Invoice Subform" extends "Sales Invoice Subform"
                 Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 begin
@@ -168,8 +164,6 @@ pageextension 87395 "wan Sales Quote Subform" extends "Sales Quote Subform"
                 Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 begin
@@ -219,8 +213,6 @@ pageextension 87396 "wan Sales Cr.Memo Subform" extends "Sales Cr. Memo Subform"
                 Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 begin
@@ -270,8 +262,6 @@ pageextension 87308 "wan Blanket Sales Order Sub." extends "Blanket Sales Order 
                 Caption = 'MemoPad';
                 Ellipsis = true;
                 Image = Text;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 begin

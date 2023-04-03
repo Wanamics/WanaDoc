@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="fr-FR" original="WanaDoc">
+  <file datatype="xml" source-language="en-US" target-language="fr-FR" original="WanaDoc.g.xlf">
     <body>
       <group id="body">
         <trans-unit id="Table 2793207324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -35,7 +35,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 453050756 - Method 2664287289 - NamedType 1167231360" size-unit="char" translate="yes" xml:space="preserve">
           <source>Prepayment Invoice</source>
-          <target state="needs-translation">Facture d'acompte</target>
+          <target>Facture d'acompte</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Events - Method OnBeforeGetDocumentCaption - NamedType PrepaymentInvoice</note>
         </trans-unit>
@@ -47,19 +47,19 @@
         </trans-unit>
         <trans-unit id="Codeunit 46548859 - Method 1518894916 - NamedType 4207761921" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pay by %1 to our bank account %2, IBAN %3, Code SWIFT %4</source>
-          <target state="needs-translation">Paiement par %1 sur notre compte %2, IBAN %3, code Swift %4.</target>
+          <target>Paiement par %1 sur notre compte %2, IBAN %3, code Swift %4.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method PaymentMethodText - NamedType PaymentMethodLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 46548859 - Method 1518894916 - NamedType 4089536611" size-unit="char" translate="yes" xml:space="preserve">
           <source>Direct Debit ID %1 from your bank account %2 IBAN %3</source>
-          <target state="needs-translation">Prélèvement selon mandat (RUM) %1 sur votre compte %2, IBAN %3.</target>
+          <target>Prélèvement selon mandat (RUM) %1 sur votre compte %2, IBAN %3.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method PaymentMethodText - NamedType DirectDebitLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 46548859 - Method 3764847370 - NamedType 3083516713" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 and %2 of item %3 are mandatory for an intrastat operation.</source>
-          <target state="needs-translation">%1 et %2 de l'article %3 sont obligatoires pour une opération intracommunautaire.</target>
+          <target>%1 et %2 de l'article %3 sont obligatoires pour une opération intracommunautaire.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method Tariff - NamedType IntraStatErr</note>
         </trans-unit>
@@ -1401,12 +1401,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan_ Item List - Action wanImportExtendedTexts - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 809936682 - Field 2999603277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 809936682">
-          <source>Compress Prepayment</source>
-          <target>Compresser acompte</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Header - Field wan Compress Prepayment - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 2079186865 - Field 2730686926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Order Amount</source>
           <target>Montant commande</target>
@@ -1467,6 +1461,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purchase Line - Method wanMemoPad - NamedType tCaption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3017902538 - Field 2999603277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 809936682">
+          <source>Compress Prepayment</source>
+          <target>Compresser acompte</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Sales Invoice Header - Field wan Compress Prepayment - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 192179042 - Method 2871892153 - NamedType 484017086" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 192179042">
           <source>%1 %2</source>
           <target>%1 %2</target>
@@ -1475,7 +1475,7 @@
         </trans-unit>
         <trans-unit id="PermissionSet 3147185419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>WanaDoc Permission Set</source>
-          <target>DirecWanaDoc Permission Set</target>
+          <target>WanaDoc Permission Set</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet WanaDoc - Property Caption</note>
         </trans-unit>
