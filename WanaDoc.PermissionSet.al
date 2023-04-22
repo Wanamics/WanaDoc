@@ -1,7 +1,7 @@
 permissionset 87310 "WanaDoc"
 {
     Assignable = true;
-    Caption = 'WanaDoc Permission Set';
+    Caption = 'WanaDoc';
     Permissions = //table "wan Excel Buffer Extended" = X,
         codeunit "wan MemoPad Purchase" = X,
         codeunit "wan MemoPad Sales" = X,

@@ -1474,8 +1474,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Sales Line - Method wanMemoPad - NamedType tCaption</note>
         </trans-unit>
         <trans-unit id="PermissionSet 3147185419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>WanaDoc Permission Set</source>
-          <target>WanaDoc Permission Set</target>
+          <source>WanaDoc</source>
+          <target>WanaDoc</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet WanaDoc - Property Caption</note>
         </trans-unit>
