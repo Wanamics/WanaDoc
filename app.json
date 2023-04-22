@@ -14,8 +14,8 @@
   "dependencies": [
   ],
   "screenshots": [],
-  "platform": "22.0.0.0",
-  "application": "22.0.0.0",
+  "platform": "21.0.0.0",
+  "application": "21.0.0.0",
   "contextSensitiveHelpUrl": "https://www.wanamics.fr/WanaDoc/",
   "idRanges": [
     {
@@ -27,7 +27,7 @@
     "allowDebugging": true, 
     "allowDownloadingSource": true, 
     "includeSourceInSymbolFile": true},
-  "runtime": "10.2",
+  "runtime": "10.1",
   "features": [
     "NoImplicitWith",
     "TranslationFile", 

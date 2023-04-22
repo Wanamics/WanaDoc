@@ -941,7 +941,7 @@ report 87310 "wan Purchase - Blanket Order"
             trigger OnAfterGetRecord()
             begin
                 TotalAmount := 0;
-                CurrReport.Language := Language.GetLanguageIdOrDefault("Language Code");
+                CurrReport.Language := wanLanguage.GetLanguageIdOrDefault("Language Code");
 
                 FormatAddressFields("Purchase Header");
                 FormatDocumentFields("Purchase Header");
@@ -1099,7 +1099,7 @@ report 87310 "wan Purchase - Blanket Order"
         PurchSetup: Record "Purchases & Payables Setup";
         BuyFromContact: Record Contact;
         PayToContact: Record Contact;
-        Language: Codeunit Language;
+        wanLanguage: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
         PurchPost: Codeunit "Purch.-Post";
