@@ -494,33 +494,33 @@ report 87304 "wan Purchase - Quote"
                 column(UOM_PurchLine; "Unit of Measure")
                 {
                 }
-                column(DirUnitCost_PurchLine; FormattedDirectUnitCost)
-                {
-                    AutoFormatExpression = "Purchase Header"."Currency Code";
-                    AutoFormatType = 2;
-                }
-                column(LineDisc_PurchLine; "Line Discount %")
-                {
-                }
-                column(LineAmt_PurchLine; FormattedLineAmount)
-                {
-                }
+                // column(DirUnitCost_PurchLine; FormattedDirectUnitCost)
+                // {
+                //     AutoFormatExpression = "Purchase Header"."Currency Code";
+                //     AutoFormatType = 2;
+                // }
+                // column(LineDisc_PurchLine; "Line Discount %")
+                // {
+                // }
+                // column(LineAmt_PurchLine; FormattedLineAmount)
+                // {
+                // }
                 column(AllowInvDisc_PurchLine; "Allow Invoice Disc.")
                 {
                 }
                 column(VATIdentifier_PurchLine; "VAT Identifier")
                 {
                 }
-                column(InvDiscAmt_PurchLine; -"Inv. Discount Amount")
-                {
-                    AutoFormatExpression = "Currency Code";
-                    AutoFormatType = 1;
-                }
-                column(TotalInclVAT; "Line Amount" - "Inv. Discount Amount")
-                {
-                    AutoFormatExpression = "Purchase Header"."Currency Code";
-                    AutoFormatType = 1;
-                }
+                // column(InvDiscAmt_PurchLine; -"Inv. Discount Amount")
+                // {
+                //     AutoFormatExpression = "Currency Code";
+                //     AutoFormatType = 1;
+                // }
+                // column(TotalInclVAT; "Line Amount" - "Inv. Discount Amount")
+                // {
+                //     AutoFormatExpression = "Purchase Header"."Currency Code";
+                //     AutoFormatType = 1;
+                // }
                 column(DirectUniCost_Lbl; DirectUniCostCaptionLbl)
                 {
                 }
@@ -545,9 +545,9 @@ report 87304 "wan Purchase - Quote"
                 column(VATIdentifier_PurchLine_Lbl; FieldCaption("VAT Identifier"))
                 {
                 }
-                column(AmountIncludingVAT; "Amount Including VAT")
-                {
-                }
+                // column(AmountIncludingVAT; "Amount Including VAT")
+                // {
+                // }
                 column(TotalPriceCaption_Lbl; TotalPriceCaptionLbl)
                 {
                 }
@@ -689,6 +689,9 @@ report 87304 "wan Purchase - Quote"
                     Clear(PurchPost);
                     TempPurchLine.DeleteAll();
                     TempVATAmountLine.DeleteAll();
+                    //[
+                    CurrReport.Break();
+                    //]
                     PurchPost.GetPurchLines("Purchase Header", TempPurchLine, 0);
                     TempPurchLine.CalcVATAmountLines(0, "Purchase Header", TempPurchLine, TempVATAmountLine);
                     TempPurchLine.UpdateVATOnLines(0, "Purchase Header", TempPurchLine, TempVATAmountLine);
