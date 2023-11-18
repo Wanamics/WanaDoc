@@ -125,6 +125,16 @@ reportextension 87302 "Standard Sales - Pro Forma Inv" extends "Standard Sales -
             }
             */
         }
+
+        addbefore(Totals)
+        {
+            dataitem(LetterText; "Integer")
+            {
+                DataItemTableView = sorting(Number) where(Number = const(1));
+                column(wanBeginningContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Beginning, Header."Language Code")) { }
+                column(wanEndingContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Ending, Header."Language Code")) { }
+            }
+        }
     }
     var
         MemoPad: Codeunit "wan MemoPad Sales";

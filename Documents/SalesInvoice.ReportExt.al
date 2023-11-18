@@ -105,6 +105,11 @@ reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoi
                     clear(wanTotal);
             end;
         }
+        add(LetterText)
+        {
+            column(wanBeginningContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Beginning, Header."Language Code")) { }
+            column(wanEndingContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Ending, Header."Language Code")) { }
+        }
     }
     var
         MemoPad: Codeunit "wan MemoPad Sales Invoice";
@@ -128,8 +133,11 @@ reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoi
         wanTotal: array[3] of Decimal;
         wanAutoFormat: Enum "Auto Format";
         wanGenBusPostingGroup: Record "Gen. Business Posting Group";
-        wanVATClause: Record "VAT Clause";
         wanLatePaymentClause: Text;
+        wanVATClause: Record "VAT Clause";
+        wanLetterGreetingText: Label 'Dear customer',;
+        wanLetterBodyText: Label 'Thank you for your business. Your quote is attached to this message.';
+        wanLetterClosingText: Label 'Sincerely';
 
     trigger OnPreReport()
     begin

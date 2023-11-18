@@ -14,11 +14,6 @@ reportextension 87322 "Standard Purchase - Order" extends "Standard Purchase - O
             column(wanShipToAddress; ShipToAddress) { }
             column(wanPayToAddress_Lbl; PayToAddress_Lbl) { }
             column(wanPayToAddress; PayToAddress) { }
-            /*
-            column(wanMailGreetingLbl; wanMailGreeting_Lbl) { }
-            column(wanMailBodyLbl; wanMailBody_Lbl) { }
-            column(wanMailClosingLbl; wanMailClosing_Lbl) { }
-            */
             column(wanRequestedReceiptDate; DocumentHelper.FormatDate("Requested Receipt Date")) { }
             column(wanVersion; DocumentHelper.GetVersion("No. of Archived Versions")) { }
         }
@@ -44,6 +39,11 @@ reportextension 87322 "Standard Purchase - Order" extends "Standard Purchase - O
             column(wanVATPercent; DocumentHelper.iIf(Type = Type::" ", '', format("Purchase Line"."VAT %"))) { }
             column(wanVATPercent_lbl; "Purchase Line".fieldcaption("VAT %")) { }
             column(wanLineDiscPercent; DocumentHelper.BlankZero("Purchase Line"."Line Discount %")) { }
+        }
+        add(LetterText)
+        {
+            column(wanBeginningContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Beginning, "Purchase Header"."Language Code")) { }
+            column(wanEndingContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Ending, "Purchase Header"."Language Code")) { }
         }
     }
     var

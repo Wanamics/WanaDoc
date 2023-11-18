@@ -17,6 +17,7 @@ reportextension 87304 "Standard Sales - Quote" extends "Standard Sales - Quote"
             column(wanBillToAddress; BillToAddress) { }
             column(wanOurAccountNo_Lbl; DocumentHelper.iif(Customer."Our Account No." = '', '', Customer.Fieldcaption("Our Account No."))) { }
             column(wanOurAccountNo; Customer."Our Account No.") { }
+            column(wanVATClause; wanVATClause.Description) { }
             column(wanMailGreetingText; wanMailGreeting_Lbl) { }
             column(wanMailBodyText; wanMailBody_Lbl) { }
             column(wanMailClosingText; wanMailClosing_Lbl) { }
@@ -25,7 +26,6 @@ reportextension 87304 "Standard Sales - Quote" extends "Standard Sales - Quote"
             column(wanPromDelivDate; DocumentHelper.FormatDate(Header."Promised Delivery Date")) { }
             column(wanPromDelivDate_Lbl; Header.FieldCaption("Promised Delivery Date")) { }
             column(wanVersion; DocumentHelper.GetVersion("No. of Archived Versions")) { }
-            column(wanVATClause; wanVATClause.Description) { }
         }
         modify(Header)
         {
@@ -55,6 +55,11 @@ reportextension 87304 "Standard Sales - Quote" extends "Standard Sales - Quote"
             column(wanMemoPad; GetMemo(Header, Line)) { }
             column(wanQuantity_UOM; DocumentHelper.iif(Line.Type = Line.Type::" ", '', Format(Line.Quantity) + MemoPad.LineFeed + Line."Unit of Measure")) { }
         }
+        add(LetterText)
+        {
+            column(wanBeginningContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Beginning, Header."Language Code")) { }
+            column(wanEndingContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Ending, Header."Language Code")) { }
+        }
     }
     var
         MemoPad: Codeunit "wan MemoPad Sales";
@@ -70,10 +75,10 @@ reportextension 87304 "Standard Sales - Quote" extends "Standard Sales - Quote"
         CompanyLegalInfo: Text;
         DocumentHelper: Codeunit "wan Document Helper";
         Customer: Record Customer;
+        wanVATClause: Record "VAT Clause";
         wanMailGreeting_Lbl: Label 'Dear customer',;
         wanMailBody_Lbl: Label 'Thank you for your business. Your quote is attached to this message.';
         wanMailClosing_Lbl: Label 'Sincerely';
-        wanVATClause: Record "VAT Clause";
 
     trigger OnPreReport()
     begin

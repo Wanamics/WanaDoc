@@ -922,21 +922,6 @@ report 87310 "wan Purchase - Blanket Order"
                     SetRange(Number, 1, TempPrepmtVATAmountLine.Count);
                 end;
             }
-            /*
-            dataitem(LetterText; "Integer")
-            {
-                DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
-                column(GreetingText; GreetingLbl)
-                {
-                }
-                column(BodyText; BodyLbl)
-                {
-                }
-                column(ClosingText; ClosingLbl)
-                {
-                }
-            }
-            */
 
             trigger OnAfterGetRecord()
             begin
@@ -959,6 +944,12 @@ report 87310 "wan Purchase - Blanket Order"
                     */
                 end;
             end;
+        }
+        dataitem(LetterText; "Integer")
+        {
+            DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+            column(wanBeginningContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Beginning, "Purchase Header"."Language Code")) { }
+            column(wanEndingContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Ending, "Purchase Header"."Language Code")) { }
         }
     }
 
@@ -1191,11 +1182,6 @@ report 87310 "wan Purchase - Blanket Order"
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
         DocumentHelper: Codeunit "wan Document Helper";
-    /*
-    wanMailGreeting_Lbl: Label 'Dear vendor', FRA = 'Bonjour,';
-    wanMailBody_Lbl: Label 'Please find attached our blanket order is attached to this message.', FRA = 'Veuillez trouver ci-joint notre commande cadre dont vous voudrez bien accuser réception :';
-    wanMailClosing_Lbl: Label 'Sincerely', FRA = 'Bonne réception.';
-    */
     //+]
 
     procedure InitializeRequest(LogInteractionParam: Boolean)

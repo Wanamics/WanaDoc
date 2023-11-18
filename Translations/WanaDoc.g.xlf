@@ -3,6 +3,36 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="WanaDoc">
     <body>
       <group id="body">
+        <trans-unit id="Table 1968962298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Content</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Document Content - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1968962298 - Field 2166181827 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Content</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Document Content - Field Content - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1968962298 - Field 2273653569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Language Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Document Content - Field Language Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1968962298 - Field 1536621291 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Placement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Document Content - Field Placement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1968962298 - Field 3046817188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Document Content - Field Report Caption - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1968962298 - Field 1272245069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Document Content - Field Report ID - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2793207324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Excel Buffer Extended</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -127,6 +157,36 @@
           <source>Excel Files (*.xlsx)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method Import - NamedType ExcelFileCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 489591239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Contents</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Document Contents - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 489591239 - Control 2273653569 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Language Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Document Contents - Control Language Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 489591239 - Control 1536621291 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Placement field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Document Contents - Control Placement - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 489591239 - Control 3046817188 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Report Caption field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Document Contents - Control Report Caption - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 489591239 - Control 1272245069 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Report ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Document Contents - Control Report ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 489591239 - Control 1217040695 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Content</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Document Contents - Control RichText - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 812580689 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>MemoPad</source>
@@ -1513,6 +1573,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Sales Line - Method wanMemoPad - NamedType tCaption</note>
         </trans-unit>
+        <trans-unit id="Enum 961050025 - EnumValue 1629502811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Beginning</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum wan Document Content Placement - EnumValue Beginning - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 961050025 - EnumValue 758136617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum wan Document Content Placement - EnumValue Ending - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PermissionSet 3147185419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>WanaDoc</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1562,6 +1632,21 @@
           <source>Ship-to</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Invoice - NamedType ShipToAddress_Lbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2226024577 - NamedType 537486717" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2226024577">
+          <source>Thank you for your business. Your quote is attached to this message.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Invoice - NamedType wanLetterBodyText</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2226024577 - NamedType 781402628" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2226024577">
+          <source>Sincerely</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Invoice - NamedType wanLetterClosingText</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2226024577 - NamedType 1177534678" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2226024577">
+          <source>Dear customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Invoice - NamedType wanLetterGreetingText</note>
         </trans-unit>
         <trans-unit id="ReportExtension 2226024577 - Method 894501855 - NamedType 4233250767" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2226024577">
           <source>Shipment No. %1 %2</source>

@@ -826,6 +826,8 @@ report 87300 "wan Sales - Blanket Order"
                 column(PmtDiscText; PmtDiscText)
                 {
                 }
+                column(wanBeginningContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Beginning, Header."Language Code")) { }
+                column(wanEndingContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Ending, Header."Language Code")) { }
 
                 trigger OnPreDataItem()
                 begin
@@ -917,7 +919,7 @@ report 87300 "wan Sales - Blanket Order"
                 if not IsReportInPreviewMode() then
                     CODEUNIT.Run(CODEUNIT::"Sales-Printed", Header);
 
-                CurrReport.Language := Language.GetLanguageIdOrDefault("Language Code");
+                CurrReport.Language := Lang.GetLanguageIdOrDefault("Language Code");
 
                 CalcFields("Work Description");
                 ShowWorkDescription := "Work Description".HasValue;
@@ -1092,7 +1094,7 @@ report 87300 "wan Sales - Blanket Order"
         AsmHeader: Record "Assembly Header";
         SellToContact: Record Contact;
         BillToContact: Record Contact;
-        Language: Codeunit Language;
+        Lang: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
         SegManagement: Codeunit SegManagement;
@@ -1102,7 +1104,7 @@ report 87300 "wan Sales - Blanket Order"
         MoreLines: Boolean;
         CopyText: Text[30];
         TransHeaderAmount: Decimal;
-        [InDataSet]
+        // [InDataSet]
         LogInteractionEnable: Boolean;
         AsmInfoExistsForLine: Boolean;
         CompanyLogoPosition: Integer;
@@ -1242,13 +1244,13 @@ report 87300 "wan Sales - Blanket Order"
 
     local procedure FormatDocumentFields(SalesHeader: Record "Sales Header")
     begin
-        with SalesHeader do begin
-            FormatDocument.SetTotalLabels("Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
-            FormatDocument.SetSalesPerson(SalespersonPurchaser, "Salesperson Code", SalesPersonText);
-            FormatDocument.SetPaymentTerms(PaymentTerms, "Payment Terms Code", "Language Code");
-            FormatDocument.SetPaymentMethod(PaymentMethod, "Payment Method Code", "Language Code");
-            FormatDocument.SetShipmentMethod(ShipmentMethod, "Shipment Method Code", "Language Code");
-        end;
+        // with SalesHeader do begin
+        FormatDocument.SetTotalLabels(SalesHeader."Currency Code", TotalText, TotalInclVATText, TotalExclVATText);
+        FormatDocument.SetSalesPerson(SalespersonPurchaser, SalesHeader."Salesperson Code", SalesPersonText);
+        FormatDocument.SetPaymentTerms(PaymentTerms, SalesHeader."Payment Terms Code", SalesHeader."Language Code");
+        FormatDocument.SetPaymentMethod(PaymentMethod, SalesHeader."Payment Method Code", SalesHeader."Language Code");
+        FormatDocument.SetShipmentMethod(ShipmentMethod, SalesHeader."Shipment Method Code", SalesHeader."Language Code");
+        // end;
 
         OnAfterFormatDocumentFields(SalesHeader);
     end;

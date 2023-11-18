@@ -328,4 +328,21 @@ codeunit 87301 "wan Document Helper"
         FormatAddress.PurchCrMemoPayTo(Addr, pHeader);
         pPayToAddress := FullAddress(Addr);
     end;
+
+    procedure Content(pReportId: Text; pPlaceHolder: Enum "wan Document Content Placement"; pLanguageCode: Code[10]) ReturnValue: Text
+    var
+        ReportID: Integer;
+        DocumentContent: Record "wan Document Content";
+        ContentInStream: InStream;
+    begin
+        Evaluate(ReportID, pReportId.Substring(8));
+        DocumentContent.SetRange("Report ID", ReportID);
+        DocumentContent.SetRange("Placement", pPlaceHolder);
+        DocumentContent.SetFilter("Language Code", '%1|%2', pLanguageCode, '');
+        if DocumentContent.FindLast() then begin
+            DocumentContent.CalcFields("Content");
+            DocumentContent."Content".CreateInStream(ContentInStream, TextEncoding::UTF8);
+            ContentInStream.Read(ReturnValue);
+        end;
+    end;
 }

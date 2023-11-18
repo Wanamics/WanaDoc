@@ -56,6 +56,11 @@ reportextension 87308 "Standard Sales - Shipment" extends "Standard Sales - Ship
             column(wanMemoPad; GetMemo(Header, Line)) { }
             column(wanQuantity_UOM; DocumentHelper.iif(Line.Type = Line.Type::" ", '', Format(Line.Quantity) + MemoPad.LineFeed + Line."Unit of Measure")) { }
         }
+        add(LetterText)
+        {
+            column(wanBeginningContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Beginning, Header."Language Code")) { }
+            column(wanEndingContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Ending, Header."Language Code")) { }
+        }
     }
     requestpage
     {

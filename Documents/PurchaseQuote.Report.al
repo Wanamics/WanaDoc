@@ -932,6 +932,8 @@ report 87304 "wan Purchase - Quote"
                 column(ClosingText; ClosingLbl)
                 {
                 }
+                column(wanBeginningContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Beginning, "Purchase Header"."Language Code")) { }
+                column(wanEndingContent; DocumentHelper.Content(CurrReport.ObjectId(false), enum::"wan Document Content Placement"::Ending, "Purchase Header"."Language Code")) { }
             }
 
             trigger OnAfterGetRecord()
@@ -1132,7 +1134,7 @@ report 87304 "wan Purchase - Quote"
         PrepmtTotalAmountInclVAT: Decimal;
         PrepmtLineAmount: Decimal;
         AllowInvDisctxt: Text[30];
-        [InDataSet]
+        // [InDataSet]
         LogInteractionEnable: Boolean;
         TotalSubTotal: Decimal;
         TotalAmount: Decimal;
