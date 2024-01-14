@@ -1,6 +1,7 @@
 table 87301 "wan Document Content"
 {
     Caption = 'Document Content';
+    LookupPageId = "wan Document Contents";
     DataClassification = ToBeClassified;
 
     fields

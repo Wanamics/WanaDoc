@@ -3,7 +3,7 @@ permissionset 87310 "WanaDoc"
     Assignable = true;
     Caption = 'WanaDoc';
     Permissions = //table "wan Excel Buffer Extended" = X,
-        codeunit "wan MemoPad Purchase" = X,
+ codeunit "wan MemoPad Purchase" = X,
         codeunit "wan MemoPad Sales" = X,
         codeunit "wan MemoPad Management" = X,
         codeunit "wan ExcelBuffer Events" = X,
@@ -23,5 +23,9 @@ permissionset 87310 "WanaDoc"
         codeunit "wan MemoPad Sales Invoice" = X,
         codeunit "wan MemoPad Sales Shipment" = X,
         codeunit "wan Sales Prepayment Events" = X,
-        table "wan Excel Buffer Extended" = X;
+        table "wan Excel Buffer Extended" = X,
+        tabledata "wan Document Content" = RIMD,
+        table "wan Document Content" = X,
+        report "wan Sales - Blanket Order" = X,
+        page "wan Document Contents" = X;
 }

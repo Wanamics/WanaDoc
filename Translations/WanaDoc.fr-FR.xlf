@@ -1653,6 +1653,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blanket Sales Order Sub. - Action wanExcelImport - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2562377768 - Action 2919671330 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2274420296">
+          <source>Document Content</source>
+          <target>Contenu document</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Custom Report Layouts - Action wanDocumentContent - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1343711391 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
           <source>MemoPad</source>
           <target>MemoPad</target>

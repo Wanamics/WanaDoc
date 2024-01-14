@@ -158,6 +158,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method Import - NamedType ExcelFileCaption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3262876583 - Method 873171600 - NamedType 4082505270" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment %1</source>
+          <note from="Developer" annotates="general" priority="2">%1:Vendor Name</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit WanaDoc Purchase Events - Method SetPostingDescription - NamedType PrepmtPostingDescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3469960386 - Method 873171600 - NamedType 4082505270" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment %1</source>
+          <note from="Developer" annotates="general" priority="2">%1:Vendor Name</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit WanaDoc Sales Events - Method SetPostingDescription - NamedType PrepmtPostingDescriptionLbl</note>
+        </trans-unit>
         <trans-unit id="Page 489591239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Contents</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1377,6 +1387,11 @@
           <source>Excel Import</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blanket Sales Order Sub. - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2562377768 - Action 2919671330 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2274420296">
+          <source>Document Content</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Custom Report Layouts - Action wanDocumentContent - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1343711391 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
           <source>MemoPad</source>

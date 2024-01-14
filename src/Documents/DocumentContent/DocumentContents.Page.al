@@ -4,7 +4,6 @@ page 87301 "wan Document Contents"
     Caption = 'Document Contents';
     PageType = List;
     SourceTable = "wan Document Content";
-    UsageCategory = Administration;
 
     layout
     {
