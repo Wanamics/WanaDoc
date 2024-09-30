@@ -70,5 +70,20 @@
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true
         }
+        ,
+        {
+            "name": "GRS Dev",
+            "request": "launch",
+            "server": "https://businesscentral.dynamics.com/",
+            "tenant": "56493edd-987c-4285-9ca2-35c8d6451343",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "DevGressier",
+            "startupObjectType": "Report",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true
+        },
     ]
 }

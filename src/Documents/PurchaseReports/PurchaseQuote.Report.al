@@ -112,18 +112,18 @@ report 87304 "wan Purchase - Quote"
             column(CompanyVATRegistrationNo_Lbl; CompanyInfo.GetVATRegistrationNumberLbl)
             {
             }
-            column(CompanyLegalOffice; CompanyInfo.GetLegalOffice)
-            {
-            }
-            column(CompanyLegalOffice_Lbl; CompanyInfo.GetLegalOfficeLbl)
-            {
-            }
-            column(CompanyCustomGiro; CompanyInfo.GetCustomGiro)
-            {
-            }
-            column(CompanyCustomGiro_Lbl; CompanyInfo.GetCustomGiroLbl)
-            {
-            }
+            // column(CompanyLegalOffice; CompanyInfo.GetLegalOffice)
+            // {
+            // }
+            // column(CompanyLegalOffice_Lbl; CompanyInfo.GetLegalOfficeLbl)
+            // {
+            // }
+            // column(CompanyCustomGiro; CompanyInfo.GetCustomGiro)
+            // {
+            // }
+            // column(CompanyCustomGiro_Lbl; CompanyInfo.GetCustomGiroLbl)
+            // {
+            // }
             column(DocType_PurchHeader; "Document Type")
             {
             }
@@ -1230,7 +1230,8 @@ report 87304 "wan Purchase - Quote"
 
     local procedure InitLogInteraction()
     begin
-        LogInteraction := SegManagement.FindInteractTmplCode(13) <> '';
+        // LogInteraction := SegManagement.FindInteractTmplCode(13) <> '';
+        LogInteraction := SegManagement.FindInteractionTemplateCode("Interaction Log Entry Document Type"::"Purch.Qte.") <> '';
     end;
     //[+
     local procedure GetMemo(pHeader: Record "Purchase Header"; pLine: Record "Purchase Line") ReturnValue: Text;

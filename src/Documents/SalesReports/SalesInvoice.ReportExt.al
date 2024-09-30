@@ -156,6 +156,7 @@ reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoi
         if pLine.Type = pLine.Type::Item then begin
             ReturnValue += DocumentHelper.ItemReferences(pLine."No.", pLine."Item Reference No.");
             ReturnValue += DocumentHelper.Tariff(pLine."No.", pHeader."Ship-to Country/Region Code");
+            ReturnValue += TrackingLinesSerialNos(pLine);
             ReturnValue += ShipmentLines;
         end else
             if pHeader."Prepayment Invoice" and (pLine.Type = pLine.Type::"G/L Account") then begin
@@ -211,6 +212,24 @@ reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoi
             repeat
                 ReturnValue += ETL.Text;
             Until ETL.Next() = 0;
+        end;
+    end;
+
+    procedure TrackingLinesSerialNos(pSalesInvoiceLine: Record "Sales Invoice Line") ReturnValue: Text
+    var
+        TempItemLedgerEntry: Record "Item Ledger Entry" temporary;
+        Tab: Text[1];
+        ItemTrackingDocManagement: Codeunit "Item Tracking Doc. Management";
+        ItemTrackingMgt: Codeunit "Item Tracking Management";
+    begin
+        ItemTrackingDocManagement.RetrieveEntriesFromPostedInvoice(TempItemLedgerEntry, pSalesInvoiceLine.RowID1());
+        Tab[1] := 9;
+        TempItemLedgerEntry.SetFilter("Serial No.", '<>%1', '');
+        if TempItemLedgerEntry.FindSet() then begin
+            ReturnValue += DocumentHelper.LineFeed() + Tab + TempItemLedgerEntry.FieldCaption("Serial No.") /*+ Tab + ItemLedgerEntry.FieldCaption("Quantity")*/;
+            repeat
+                ReturnValue += DocumentHelper.LineFeed() + Tab + TempItemLedgerEntry."Serial No."; // + ' : ' + Format(abs(ItemLedgerEntry."Quantity"));
+            until TempItemLedgerEntry.Next() = 0;
         end;
     end;
 }

@@ -112,18 +112,18 @@ report 87310 "wan Purchase - Blanket Order"
             column(CompanyVATRegistrationNo_Lbl; CompanyInfo.GetVATRegistrationNumberLbl)
             {
             }
-            column(CompanyLegalOffice; CompanyInfo.GetLegalOffice)
-            {
-            }
-            column(CompanyLegalOffice_Lbl; CompanyInfo.GetLegalOfficeLbl)
-            {
-            }
-            column(CompanyCustomGiro; CompanyInfo.GetCustomGiro)
-            {
-            }
-            column(CompanyCustomGiro_Lbl; CompanyInfo.GetCustomGiroLbl)
-            {
-            }
+            // column(CompanyLegalOffice; CompanyInfo.GetLegalOffice)
+            // {
+            // }
+            // column(CompanyLegalOffice_Lbl; CompanyInfo.GetLegalOfficeLbl)
+            // {
+            // }
+            // column(CompanyCustomGiro; CompanyInfo.GetCustomGiro)
+            // {
+            // }
+            // column(CompanyCustomGiro_Lbl; CompanyInfo.GetCustomGiroLbl)
+            // {
+            // }
             column(DocType_PurchHeader; "Document Type")
             {
             }
@@ -1127,7 +1127,7 @@ report 87310 "wan Purchase - Blanket Order"
         PrepmtTotalAmountInclVAT: Decimal;
         PrepmtLineAmount: Decimal;
         AllowInvDisctxt: Text[30];
-        [InDataSet]
+        // [InDataSet]
         LogInteractionEnable: Boolean;
         TotalSubTotal: Decimal;
         TotalAmount: Decimal;
@@ -1222,7 +1222,8 @@ report 87310 "wan Purchase - Blanket Order"
 
     local procedure InitLogInteraction()
     begin
-        LogInteraction := SegManagement.FindInteractTmplCode(13) <> '';
+        // LogInteraction := SegManagement.FindInteractTmplCode(13) <> '';
+        LogInteraction := SegManagement.FindInteractionTemplateCode("Interaction Log Entry Document Type"::"Purch. Blnkt. Ord.") <> '';
     end;
     //[+
     local procedure GetMemo(pHeader: Record "Purchase Header"; pLine: Record "Purchase Line") ReturnValue: Text;
