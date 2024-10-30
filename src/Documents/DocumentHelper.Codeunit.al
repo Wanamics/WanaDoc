@@ -42,8 +42,8 @@ codeunit 87301 "wan Document Helper"
 
     procedure PaymentMethodText(pLanguageCode: Code[10]; pPaymentMethodCode: Code[10]; pCompanyBankAccountNo: Code[20]; pCustomerNo: Code[20]; pSDDMandateId: Code[35]): Text;
     var
-        PaymentMethodLbl: Label 'Pay by %1 to our bank account %2, IBAN %3, Code SWIFT %4';
-        DirectDebitLbl: Label 'Direct Debit ID %1 from your bank account %2 IBAN %3';
+        PaymentMethodLbl: Label 'Pay by %1 to our bank account %2, IBAN %3, Code SWIFT %4', Comment = '%1:PaymentMethod.Description, %2:BankAccount.Name, %3:BankAccount.IBAN, %4:BankAccount."SWIFT Code")';
+        DirectDebitLbl: Label 'Direct Debit ID %1 from your bank account %2 IBAN %3', Comment = '%1:SDDMandateId, %2:CustomerBankAccount.Name, %3:CustomerBankAccount.IBAN)';
         SDDMandate: Record "SEPA Direct Debit Mandate";
         CustomerBankAccount: Record "Customer Bank Account";
     begin
@@ -138,11 +138,11 @@ codeunit 87301 "wan Document Helper"
 
     procedure GetVersion(pNoOfArchivedVersions: Integer): Text;
     var
-        tVersion: Label ' R%1';
+        VersionTxt: Label ' R%1';
     begin
         if pNoOfArchivedVersions = 0 then
             exit;
-        exit(StrSubstNo(tVersion, pNoOfArchivedVersions));
+        exit(StrSubstNo(VersionTxt, pNoOfArchivedVersions));
     end;
 
     procedure ItemReferences(pItemNo: Code[20]; pItemReferenceNo: Code[50]) ReturnValue: Text
@@ -160,7 +160,7 @@ codeunit 87301 "wan Document Helper"
     procedure Tariff(pItemNo: Code[20]; pShipToCountryRegionCode: Code[10]) ReturnValue: Text;
     var
         Item: Record Item;
-        IntraStatErr: Label '%1 and %2 of item %3 are mandatory for an intrastat operation.';
+        IntraStatErr: Label '%1 and %2 of item %3 are mandatory for an intrastat operation.', Comment = '%1:Item.FieldCaption("Tariff No."), %2:Item.FieldCaption("Country/Region of Origin Code", %3:Item."No.")';
     begin
         Item.Get(pItemNo);
         if Item.IsInventoriableType() then begin

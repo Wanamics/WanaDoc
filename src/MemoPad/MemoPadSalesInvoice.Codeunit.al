@@ -3,7 +3,7 @@ codeunit 87328 "wan MemoPad Sales Invoice"
     procedure GetExtendedText(pHeader: Record "Sales Invoice Header"; pLine: Record "Sales Invoice Line") ReturnValue: text;
     var
         ETH: Record "Extended Text Header";
-        ETL: Record "Extended Text Line" temporary;
+        TempETL: Record "Extended Text Line" temporary;
         TransferExtendedText: Codeunit "Transfer Extended Text";
     begin
         case pLine.Type of
@@ -19,11 +19,11 @@ codeunit 87328 "wan MemoPad Sales Invoice"
         ETH.SetRange("No.", pLine."No.");
         ETH.SetRange("Sales Invoice", true);
         TransferExtendedText.ReadExtTextLines(ETH, pHeader."Document Date", pHeader."Language Code");
-        TransferExtendedText.GetTempExtTextLine(ETL);
-        if ETL.FindSet() then begin
+        TransferExtendedText.GetTempExtTextLine(TempETL);
+        if TempETL.FindSet() then begin
             repeat
-                ReturnValue += ETL.Text;
-            Until ETL.Next() = 0;
+                ReturnValue += TempETL.Text;
+            Until TempETL.Next() = 0;
         end;
     end;
 

@@ -7,6 +7,7 @@ report 87310 "wan Purchase - Blanket Order"
     EnableHyperlinks = true;
     PreviewMode = PrintLayout;
     WordMergeDataItem = "Purchase Header";
+    UsageCategory = None;
 
     dataset
     {

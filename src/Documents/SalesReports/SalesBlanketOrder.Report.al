@@ -7,6 +7,7 @@ report 87300 "wan Sales - Blanket Order"
     DefaultLayout = Word;
     PreviewMode = PrintLayout;
     WordMergeDataItem = Header;
+    UsageCategory = None;
 
     dataset
     {

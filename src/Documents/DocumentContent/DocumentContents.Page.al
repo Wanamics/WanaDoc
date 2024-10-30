@@ -1,6 +1,7 @@
 page 87301 "wan Document Contents"
 {
     ApplicationArea = All;
+    UsageCategory = None;
     Caption = 'Document Contents';
     PageType = List;
     SourceTable = "wan Document Content";

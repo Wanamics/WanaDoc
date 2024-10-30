@@ -7,6 +7,7 @@ report 87304 "wan Purchase - Quote"
     EnableHyperlinks = true;
     PreviewMode = PrintLayout;
     WordMergeDataItem = "Purchase Header";
+    UsageCategory = None;
 
     dataset
     {

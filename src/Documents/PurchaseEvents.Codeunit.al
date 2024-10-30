@@ -31,7 +31,8 @@ codeunit 87303 "WanaDoc Purchase Events"
     local procedure OnAfterValidateEvent(var Rec: Record "Purchase Line"; var xRec: Record "Purchase Line"; CurrFieldNo: Integer)
     begin
         if (CurrFieldNo = Rec.FieldNo("No.")) and
-            not (Rec.Type in [Rec.Type::Item, Rec.Type::Resource]) and
+            // not (Rec.Type in [Rec.Type::Item, Rec.Type::Resource]) and
+            (Rec.Type = Rec.Type::"G/L Account") and
             (Rec.Quantity = 0) then
             Rec.Validate(Quantity, 1);
     end;
