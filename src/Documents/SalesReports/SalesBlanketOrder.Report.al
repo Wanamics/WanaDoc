@@ -1,3 +1,34 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Sales.Document;
+using Microsoft.Assembly.Document;
+using System.Utilities;
+using Microsoft.Finance.VAT.Calculation;
+using Microsoft.Foundation.Reporting;
+using Microsoft.Foundation.Company;
+using Microsoft.Bank.BankAccount;
+using Microsoft.CRM.Contact;
+using Microsoft.Foundation.Address;
+using Microsoft.Foundation.Shipping;
+using Microsoft.Foundation.PaymentTerms;
+using Microsoft.CRM.Team;
+using Microsoft.Sales.Customer;
+using Microsoft.Finance.VAT.Clause;
+using Wanamics.WanaDoc.MemoPad;
+using System.Text;
+using Microsoft.Finance.Currency;
+using Microsoft.Finance.GeneralLedger.Setup;
+using Microsoft.Utilities;
+using Microsoft.Sales.Posting;
+using Microsoft.Finance.VAT.Setup;
+using Microsoft.Sales.Setup;
+using Microsoft.Inventory.Location;
+using System.Globalization;
+using Microsoft.CRM.Segment;
+using System.EMail;
+using Microsoft.Foundation.UOM;
+using Microsoft.Inventory.Item;
+using Microsoft.CRM.Interaction;
 report 87300 "wan Sales - Blanket Order"
 // Copy from report 1305 "Standard Sales - Order Conf." + //[ ... //] from extension
 {

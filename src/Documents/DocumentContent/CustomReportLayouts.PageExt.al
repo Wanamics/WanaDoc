@@ -1,3 +1,6 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Foundation.Reporting;
 pageextension 87301 "wan Custom Report Layouts" extends "Custom Report Layouts"
 {
     actions

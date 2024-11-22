@@ -1,3 +1,7 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Utilities;
+using Microsoft.Finance.GeneralLedger.Setup;
 tableextension 87300 "wan Gen. Bus. Posting Group" extends "Gen. Business Posting Group"
 {
     fields

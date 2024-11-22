@@ -1,3 +1,16 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Sales.Document;
+using System.Utilities;
+using Microsoft.Sales.Customer;
+using Microsoft.Finance.VAT.Clause;
+using Microsoft.CRM.Team;
+using Microsoft.Foundation.Shipping;
+using Microsoft.Foundation.PaymentTerms;
+using Microsoft.Finance.VAT.Setup;
+using Wanamics.WanaDoc.MemoPad;
+using Microsoft.Foundation.Address;
+using Microsoft.Inventory.Item;
 reportextension 87302 "Standard Sales - Pro Forma Inv" extends "Standard Sales - Pro Forma Inv"
 {
     WordLayout = './ReportLayouts/wanSalesProFormaInvoice.docx';

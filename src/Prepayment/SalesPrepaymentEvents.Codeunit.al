@@ -1,3 +1,12 @@
+namespace Wanamics.WanaDoc.Prepayment;
+
+using Microsoft.Sales.Document;
+using Microsoft.Sales.History;
+using Microsoft.Finance.ReceivablesPayables;
+using Wanamics.WanaDoc.MemoPad;
+using Microsoft.Foundation.ExtendedText;
+using Microsoft.Inventory.Item;
+using Microsoft.Sales.Posting;
 codeunit 87300 "wan Sales Prepayment Events"
 {
     Permissions = tabledata "Sales invoice Line" = im;

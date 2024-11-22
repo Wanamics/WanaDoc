@@ -1,3 +1,12 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Sales.Document;
+using Microsoft.Sales.Customer;
+using Microsoft.Finance.VAT.Clause;
+using Microsoft.Finance.VAT.Setup;
+using Wanamics.WanaDoc.MemoPad;
+using Microsoft.Foundation.Address;
+using Microsoft.Inventory.Item;
 reportextension 87304 "Standard Sales - Quote" extends "Standard Sales - Quote"
 {
     WordLayout = './ReportLayouts/wanSalesQuote.docx';

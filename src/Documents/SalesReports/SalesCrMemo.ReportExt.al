@@ -1,3 +1,12 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Sales.Document;
+using Microsoft.Sales.History;
+using Microsoft.Sales.Customer;
+using Microsoft.Foundation.Address;
+using Microsoft.Inventory.Item;
+using Microsoft.Inventory.Ledger;
+using Wanamics.WanaDoc.MemoPad;
 reportextension 87307 "Standard Sales - Credit Memo" extends "Standard Sales - Credit Memo"
 {
     WordLayout = './ReportLayouts/wanSalesCrMemo.docx';

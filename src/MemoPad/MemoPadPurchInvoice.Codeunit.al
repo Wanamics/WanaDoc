@@ -1,3 +1,7 @@
+namespace Wanamics.WanaDoc.MemoPad;
+
+using Microsoft.Purchases.History;
+using Microsoft.Foundation.ExtendedText;
 codeunit 87323 "wan MemoPad Purchase Invoice"
 {
     procedure GetExtendedText(pHeader: Record "Purch. Inv. Header"; pLine: Record "Purch. Inv. Line") ReturnValue: text;

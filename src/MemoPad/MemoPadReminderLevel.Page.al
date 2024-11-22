@@ -1,3 +1,7 @@
+namespace Wanamics.WanaDoc.MemoPad;
+
+using Microsoft.Sales.Reminder;
+using Microsoft.Foundation.ExtendedText;
 page 87321 "wan Reminder Level"
 {
     PageType = Card;

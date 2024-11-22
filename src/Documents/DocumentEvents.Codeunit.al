@@ -1,3 +1,9 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Foundation.Reporting;
+using Microsoft.Sales.Document;
+using Microsoft.Sales.History;
+using Microsoft.Inventory.Item;
 codeunit 87302 "wan Document Events"
 {
     [EventSubscriber(ObjectType::Table, Database::"Custom Report Selection", 'OnBeforeInsertEvent', '', false, false)]

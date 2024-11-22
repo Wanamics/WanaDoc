@@ -1,3 +1,6 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Sales.History;
 tableextension 87312 "wan Sales Invoice Header" extends "Sales Invoice Header"
 {
     fields

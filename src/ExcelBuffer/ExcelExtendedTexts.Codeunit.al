@@ -1,3 +1,7 @@
+namespace Wanamics.WanaDoc.Excel;
+
+using System.IO;
+using Microsoft.Foundation.ExtendedText;
 codeunit 87379 "wan Excel Extended Texts"
 {
     trigger OnRun()

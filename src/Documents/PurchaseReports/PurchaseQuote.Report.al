@@ -1,3 +1,28 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Purchases.Document;
+using System.Utilities;
+using Microsoft.Foundation.Company;
+using Microsoft.CRM.Team;
+using Microsoft.CRM.Contact;
+using Microsoft.Foundation.PaymentTerms;
+using Microsoft.Foundation.Shipping;
+using Wanamics.WanaDoc.MemoPad;
+using Microsoft.Finance.VAT.Calculation;
+using Microsoft.Finance.ReceivablesPayables;
+using Microsoft.Finance.GeneralLedger.Setup;
+using Microsoft.Inventory.Location;
+using Microsoft.Finance.Currency;
+using Microsoft.Purchases.Setup;
+using System.Globalization;
+using Microsoft.Foundation.Address;
+using Microsoft.Utilities;
+using Microsoft.Purchases.Posting;
+using Microsoft.CRM.Segment;
+using System.EMail;
+using Microsoft.Inventory.Item;
+using Microsoft.Purchases.Vendor;
+using Microsoft.CRM.Interaction;
 report 87304 "wan Purchase - Quote"
 // Copy from "Standard Purchase - Order", 'Order' replaced by 'Quote' + '[+ wan Extension +]
 {

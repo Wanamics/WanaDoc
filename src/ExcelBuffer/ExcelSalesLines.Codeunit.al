@@ -1,3 +1,8 @@
+namespace Wanamics.WanaDoc.Excel;
+
+using Microsoft.Sales.Document;
+using System.IO;
+using Microsoft.Finance.GeneralLedger.Setup;
 Codeunit 87369 "wan Excel Sales Lines"
 {
     trigger OnRun()

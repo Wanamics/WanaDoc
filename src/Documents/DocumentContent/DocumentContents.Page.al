@@ -1,3 +1,4 @@
+namespace Wanamics.WanaDoc.Document;
 page 87301 "wan Document Contents"
 {
     ApplicationArea = All;

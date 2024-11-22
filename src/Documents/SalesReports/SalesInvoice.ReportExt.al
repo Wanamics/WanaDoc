@@ -1,3 +1,18 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Sales.History;
+using Microsoft.Sales.Customer;
+using Microsoft.Finance.VAT.Clause;
+using Microsoft.Finance.VAT.Setup;
+using System.Text;
+using Microsoft.Foundation.Address;
+using Microsoft.Finance.GeneralLedger.Setup;
+using Microsoft.Inventory.Item;
+using Microsoft.Inventory.Ledger;
+using Microsoft.Sales.Document;
+using Microsoft.Foundation.ExtendedText;
+using Microsoft.Inventory.Tracking;
+using Wanamics.WanaDoc.MemoPad;
 reportextension 87306 "Standard Sales - Invoice" extends "Standard Sales - Invoice"
 {
     WordLayout = './ReportLayouts/wanSalesInvoice.docx';

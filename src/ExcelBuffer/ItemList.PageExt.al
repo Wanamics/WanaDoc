@@ -1,3 +1,7 @@
+namespace Wanamics.WanaDoc.Excel;
+
+using Microsoft.Inventory.Item;
+using Microsoft.Foundation.ExtendedText;
 pageextension 87331 "wan_ Item List" extends "Item List"
 {
     layout

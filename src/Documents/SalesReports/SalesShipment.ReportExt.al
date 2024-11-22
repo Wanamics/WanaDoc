@@ -1,3 +1,12 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Sales.History;
+using Microsoft.Sales.Customer;
+using Microsoft.Foundation.Shipping;
+using Wanamics.WanaDoc.MemoPad;
+using Microsoft.Foundation.Address;
+using Microsoft.Inventory.Item;
+using Microsoft.Inventory.Ledger;
 reportextension 87308 "Standard Sales - Shipment" extends "Standard Sales - Shipment"
 {
     WordLayout = './ReportLayouts/wanSalesShipment.docx';

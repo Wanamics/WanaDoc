@@ -1,3 +1,7 @@
+namespace Wanamics.WanaDoc.Document;
+
+using System.Globalization;
+using System.Reflection;
 table 87301 "wan Document Content"
 {
     Caption = 'Document Content';

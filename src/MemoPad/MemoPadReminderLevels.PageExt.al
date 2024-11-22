@@ -1,3 +1,6 @@
+namespace Wanamics.WanaDoc.MemoPad;
+
+using Microsoft.Sales.Reminder;
 pageextension 87332 "wan Reminder Levels" extends "Reminder Levels"
 {
     actions

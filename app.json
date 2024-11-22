@@ -3,7 +3,7 @@
   "id": "c1143780-9ae5-4f2c-85a5-6aaf42a8da39",
   "name": "WanaDoc",
   "publisher": "Wanamics",
-  "version": "22.0.0.12",
+  "version": "22.0.0.14",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -14,8 +14,8 @@
   "dependencies": [
   ],
   "screenshots": [],
-  "platform": "21.0.0.0",
-  "application": "21.0.0.0",
+  "platform": "24.0.0.0",
+  "application": "24.0.0.0",
   "contextSensitiveHelpUrl": "https://www.wanamics.fr/WanaDoc/",
   "idRanges": [
     {
@@ -27,7 +27,7 @@
     "allowDebugging": true, 
     "allowDownloadingSource": true, 
     "includeSourceInSymbolFile": true},
-  "runtime": "11.0",
+  "runtime": "13.0",
   "features": [
     "NoImplicitWith",
     "TranslationFile", 

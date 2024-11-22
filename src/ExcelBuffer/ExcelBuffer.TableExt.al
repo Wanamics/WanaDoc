@@ -1,3 +1,6 @@
+namespace Wanamics.WanaDoc.Excel;
+
+using System.IO;
 tableextension 87370 "wan Excel Buffer" extends "Excel Buffer"
 {
     var

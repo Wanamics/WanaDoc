@@ -1,3 +1,6 @@
+namespace Wanamics.WanaDoc.MemoPad;
+
+using Microsoft.Foundation.ExtendedText;
 codeunit 87320 "wan MemoPad Management"
 {
     var

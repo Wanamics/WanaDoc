@@ -1,3 +1,4 @@
+namespace Wanamics.WanaDoc.Excel;
 Table 87316 "wan Excel Buffer Extended"
 {
     Caption = 'Excel Buffer Extended';

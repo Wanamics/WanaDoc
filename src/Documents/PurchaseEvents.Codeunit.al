@@ -1,3 +1,7 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Purchases.Document;
+using Microsoft.Purchases.Vendor;
 codeunit 87303 "WanaDoc Purchase Events"
 {
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", OnBeforeInitPostingDescription, '', false, false)]

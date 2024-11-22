@@ -1,3 +1,17 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Sales.History;
+using Microsoft.Purchases.Document;
+using Microsoft.Foundation.Address;
+using System.Text;
+using Microsoft.Inventory.Item;
+using Microsoft.Foundation.Company;
+using Microsoft.Bank.BankAccount;
+using Microsoft.Bank.DirectDebit;
+using Microsoft.Sales.Customer;
+using Microsoft.Sales.Document;
+using Microsoft.Inventory.Ledger;
+using Microsoft.Purchases.History;
 codeunit 87301 "wan Document Helper"
 {
     var

@@ -1,3 +1,4 @@
+namespace Wanamics.WanaDoc.MemoPad;
 page 87320 "wan MemoPad"
 {
     Caption = 'MemoPad';

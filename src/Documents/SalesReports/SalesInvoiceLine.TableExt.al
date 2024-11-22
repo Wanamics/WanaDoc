@@ -1,3 +1,6 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Sales.History;
 tableextension 87313 "Sales Invoice Line" extends "Sales Invoice Line"
 {
     fields

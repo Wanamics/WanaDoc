@@ -21,14 +21,14 @@
         },
         */
         {
-            "name": "Wanamics BC22",
+            "name": "Wanamics Development",
             "request": "launch",
             "type": "al",
             "server": "https://businesscentral.dynamics.com/",
             "environmentType": "Sandbox",
-            "environmentName": "BC22",
+            "environmentName": "DevelopmentTEST",
             "tenant": "e58e4362-4ba1-46f8-b9da-326a8fa42dc7",
-            "port": 7049,
+            // "port": 7049,
             "authentication": "AAD",
             //"startupObjectType": "Page",
             //"startupObjectId": 902,

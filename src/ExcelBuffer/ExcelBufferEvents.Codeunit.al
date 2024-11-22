@@ -1,3 +1,6 @@
+namespace Wanamics.WanaDoc.Excel;
+
+using System.IO;
 codeunit 87370 "wan ExcelBuffer Events"
 {
     [EventSubscriber(ObjectType::Table, database::"Excel Buffer", 'OnWriteCellValueOnBeforeSetCellValue', '', false, false)]

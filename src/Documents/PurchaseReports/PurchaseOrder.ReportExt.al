@@ -1,3 +1,9 @@
+namespace Wanamics.WanaDoc.Document;
+
+using Microsoft.Purchases.Document;
+using Wanamics.WanaDoc.MemoPad;
+using Microsoft.Foundation.Address;
+using Microsoft.Inventory.Item;
 reportextension 87322 "Standard Purchase - Order" extends "Standard Purchase - Order"
 {
     WordLayout = './ReportLayouts/wanPurchaseOrder.docx';

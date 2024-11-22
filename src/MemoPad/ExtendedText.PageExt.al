@@ -1,3 +1,6 @@
+namespace Wanamics.WanaDoc.MemoPad;
+
+using Microsoft.Foundation.ExtendedText;
 pageextension 87320 "wan Extended Text" extends "Extended Text"
 {
     layout

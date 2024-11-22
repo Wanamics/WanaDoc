@@ -1,3 +1,7 @@
+namespace Wanamics.WanaDoc.MemoPad;
+
+using Microsoft.Purchases.History;
+using Microsoft.Foundation.ExtendedText;
 codeunit 87324 "wan MemoPad Purch. Cr. Memo"
 {
     procedure GetExtendedText(pHeader: Record "Purch. Cr. Memo Hdr."; pLine: Record "Purch. Cr. Memo Line") ReturnValue: text;

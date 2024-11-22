@@ -33,130 +33,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table wan Document Content - Field Report ID - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2793207324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Excel Buffer Extended</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2793207324 - Field 1389794395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Column No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Column No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2793207324 - Field 3909759354 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extended Line No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Extended Line No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2793207324 - Field 1997869518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cell Value as Text</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Extended Text - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2793207324 - Field 2782707039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Row No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Row No. - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Codeunit 453050756 - Method 2664287289 - NamedType 1167231360" size-unit="char" translate="yes" xml:space="preserve">
           <source>Prepayment Invoice</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Events - Method OnBeforeGetDocumentCaption - NamedType PrepaymentInvoice</note>
         </trans-unit>
-        <trans-unit id="Codeunit 46548859 - Method 2268252984 - NamedType 823609282" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 46548859 - Method 2268252984 - NamedType 470250014" size-unit="char" translate="yes" xml:space="preserve">
           <source> R%1</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method GetVersion - NamedType tVersion</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method GetVersion - NamedType VersionTxt</note>
         </trans-unit>
         <trans-unit id="Codeunit 46548859 - Method 1518894916 - NamedType 4207761921" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pay by %1 to our bank account %2, IBAN %3, Code SWIFT %4</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Developer" annotates="general" priority="2">%1:PaymentMethod.Description, %2:BankAccount.Name, %3:BankAccount.IBAN, %4:BankAccount."SWIFT Code")</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method PaymentMethodText - NamedType PaymentMethodLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 46548859 - Method 1518894916 - NamedType 4089536611" size-unit="char" translate="yes" xml:space="preserve">
           <source>Direct Debit ID %1 from your bank account %2 IBAN %3</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Developer" annotates="general" priority="2">%1:SDDMandateId, %2:CustomerBankAccount.Name, %3:CustomerBankAccount.IBAN)</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method PaymentMethodText - NamedType DirectDebitLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 46548859 - Method 3764847370 - NamedType 3083516713" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 and %2 of item %3 are mandatory for an intrastat operation.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Developer" annotates="general" priority="2">%1:Item.FieldCaption("Tariff No."), %2:Item.FieldCaption("Country/Region of Origin Code", %3:Item."No.")</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Document Helper - Method Tariff - NamedType IntraStatErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 818474978 - NamedType 4104898276" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Data</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - NamedType SheetName</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 818474978 - Method 36190024 - NamedType 2981352172" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do-you want to create an Excel book for %1 %2(s)?</source>
-          <note from="Developer" annotates="general" priority="2">%1: Count, %2: TableCaption</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method Export - NamedType lblConfirm</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 818474978 - Method 3201496503 - NamedType 804005424" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import Excel File</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method Import - NamedType ImportFromExcelTitle</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 818474978 - Method 3201496503 - NamedType 3713533041" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Excel Files (*.xlsx)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method Import - NamedType ExcelFileCaption</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 818474978 - Method 562255948 - NamedType 1387521371" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Analyzing Data...\\</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method ImportLines - NamedType ltAnalyzing</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2010319027 - NamedType 4104898276" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Data</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - NamedType SheetName</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2010319027 - Method 846556168 - NamedType 1387521371" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Analyzing Data...\\</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method AnalyzeData - NamedType ltAnalyzing</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2010319027 - Method 36190024 - NamedType 2981352172" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do-you want to create an Excel book for %1 %2(s)?</source>
-          <note from="Developer" annotates="general" priority="2">%1: Count, %2: TableCaption</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method Export - NamedType lblConfirm</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2010319027 - Method 3201496503 - NamedType 804005424" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import Excel File</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method Import - NamedType ImportFromExcelTitle</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2010319027 - Method 3201496503 - NamedType 3713533041" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Excel Files (*.xlsx)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method Import - NamedType ExcelFileCaption</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1299705622 - NamedType 4104898276" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Data</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - NamedType SheetName</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1299705622 - Method 846556168 - NamedType 1387521371" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Analyzing Data...\\</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method AnalyzeData - NamedType ltAnalyzing</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1299705622 - Method 36190024 - NamedType 2981352172" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do-you want to create an Excel book for %1 %2(s)?</source>
-          <note from="Developer" annotates="general" priority="2">%1: Count, %2: TableCaption</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method Export - NamedType lblConfirm</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1299705622 - Method 3201496503 - NamedType 804005424" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import Excel File</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method Import - NamedType ImportFromExcelTitle</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1299705622 - Method 3201496503 - NamedType 3713533041" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Excel Files (*.xlsx)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method Import - NamedType ExcelFileCaption</note>
         </trans-unit>
         <trans-unit id="Codeunit 3262876583 - Method 873171600 - NamedType 4082505270" size-unit="char" translate="yes" xml:space="preserve">
           <source>Prepayment %1</source>
@@ -197,26 +97,6 @@
           <source>Content</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Document Contents - Control RichText - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 812580689 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>MemoPad</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan MemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2793444556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reminder Level</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Reminder Level - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2793444556 - Control 1629502811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Beginning Text</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Reminder Level - Control Beginning - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2793444556 - Control 2618466334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ending Text</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Reminder Level - Control EndingText - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 166933541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase - Blanket Order</source>
@@ -1358,175 +1238,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Sales - Blanket Order - Control LogInteraction - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1963565798 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1843696368">
-          <source>MemoPad</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blank. Purch. Order Sub. - Action wanMemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1963565798 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1843696368">
-          <source>Excel Export</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blank. Purch. Order Sub. - Action wanExcelExport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1963565798 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1843696368">
-          <source>Excel Import</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blank. Purch. Order Sub. - Action wanExcelImport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2161972249 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 884441745">
-          <source>MemoPad</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blanket Sales Order Sub. - Action wanMemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2161972249 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 884441745">
-          <source>Excel Export</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blanket Sales Order Sub. - Action wanExcelExport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2161972249 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 884441745">
-          <source>Excel Import</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blanket Sales Order Sub. - Action wanExcelImport - Property Caption</note>
-        </trans-unit>
         <trans-unit id="PageExtension 2562377768 - Action 2919671330 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2274420296">
           <source>Document Content</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Custom Report Layouts - Action wanDocumentContent - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1343711391 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
-          <source>MemoPad</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Cr. Memo Subform - Action wanMemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1343711391 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
-          <source>Excel Export</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Cr. Memo Subform - Action wanExcelExport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1343711391 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
-          <source>Excel Import</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Cr. Memo Subform - Action wanExcelImport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2017729059 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
-          <source>MemoPad</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Invoice Subform - Action wanMemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2017729059 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
-          <source>Excel Export</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Invoice Subform - Action wanExcelExport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2017729059 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
-          <source>Excel Import</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Invoice Subform - Action wanExcelImport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 3363731502 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
-          <source>MemoPad</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Quote Subform - Action wanMemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 3363731502 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
-          <source>Excel Export</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Quote Subform - Action wanExcelExport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 3363731502 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
-          <source>Excel Import</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Quote Subform - Action wanExcelImport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2219346849 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
-          <source>MemoPad</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Order Subform - Action wanMemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2219346849 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
-          <source>Excel Export</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Order Subform - Action wanExcelExport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2219346849 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
-          <source>Excel Import</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Order Subform - Action wanExcelImport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 4011560429 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3010059981">
-          <source>Texts</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Reminder Levels - Action wanMemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1643932369 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
-          <source>MemoPad</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Cr.Memo Subform - Action wanMemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1643932369 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
-          <source>Excel Export</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Cr.Memo Subform - Action wanExcelExport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1643932369 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
-          <source>Excel Import</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Cr.Memo Subform - Action wanExcelImport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 800839125 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
-          <source>MemoPad</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Invoice Subform - Action wanMemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 800839125 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
-          <source>Excel Export</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Invoice Subform - Action wanExcelExport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 800839125 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
-          <source>Excel Import</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Invoice Subform - Action wanExcelImport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 894427016 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
-          <source>MemoPad</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Order Subform - Action wanMemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 894427016 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
-          <source>Excel Export</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Order Subform - Action wanExcelExport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 894427016 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
-          <source>Excel Import</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Order Subform - Action wanExcelImport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 418562748 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
-          <source>MemoPad</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Quote Subform - Action wanMemoPad - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 418562748 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
-          <source>Excel Export</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Quote Subform - Action wanExcelExport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 418562748 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
-          <source>Excel Import</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Quote Subform - Action wanExcelImport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 232223884 - Action 2913175975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
-          <source>Export Extended text</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan_ Item List - Action wanExportExtendedTexts - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 232223884 - Action 940699584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
-          <source>Import Extended text</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan_ Item List - Action wanImportExtendedTexts - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2079186865 - Field 2730686926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Order Amount</source>
@@ -1573,20 +1288,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Bus. Posting Group - Field wan Late Payment Text Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 505023743 - Method 2871892153 - NamedType 484017086" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 505023743">
-          <source>%1 %2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purchase Line - Method wanMemoPad - NamedType tCaption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 3017902538 - Field 2999603277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 809936682">
           <source>Compress Prepayment</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Sales Invoice Header - Field wan Compress Prepayment - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 192179042 - Method 2871892153 - NamedType 484017086" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 192179042">
-          <source>%1 %2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Sales Line - Method wanMemoPad - NamedType tCaption</note>
         </trans-unit>
         <trans-unit id="Enum 961050025 - EnumValue 1629502811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Beginning</source>
@@ -1597,11 +1302,6 @@
           <source>Ending</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum wan Document Content Placement - EnumValue Ending - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PermissionSet 3147185419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>WanaDoc</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet WanaDoc - Property Caption</note>
         </trans-unit>
         <trans-unit id="ReportExtension 2244614141 - NamedType 3808264029" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2244614141">
           <source>Buy-from</source>
@@ -1777,6 +1477,341 @@
           <source>Show lines without quantity</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales - Shipment - Control wanShowLinesWithoutQuantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2793207324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Buffer Extended</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2793207324 - Field 1389794395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Column No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Column No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2793207324 - Field 3909759354 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extended Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Extended Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2793207324 - Field 1997869518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cell Value as Text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Extended Text - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2793207324 - Field 2782707039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Row No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Excel Buffer Extended - Field Row No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 818474978 - NamedType 4104898276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - NamedType SheetName</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 818474978 - Method 36190024 - NamedType 2981352172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do-you want to create an Excel book for %1 %2(s)?</source>
+          <note from="Developer" annotates="general" priority="2">%1: Count, %2: TableCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method Export - NamedType lblConfirm</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 818474978 - Method 3201496503 - NamedType 804005424" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Excel File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method Import - NamedType ImportFromExcelTitle</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 818474978 - Method 3201496503 - NamedType 3713533041" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Files (*.xlsx)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method Import - NamedType ExcelFileCaption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 818474978 - Method 562255948 - NamedType 1387521371" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analyzing Data...\\</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Extended Texts - Method ImportLines - NamedType ltAnalyzing</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2010319027 - NamedType 4104898276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - NamedType SheetName</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2010319027 - Method 846556168 - NamedType 1387521371" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analyzing Data...\\</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method AnalyzeData - NamedType ltAnalyzing</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2010319027 - Method 36190024 - NamedType 2981352172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do-you want to create an Excel book for %1 %2(s)?</source>
+          <note from="Developer" annotates="general" priority="2">%1: Count, %2: TableCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method Export - NamedType lblConfirm</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2010319027 - Method 3201496503 - NamedType 804005424" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Excel File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method Import - NamedType ImportFromExcelTitle</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2010319027 - Method 3201496503 - NamedType 3713533041" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Files (*.xlsx)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Purchase Lines - Method Import - NamedType ExcelFileCaption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1299705622 - NamedType 4104898276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - NamedType SheetName</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1299705622 - Method 846556168 - NamedType 1387521371" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Analyzing Data...\\</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method AnalyzeData - NamedType ltAnalyzing</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1299705622 - Method 36190024 - NamedType 2981352172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do-you want to create an Excel book for %1 %2(s)?</source>
+          <note from="Developer" annotates="general" priority="2">%1: Count, %2: TableCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method Export - NamedType lblConfirm</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1299705622 - Method 3201496503 - NamedType 804005424" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Excel File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method Import - NamedType ImportFromExcelTitle</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1299705622 - Method 3201496503 - NamedType 3713533041" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Files (*.xlsx)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Excel Sales Lines - Method Import - NamedType ExcelFileCaption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1154038480 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1843696368">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blank. Purch. Order Excel - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1154038480 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1843696368">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blank. Purch. Order Excel - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2091470660 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Cr. Memo Excel - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2091470660 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Cr. Memo Excel - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2034477641 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Invoice Excel - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2034477641 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Invoice Excel - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2561769641 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Quote Excel - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2561769641 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Quote Excel - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 774712678 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Order Excel - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 774712678 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Order Excel - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 232223884 - Action 2913175975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
+          <source>Export Extended text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan_ Item List - Action wanExportExtendedTexts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 232223884 - Action 940699584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
+          <source>Import Extended text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan_ Item List - Action wanImportExtendedTexts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2017276905 - Method 3868339101 - NamedType 4117545204" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The credit memo cannot be posted because the total is different from the total on the related incoming document.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Purch. Copy Incoming Doc. - Method OnBeforePostPurchaseDoc - NamedType TotalsMismatchErr</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1870447923 - Action 1695057039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 956135699">
+          <source>Create Purch. Inv./Cr.Memo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Incoming Document - Action _CreatePurchInvCrMemo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1870447923 - Action 3419587933 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 956135699">
+          <source>Create</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Incoming Document - Action _Create - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1870447923 - Control 4235931051 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 956135699">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Incoming Document - Control _Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1870447923 - Control 1228173161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 956135699">
+          <source>Payment Method Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Incoming Document - Control _PaymentMethodCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2034477641 - Action 552428158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>Copy Blanket Order Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Invoice Subf. - Action _CopyBlanketOrderLines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1870447923 - Field 729258068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 956135699">
+          <source>Payment Method Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Incoming Document - Field Wan Payment Method Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 812580689 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan MemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2793444556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reminder Level</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Reminder Level - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2793444556 - Control 1629502811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Beginning Text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Reminder Level - Control Beginning - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2793444556 - Control 2618466334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Reminder Level - Control EndingText - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1154038480 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1843696368">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blank. Purch. Order MemoP. - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3708889835 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 884441745">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blanket Sales Order Excel - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3708889835 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 884441745">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blanket Sales Order Excel - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3708889835 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 884441745">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Blanket Sales Order MemoP. - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2091470660 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Cr. Memo MemoPad - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2034477641 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Invoice MemoPad - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2561769641 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 997943925">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purch. Quote MemoPad - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 774712678 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 526152577">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Order MemoPad - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4011560429 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3010059981">
+          <source>Texts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Reminder Levels - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1913139870 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Cr.Memo Excel - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1913139870 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Cr.Memo Excel - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1913139870 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1056066689">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Cr.Memo MemoPad - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 140718098 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Invoice Excel - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 140718098 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Invoice Excel - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 140718098 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3689007477">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Invoice MemoPad - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4270738923 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Order Excel - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4270738923 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Order Excel - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4270738923 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Order MemoPad - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3602040655 - Action 3517704061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Excel Export</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Quote Excel - Action wanExcelExport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3602040655 - Action 3121239518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Excel Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Quote Excel - Action wanExcelImport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3602040655 - Action 2871892153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>MemoPad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Quote MemoPad - Action wanMemoPad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 505023743 - Method 2871892153 - NamedType 484017086" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 505023743">
+          <source>%1 %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purchase Line - Method wanMemoPad - NamedType tCaption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 192179042 - Method 2871892153 - NamedType 484017086" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 192179042">
+          <source>%1 %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Sales Line - Method wanMemoPad - NamedType tCaption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 3147185419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>WanaDoc</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet WanaDoc - Property Caption</note>
         </trans-unit>
       </group>
     </body>

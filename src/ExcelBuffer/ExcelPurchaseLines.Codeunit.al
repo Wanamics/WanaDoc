@@ -1,3 +1,8 @@
+namespace Wanamics.WanaDoc.Excel;
+
+using Microsoft.Purchases.Document;
+using System.IO;
+using Microsoft.Finance.GeneralLedger.Setup;
 Codeunit 87389 "wan Excel Purchase Lines"
 {
     trigger OnRun()
