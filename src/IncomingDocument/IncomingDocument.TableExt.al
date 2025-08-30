@@ -63,7 +63,7 @@ tableextension 87306 "wan Incoming Document" extends "Incoming Document"
                     "Amount Excl. VAT" := "Amount Incl. VAT" - "VAT Amount";
             end;
         }
-        field(87300; "Wan Payment Method Code"; Code[20])
+        field(87300; "wan Payment Method Code"; Code[20])
         {
             Caption = 'Payment Method Code';
             FieldClass = FlowField;
@@ -73,5 +73,4 @@ tableextension 87306 "wan Incoming Document" extends "Incoming Document"
     }
     var
         Vendor: Record Vendor;
-
 }
