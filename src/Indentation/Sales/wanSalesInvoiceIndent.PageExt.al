@@ -81,6 +81,6 @@ pageextension 87313 "wan Sales Invoice Indent" extends "Sales Invoice Subform"
     begin
         wanEnabled := Rec.wanIsEnabled(CurrPage.Editable);
         wanStyle := Rec.wanStyle();
-        wanIndentation := Rec."wan Indentation";
+        wanIndentation := Rec.wanIndentation();
     end;
 }

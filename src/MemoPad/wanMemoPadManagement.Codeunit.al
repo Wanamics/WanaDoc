@@ -99,25 +99,4 @@ codeunit 87320 "wan MemoPad Management"
             until TempExtendedTextLine.Next = 0;
         end;
     end;
-
-    procedure Indent(var pMemo: Text; pIndentation: Integer)
-    var
-        Lines: list of [Text];
-        Margin: Text;
-        i: Integer;
-        NonBreakingSpace: Text;
-        LineFeed: Text[1];
-    begin
-        LineFeed[1] := 10;
-        if (pMemo = '') or (pIndentation <= 0) then
-            exit;
-        NonBreakingSpace[1] := 8239;
-        for i := 1 to pIndentation * 3 do
-            Margin += NonBreakingSpace;
-        Lines := pMemo.Split(LineFeed);
-        pMemo := '';
-        for i := 1 to Lines.Count() - 1 do
-            pMemo += Margin + Lines.Get(i) + LineFeed;
-        pMemo += Margin + Lines.Get(Lines.Count);
-    end;
 }

@@ -3,7 +3,7 @@ namespace Wanamics.WanaDoc.Indentation;
 using Microsoft.Purchases.Document;
 using Wanamics.WanaDoc.MemoPad;
 using System.Text;
-reportextension 87314 "wan Purch. Order Indent." extends "Standard Purchase - Order"
+reportextension 87314 "wan Purch. Order Indent" extends "Standard Purchase - Order"
 {
     dataset
     {
@@ -12,9 +12,10 @@ reportextension 87314 "wan Purch. Order Indent." extends "Standard Purchase - Or
             trigger OnAfterAfterGetRecord()
             var
                 MemoPadManagement: Codeunit "wan MemoPad Management";
+                IndentHelper: Codeunit "wan Indent Helper";
                 i: Integer;
             begin
-                MemoPadManagement.Indent(wanMemo, "wan Indentation");
+                IndentHelper.Indent(wanMemo, "wan Indentation");
                 wanTitleLineMemo := '';
                 wanTotalLineMemo := '';
                 wanTotalLineAmount := '';
@@ -37,8 +38,8 @@ reportextension 87314 "wan Purch. Order Indent." extends "Standard Purchase - Or
                             for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
                                 // wanTotalLines[i]."Order Amount" += "Order Amount"; // for Invoice and CreditMemo
                                 wanTotalLines[i]."Line Amount" += "Line Amount";
-                                wanTotalLines[i]."Prepmt. Line Amount" += "Prepmt. Line Amount";
-                                wanTotalLines[i]."Prepmt. Amt. Inv." += "Prepmt. Amt. Inv.";
+                                // wanTotalLines[i]."Prepmt. Line Amount" += "Prepmt. Line Amount";
+                                // wanTotalLines[i]."Prepmt. Amt. Inv." += "Prepmt. Amt. Inv.";
                             end;
                         end;
                 end;

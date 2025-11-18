@@ -2,11 +2,11 @@ namespace Wanamics.WanaDoc.Indentation;
 
 using Microsoft.Sales.History;
 
-tableextension 87314 "wan Sales C.M. Line Indent." extends "Sales Cr.Memo Line"
+tableextension 87314 "wan Sales C.M. Line Indent" extends "Sales Cr.Memo Line"
 {
     fields
     {
-        field(87500; "wan Indentation"; Integer)
+        field(87350; "wan Indentation"; Integer)
         {
             Caption = 'Indentation';
             DataClassification = SystemMetadata;
@@ -25,6 +25,17 @@ tableextension 87314 "wan Sales C.M. Line Indent." extends "Sales Cr.Memo Line"
         wanIndentHelper: Codeunit "wan Indent Helper";
     begin
         exit(wanIndentHelper.IsTotal(Type, "No."));
+    end;
+
+    procedure wanIndentation(): Integer
+    var
+        AttachedToLine: Record "Sales Cr.Memo Line";
+    begin
+        if "Attached to Line No." = 0 then
+            exit(Rec."wan Indentation")
+        else
+            if AttachedToLine.Get("Document No.", "Attached to Line No.") then
+                exit(AttachedToLine."wan Indentation");
     end;
 
     procedure wanStyle(): Text

@@ -81,6 +81,6 @@ pageextension 87314 "wan Sales Cr. Memo Indent" extends "Sales Cr. Memo Subform"
     begin
         wanEnabled := Rec.wanIsEnabled(CurrPage.Editable);
         wanStyle := Rec.wanStyle();
-        wanIndentation := Rec."wan Indentation";
+        wanIndentation := Rec.wanIndentation();
     end;
 }

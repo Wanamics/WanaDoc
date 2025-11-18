@@ -2,11 +2,11 @@ namespace Wanamics.WanaDoc.Indentation;
 
 using Microsoft.Purchases.Document;
 
-tableextension 87315 "wan Purch. Line Indent." extends "Purchase Line"
+tableextension 87315 "wan Purch. Line Indent" extends "Purchase Line"
 {
     fields
     {
-        field(87500; "wan Indentation"; Integer)
+        field(87350; "wan Indentation"; Integer)
         {
             Caption = 'Indentation';
             DataClassification = SystemMetadata;
@@ -25,6 +25,17 @@ tableextension 87315 "wan Purch. Line Indent." extends "Purchase Line"
         wanIndentHelper: Codeunit "wan Indent Helper";
     begin
         exit(wanIndentHelper.IsTotal(Type, "No."));
+    end;
+
+    procedure wanIndentation(): Integer
+    var
+        AttachedToLine: Record "Purchase Line";
+    begin
+        if "Attached to Line No." = 0 then
+            exit(Rec."wan Indentation")
+        else
+            if AttachedToLine.Get("Document No.", "Attached to Line No.") then
+                exit(AttachedToLine."wan Indentation");
     end;
 
     procedure wanStyle(): Text

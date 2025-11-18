@@ -2,6 +2,7 @@ namespace Wanamics.WanaDoc.MemoPad;
 
 using Microsoft.Sales.Document;
 using Microsoft.Foundation.ExtendedText;
+using Microsoft.Sales.Setup;
 codeunit 87327 "wan MemoPad Sales"
 {
     procedure GetExtendedText(pHeader: Record "Sales Header"; pLine: Record "Sales Line") ReturnValue: text;
@@ -66,4 +67,22 @@ codeunit 87327 "wan MemoPad Sales"
     begin
         ReturnValue[1] := 10;
     end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Sales Quote Subform", OnBeforeSetDefaultType, '', false, false)]
+    local procedure OnBeforeSetDefaultType(var SalesLine: Record "Sales Line"; var xSalesLine: Record "Sales Line"; var IsHandled: Boolean)
+    begin
+        if SalesLine."Type" <> "Sales Line Type"::" " then
+            exit;
+        if wanSetup."Primary Key" = '' then begin
+            wanSetup.Get();
+            wanSetup."Primary Key" := 'GOTTEN';
+        end;
+        if wanSetup."Document Default Line Type" = "Sales Line Type"::" " then
+            exit;
+        SalesLine.Type := wanSetup."Document Default Line Type";
+        IsHandled := true;
+    end;
+
+    var
+        wanSetup: Record "Sales & Receivables Setup";
 }

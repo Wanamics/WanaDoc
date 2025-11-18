@@ -23,6 +23,6 @@ pageextension 87335 "wan Posted Purch. C.M. Indent" extends "Posted Purch. Cr. M
     trigger OnAfterGetRecord()
     begin
         wanStyle := Rec.wanStyle();
-        wanIndentation := Rec."wan Indentation";
+        wanIndentation := Rec.wanIndentation();
     end;
 }

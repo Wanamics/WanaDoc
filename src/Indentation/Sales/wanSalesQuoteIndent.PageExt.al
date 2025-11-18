@@ -92,6 +92,6 @@ pageextension 87310 "wan Sales Quote Indent" extends "Sales Quote Subform"
     begin
         wanEnabled := Rec.wanIsEnabled(CurrPage.Editable);
         wanStyle := Rec.wanStyle();
-        wanIndentation := Rec."wan Indentation";
+        wanIndentation := Rec.wanIndentation();
     end;
 }

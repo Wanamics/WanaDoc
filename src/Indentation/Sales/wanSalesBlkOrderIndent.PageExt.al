@@ -81,6 +81,6 @@ pageextension 87318 "wan Sales Blk. Order Indent" extends "Blanket Sales Order S
     begin
         wanEnabled := Rec.wanIsEnabled(CurrPage.Editable);
         wanStyle := Rec.wanStyle();
-        wanIndentation := Rec."wan Indentation";
+        wanIndentation := Rec.wanIndentation();
     end;
 }

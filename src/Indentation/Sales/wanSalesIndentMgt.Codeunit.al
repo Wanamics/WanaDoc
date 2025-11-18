@@ -1,7 +1,7 @@
 namespace Wanamics.WanaDoc.Indentation;
 
 using Microsoft.Sales.Document;
-using Microsoft.Sales.History;
+using System.Utilities;
 
 codeunit 87310 "wan Sales Indent. Mgt."
 {
@@ -13,6 +13,7 @@ codeunit 87310 "wan Sales Indent. Mgt."
         SubLine: Record "Sales Line";
         ShiftNotAllowedErr: Label 'shift not allowed';
     begin
+        pLine.TestField("Attached to Line No.", 0);
         pLine.SetLoadFields("wan Indentation");
         pLine.Setrange("Attached to Line No.", 0);
         if pShift < 0 then
@@ -46,6 +47,7 @@ codeunit 87310 "wan Sales Indent. Mgt."
     local procedure ShiftAllowed(var pLine: Record "Sales Line"; pShift: Integer): Boolean
     var
         PrevLine: Record "Sales Line";
+        NextLine: Record "Sales Line";
     begin
         if pShift > 0 then begin
             if not GetLine(pLine, '<', Prevline) then
@@ -53,11 +55,17 @@ codeunit 87310 "wan Sales Indent. Mgt."
             if PrevLine.wanIsTitle() then
                 exit(pLine."wan Indentation" >= PrevLine."wan Indentation")
             else
-                exit(pLine."wan Indentation" > PrevLine."wan Indentation");
-        end else
+                exit(pLine."wan Indentation" < PrevLine."wan Indentation");
+        end else begin
             if pLine."wan Indentation" <= 0 then
                 exit(false);
-        exit(true);
+            if not GetLine(pLine, '>', NextLine) then
+                exit(true)
+            else if pLine.wanIsTitle() then
+                exit(NextLine."wan Indentation" <= pLine."wan Indentation")
+            else
+                exit(NextLine."wan Indentation" < pLine."wan Indentation");
+        end;
     end;
 
     local procedure GetLine(pSourceLine: Record "Sales Line"; pWhere: Text; var pTargetLine: Record "Sales Line"): Boolean
@@ -88,6 +96,7 @@ codeunit 87310 "wan Sales Indent. Mgt."
     local procedure OnAfterInsert(var Rec: Record "Sales Line"; RunTrigger: Boolean)
     var
         PrevLine: Record "Sales Line";
+        Math: Codeunit Math;
     begin
         if Rec.IsTemporary then
             exit;
@@ -96,14 +105,14 @@ codeunit 87310 "wan Sales Indent. Mgt."
         if not GetLine(Rec, '<', PrevLine) then
             exit;
         if PrevLine.wanIsTotal() then
-            Rec."wan Indentation" := PrevLine."wan Indentation" - 1
-        else if not PrevLine.wanIsTitle() then
-            Rec."wan Indentation" := PrevLine."wan Indentation"
+            Rec."wan Indentation" := Math.Max(PrevLine."wan Indentation" - 1, 0)
+        else if PrevLine.wanIsTitle() then
+            // if Rec.wanIsTitle() then
+            //     Rec."wan Indentation" := PrevLine."wan Indentation"
+            // else 
+                Rec."wan Indentation" := PrevLine."wan Indentation" + 1
         else
-            if Rec.wanIsTitle() then
-                Rec."wan Indentation" := PrevLine."wan Indentation"
-            else
-                Rec."wan Indentation" := PrevLine."wan Indentation" + 1;
+            Rec."wan Indentation" := PrevLine."wan Indentation";
         Rec.Modify(false);
     end;
 
@@ -133,12 +142,15 @@ codeunit 87310 "wan Sales Indent. Mgt."
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", OnBeforeValidateNo, '', false, false)]
     local procedure OnBeforeValidateNo(var SalesLine: Record "Sales Line"; xSalesLine: Record "Sales Line"; CurrentFieldNo: Integer; var IsHandled: Boolean)
+    var
+        Hold: Code[20];
     begin
         if SalesLine."No." in [IndentHelper.TitleCode(), IndentHelper.TotalCode()] then begin
+            Hold := SalesLine."No.";
             if SalesLine.Type <> SalesLine.Type::" " then begin
                 SalesLine."No." := '';
                 SalesLine.Validate(Type, SalesLine.Type::" ");
-                SalesLine."No." := IndentHelper.TitleCode();
+                SalesLine."No." := Hold;
             end;
             IsHandled := true;
         end;

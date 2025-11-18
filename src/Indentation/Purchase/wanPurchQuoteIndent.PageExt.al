@@ -23,7 +23,7 @@ pageextension 87315 "wan Purch. Quote Indent" extends "Purchase Quote Subform"
             action(wanShiftLeft)
             {
                 ApplicationArea = All;
-                Caption = '', Locked = true;
+                Caption = ' ', Locked = true;
                 ToolTip = 'Shift Lines Left';
                 Image = PreviousRecord;
                 Enabled = wanEnabled and (Rec."wan Indentation" > 0);
@@ -39,7 +39,7 @@ pageextension 87315 "wan Purch. Quote Indent" extends "Purchase Quote Subform"
             action(wanShiftRight)
             {
                 ApplicationArea = All;
-                Caption = '', Locked = true;
+                Caption = ' ', Locked = true;
                 ToolTip = 'Shift Lines Right';
                 Image = NextRecord;
                 Enabled = wanEnabled;
@@ -81,6 +81,6 @@ pageextension 87315 "wan Purch. Quote Indent" extends "Purchase Quote Subform"
     begin
         wanEnabled := Rec.wanIsEnabled(CurrPage.Editable);
         wanStyle := Rec.wanStyle();
-        wanIndentation := Rec."wan Indentation";
+        wanIndentation := Rec.wanIndentation();
     end;
 }

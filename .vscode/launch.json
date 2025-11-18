@@ -1,24 +1,24 @@
 {
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "Wanamics Development",
-            "request": "launch",
-            "type": "al",
-            "server": "https://businesscentral.dynamics.com/",
-            "environmentType": "Sandbox",
-            "environmentName": "Development",
-            "tenant": "e58e4362-4ba1-46f8-b9da-326a8fa42dc7",
-            "port": 7049,
-            "authentication": "AAD",
-            "startupObjectType": "Page",
-            "startupObjectId": 9305,
-            // "schemaUpdateMode": "ForceSync",
-            "breakOnError": true,
-            "launchBrowser": true,
-            "enableLongRunningSqlStatements": true,
-            "enableSqlInformationDebugger": true
-        }
+        // {
+        //     "name": "Wanamics Development",
+        //     "request": "launch",
+        //     "type": "al",
+        //     "server": "https://businesscentral.dynamics.com/",
+        //     "environmentType": "Sandbox",
+        //     "environmentName": "Development",
+        //     "tenant": "e58e4362-4ba1-46f8-b9da-326a8fa42dc7",
+        //     "port": 7049,
+        //     "authentication": "AAD",
+        //     "startupObjectType": "Page",
+        //     "startupObjectId": 143,
+        //     // "schemaUpdateMode": "ForceSync",
+        //     "breakOnError": true,
+        //     "launchBrowser": true,
+        //     "enableLongRunningSqlStatements": true,
+        //     "enableSqlInformationDebugger": true
+        // }
         // ,
         // {
         //     "name": "Wanamics Development",
@@ -103,22 +103,22 @@
         //     "enableSqlInformationDebugger": true
         // }
         // ,
-        // {
-        //     "name": "Surcotec Dev",
-        //     "request": "launch",
-        //     "type": "al",
-        //     "server": "https://businesscentral.dynamics.com/",
-        //     "tenant":"ba217f05-1ceb-4441-b746-c7f997081f1c",
-        //     "environmentType": "Sandbox",
-        //     "environmentName": "Surcotec_Dev",
-        //     "startupCompany": "Surcotec",
-        //     "breakOnError": "ExcludeTry",
-        //     "launchBrowser": true,
-        //     "enableLongRunningSqlStatements": true,
-        //     "enableSqlInformationDebugger": true,
-        //     // "schemaUpdateMode": "ForceSync",
-        //     "startupObjectType": "Page",
-        //     "startupObjectId": 41
-        //     }
+        {
+            "name": "Surcotec Dev",
+            "request": "launch",
+            "type": "al",
+            "server": "https://businesscentral.dynamics.com/",
+            "tenant":"ba217f05-1ceb-4441-b746-c7f997081f1c",
+            "environmentType": "Sandbox",
+            "environmentName": "Surcotec_Dev",
+            "startupCompany": "Surcotec",
+            "breakOnError": "ExcludeTry",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            // "schemaUpdateMode": "ForceSync",
+            // "startupObjectType": "Page",
+            // "startupObjectId": 41
+            }
     ]
 }

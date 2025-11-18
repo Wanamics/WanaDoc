@@ -23,7 +23,7 @@ pageextension 87317 "wan Purch. Invoice Indent" extends "Purch. Invoice Subform"
             action(wanShiftLeft)
             {
                 ApplicationArea = All;
-                Caption = '', Locked = true;
+                Caption = ' ', Locked = true;
                 ToolTip = 'Shift Lines Left';
                 Image = PreviousRecord;
                 Enabled = wanEnabled and (Rec."wan Indentation" > 0);
@@ -39,7 +39,7 @@ pageextension 87317 "wan Purch. Invoice Indent" extends "Purch. Invoice Subform"
             action(wanShiftRight)
             {
                 ApplicationArea = All;
-                Caption = '', Locked = true;
+                Caption = ' ', Locked = true;
                 ToolTip = 'Shift Lines Right';
                 Image = NextRecord;
                 Enabled = wanEnabled;
@@ -81,6 +81,6 @@ pageextension 87317 "wan Purch. Invoice Indent" extends "Purch. Invoice Subform"
     begin
         wanEnabled := Rec.wanIsEnabled(CurrPage.Editable);
         wanStyle := Rec.wanStyle();
-        wanIndentation := Rec."wan Indentation";
+        wanIndentation := Rec.wanIndentation();
     end;
 }

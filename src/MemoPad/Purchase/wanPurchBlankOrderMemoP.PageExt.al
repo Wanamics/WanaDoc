@@ -3,6 +3,13 @@ namespace Wanamics.WanaDoc.MemoPad;
 using Microsoft.Purchases.Document;
 pageextension 87325 "wan Purch. Blank. Order MemoP." extends "Blanket Purchase Order Subform"
 {
+    layout
+    {
+        modify(Description)
+        {
+            Editable = not wanIsAttached;
+        }
+    }
     actions
     {
         addlast(processing)
@@ -26,4 +33,11 @@ pageextension 87325 "wan Purch. Blank. Order MemoP." extends "Blanket Purchase O
             }
         }
     }
+    var
+        wanIsAttached: Boolean;
+
+    trigger OnAfterGetCurrRecord()
+    begin
+        wanIsAttached := Rec."Attached to Line No." <> 0;
+    end;
 }

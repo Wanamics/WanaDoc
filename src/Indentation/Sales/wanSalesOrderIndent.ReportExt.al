@@ -3,7 +3,7 @@ namespace Wanamics.WanaDoc.Indentation;
 using Microsoft.Sales.Document;
 using Wanamics.WanaDoc.MemoPad;
 using System.Text;
-reportextension 87313 "wan Sales Order Indent." extends "Standard Sales - Order Conf."
+reportextension 87313 "wan Sales Order Indent" extends "Standard Sales - Order Conf."
 {
     dataset
     {
@@ -11,10 +11,10 @@ reportextension 87313 "wan Sales Order Indent." extends "Standard Sales - Order 
         {
             trigger OnAfterAfterGetRecord()
             var
-                MemoPadManagement: Codeunit "wan MemoPad Management";
+                IndentHelper: Codeunit "wan Indent Helper";
                 i: Integer;
             begin
-                MemoPadManagement.Indent(wanMemo, "wan Indentation");
+                IndentHelper.Indent(wanMemo, "wan Indentation");
                 wanTitleLineMemo := '';
                 wanTotalLineMemo := '';
                 wanTotalLineAmount := '';

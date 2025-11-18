@@ -1,9 +1,8 @@
 namespace Wanamics.WanaDoc.Indentation;
 
 using Microsoft.Sales.Document;
-using Wanamics.WanaDoc.MemoPad;
 using System.Text;
-reportextension 87310 "wan Sales Quote Indent." extends "Standard Sales - Quote"
+reportextension 87310 "wan Sales Quote Indent" extends "Standard Sales - Quote"
 {
     dataset
     {
@@ -11,10 +10,10 @@ reportextension 87310 "wan Sales Quote Indent." extends "Standard Sales - Quote"
         {
             trigger OnAfterAfterGetRecord()
             var
-                MemoPadManagement: Codeunit "wan MemoPad Management";
+                IndentHelper: Codeunit "wan Indent Helper";
                 i: Integer;
             begin
-                MemoPadManagement.Indent(wanMemo, "wan Indentation");
+                IndentHelper.Indent(wanMemo, "wan Indentation");
                 wanTitleLineMemo := '';
                 wanTotalLineMemo := '';
                 wanTotalLineAmount := '';
@@ -36,9 +35,9 @@ reportextension 87310 "wan Sales Quote Indent." extends "Standard Sales - Quote"
                         begin
                             for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
                                 // wanTotalLines[i]."Order Amount" += "Order Amount"; // for Invoice and CreditMemo
+                                // wanTotalLines[i]."Prepmt. Line Amount" += "Prepmt. Line Amount";
+                                // wanTotalLines[i]."Prepmt. Amt. Inv." += "Prepmt. Amt. Inv.";
                                 wanTotalLines[i]."Line Amount" += "Line Amount";
-                                wanTotalLines[i]."Prepmt. Line Amount" += "Prepmt. Line Amount";
-                                wanTotalLines[i]."Prepmt. Amt. Inv." += "Prepmt. Amt. Inv.";
                             end;
                         end;
                 end;
@@ -56,19 +55,22 @@ reportextension 87310 "wan Sales Quote Indent." extends "Standard Sales - Quote"
         AutoFormat: Codeunit "Auto Format";
         AutoFormatType: Enum "Auto Format";
     begin
-        if pTotalLine."Line Amount" <> 0 then
-            pTotalLineAmount := Format(pTotalLine."Line Amount", 0, AutoFormat.ResolveAutoFormat(AutoFormatType::AmountFormat, pTotalLine."Currency Code"));
+        // if pTotalLine."wan Order Amount" <> 0 then
+        //     pTotalOrderLineAmount := Format(pTotalLine."wan Order Amount", 0, AutoFormat.ResolveAutoFormat(AutoFormatType::AmountFormat, pTotalLine.GetCurrencyCode()));
         // if pTotalLine."Prepmt. Line Amount" <> 0 then
         //     pTotalPrepmtLineAmount := Format(pTotalLine."Prepmt. Line Amount", 0, AutoFormat.ResolveAutoFormat(AutoFormatType::AmountFormat, pTotalLine."Currency Code"));
         // if pTotalLine."Prepmt. Amt. Inv." <> 0 then
         //     pTotalPrepmtAmtInvLineAmount := Format(pTotalLine."Prepmt. Amt. Inv.", 0, AutoFormat.ResolveAutoFormat(AutoFormatType::AmountFormat, pTotalLine."Currency Code"));
+        if pTotalLine."Line Amount" <> 0 then
+            pTotalLineAmount := Format(pTotalLine."Line Amount", 0, AutoFormat.ResolveAutoFormat(AutoFormatType::AmountFormat, pTotalLine."Currency Code"));
     end;
 
     var
         wanTotalLines: array[10] of Record "Sales Line" temporary;
         wanTitleLineMemo: Text;
         wanTotalLineMemo: Text;
+        // wanTotalOrderLineAmount : Text;
+        // wanTotalPrepmtLineAmount: Text;
+        // wanTotalPrepmtAmtInvLineAmount: Text;
         wanTotalLineAmount: Text;
-    // wanTotalPrepmtLineAmount: Text;
-    // wanTotalPrepmtAmtInvLineAmount: Text;
 }

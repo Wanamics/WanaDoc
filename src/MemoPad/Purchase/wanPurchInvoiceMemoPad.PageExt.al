@@ -3,6 +3,13 @@ namespace Wanamics.WanaDoc.MemoPad;
 using Microsoft.Purchases.Document;
 pageextension 87322 "wan Purch. Invoice MemoPad" extends "Purch. Invoice Subform"
 {
+    layout
+    {
+        modify(Description)
+        {
+            Editable = not wanIsAttached;
+        }
+    }
     actions
     {
         addlast(processing)
@@ -26,4 +33,11 @@ pageextension 87322 "wan Purch. Invoice MemoPad" extends "Purch. Invoice Subform
             }
         }
     }
+    var
+        wanIsAttached: Boolean;
+
+    trigger OnAfterGetCurrRecord()
+    begin
+        wanIsAttached := Rec."Attached to Line No." <> 0;
+    end;
 }

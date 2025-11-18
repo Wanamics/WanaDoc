@@ -23,6 +23,6 @@ pageextension 87336 "wan Posted Purch. Inv. Indent" extends "Posted Purch. Invoi
     trigger OnAfterGetRecord()
     begin
         wanStyle := Rec.wanStyle();
-        wanIndentation := Rec."wan Indentation";
+        wanIndentation := Rec.wanIndentation();
     end;
 }

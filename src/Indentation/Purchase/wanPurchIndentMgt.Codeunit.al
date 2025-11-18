@@ -1,7 +1,7 @@
 namespace Wanamics.WanaDoc.Indentation;
 
 using Microsoft.Purchases.Document;
-using Microsoft.Purchases.History;
+using System.Utilities;
 
 codeunit 87315 "wan Purch. Indent. Mgt."
 {
@@ -13,6 +13,7 @@ codeunit 87315 "wan Purch. Indent. Mgt."
         SubLine: Record "Purchase Line";
         ShiftNotAllowedErr: Label 'shift not allowed';
     begin
+        pLine.TestField("Attached to Line No.", 0);
         pLine.SetLoadFields("wan Indentation");
         pLine.Setrange("Attached to Line No.", 0);
         if pShift < 0 then
@@ -46,6 +47,7 @@ codeunit 87315 "wan Purch. Indent. Mgt."
     local procedure ShiftAllowed(var pLine: Record "Purchase Line"; pShift: Integer): Boolean
     var
         PrevLine: Record "Purchase Line";
+        NextLine: Record "Purchase Line";
     begin
         if pShift > 0 then begin
             if not GetLine(pLine, '<', Prevline) then
@@ -53,11 +55,17 @@ codeunit 87315 "wan Purch. Indent. Mgt."
             if PrevLine.wanIsTitle() then
                 exit(pLine."wan Indentation" >= PrevLine."wan Indentation")
             else
-                exit(pLine."wan Indentation" > PrevLine."wan Indentation");
-        end else
+                exit(pLine."wan Indentation" < PrevLine."wan Indentation");
+        end else begin
             if pLine."wan Indentation" <= 0 then
                 exit(false);
-        exit(true);
+            if not GetLine(pLine, '>', NextLine) then
+                exit(true)
+            else if pLine.wanIsTitle() then
+                exit(NextLine."wan Indentation" <= pLine."wan Indentation")
+            else
+                exit(NextLine."wan Indentation" < pLine."wan Indentation");
+        end;
     end;
 
     local procedure GetLine(pSourceLine: Record "Purchase Line"; pWhere: Text; var pTargetLine: Record "Purchase Line"): Boolean
@@ -88,6 +96,7 @@ codeunit 87315 "wan Purch. Indent. Mgt."
     local procedure OnAfterInsert(var Rec: Record "Purchase Line"; RunTrigger: Boolean)
     var
         PrevLine: Record "Purchase Line";
+        Math: Codeunit Math;
     begin
         if Rec.IsTemporary then
             exit;
@@ -96,14 +105,14 @@ codeunit 87315 "wan Purch. Indent. Mgt."
         if not GetLine(Rec, '<', PrevLine) then
             exit;
         if PrevLine.wanIsTotal() then
-            Rec."wan Indentation" := PrevLine."wan Indentation" - 1
-        else if not PrevLine.wanIsTitle() then
-            Rec."wan Indentation" := PrevLine."wan Indentation"
+            Rec."wan Indentation" := Math.Max(PrevLine."wan Indentation" - 1, 0)
+        else if PrevLine.wanIsTitle() then
+            // if Rec.wanIsTitle() then
+            //     Rec."wan Indentation" := PrevLine."wan Indentation"
+            // else 
+                Rec."wan Indentation" := PrevLine."wan Indentation" + 1
         else
-            if Rec.wanIsTitle() then
-                Rec."wan Indentation" := PrevLine."wan Indentation"
-            else
-                Rec."wan Indentation" := PrevLine."wan Indentation" + 1;
+            Rec."wan Indentation" := PrevLine."wan Indentation";
         Rec.Modify(false);
     end;
 
@@ -133,12 +142,15 @@ codeunit 87315 "wan Purch. Indent. Mgt."
 
     [EventSubscriber(ObjectType::Table, Database::"Purchase Line", OnBeforeValidateNo, '', false, false)]
     local procedure OnBeforeValidateNo(var PurchaseLine: Record "Purchase Line"; xPurchaseLine: Record "Purchase Line"; CurrentFieldNo: Integer; var IsHandled: Boolean)
+    var
+        Hold: Code[20];
     begin
         if PurchaseLine."No." in [IndentHelper.TitleCode(), IndentHelper.TotalCode()] then begin
+            Hold := PurchaseLine."No.";
             if PurchaseLine.Type <> PurchaseLine.Type::" " then begin
                 PurchaseLine."No." := '';
                 PurchaseLine.Validate(Type, PurchaseLine.Type::" ");
-                PurchaseLine."No." := IndentHelper.TitleCode();
+                PurchaseLine."No." := Hold;
             end;
             IsHandled := true;
         end;
@@ -179,11 +191,11 @@ codeunit 87315 "wan Purch. Indent. Mgt."
         Line.SetRange("Attached to Line No.", 0);
         if Line.FindSet() then
             repeat
-                if (Line."wan Indentation" <= pLine."wan Indentation") or IndentHelper.IsTotal(Line.Type, Line."No.") then
+                if (Line."wan Indentation" <= pLine."wan Indentation") or Line.wanIsTotal() then
                     break;
                 xLine := Line;
             until Line.Next() = 0;
-        if (Line."wan Indentation" = pLine."wan Indentation" + 1) and IndentHelper.IsTotal(Line.Type, Line."No.") then
+        if (Line."wan Indentation" = pLine."wan Indentation" + 1) and Line.wanIsTotal() then
             exit;
         if GetLine(xLine, '>', Line) then
             Line."Line No." := (Line."Line No." + xLine."Line No.") div 2
@@ -192,7 +204,7 @@ codeunit 87315 "wan Purch. Indent. Mgt."
         Line.Init();
         Line."No." := IndentHelper.TotalCode();
         Line."wan Indentation" := pLine."wan Indentation" + 1;
-        Line.Description := CopyStr(StrSubstNo(TotalLbl, pLine.Description), 1, maxstrlen(Line.Description));
+        Line.Description := CopyStr(StrSubstNo(TotalLbl, pLine.Description), 1, MaxStrLen(Line.Description));
         Line.Insert(false);
     end;
 }
