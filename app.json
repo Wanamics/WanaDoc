@@ -3,7 +3,7 @@
   "id": "c1143780-9ae5-4f2c-85a5-6aaf42a8da39",
   "name": "WanaDoc",
   "publisher": "Wanamics",
-  "version": "27.0.0.2",
+  "version": "27.0.0.5",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -16,7 +16,7 @@
   "screenshots": [],
   "platform": "25.0.0.0",
   "application": "25.0.0.0",
-  "contextSensitiveHelpUrl": "https://www.wanamics.fr/WanaDoc/",
+  "contextSensitiveHelpUrl": "https://github.com/Wanamics/WanaDoc?tab=readme-ov-file#extension-wanadoc",
   "idRanges": [
     {
       "from": 87300,

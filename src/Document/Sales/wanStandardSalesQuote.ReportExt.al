@@ -34,6 +34,7 @@ reportextension 87304 "wan Standard Sales - Quote" extends "Standard Sales - Quo
             column(wanPromDelivDate_Lbl; FieldCaption("Promised Delivery Date")) { }
             column(wanVersion; DocumentHelper.GetVersion("No. of Archived Versions")) { }
             column(wanShipmentMethodDescription_Lbl; DocumentHelper.iIf(ShipmentMethod.Description = '', '', ShptMethodDescLbl)) { }
+            column(wanRegistrationNo_Lbl; DocumentHelper.iIf("VAT Registration No." = '', '', FieldCaption("VAT Registration No."))) { }
         }
         modify(Header)
         {

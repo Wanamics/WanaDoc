@@ -1,10 +1,10 @@
 namespace Wanamics.WanaDoc.Document;
 
+using Wanamics.WanaDoc.MemoPad;
 using Microsoft.Sales.Document;
 using Microsoft.Sales.Customer;
 using Microsoft.Finance.VAT.Clause;
 using Microsoft.Finance.VAT.Setup;
-using Wanamics.WanaDoc.MemoPad;
 using Microsoft.Foundation.Address;
 using Microsoft.Inventory.Item;
 reportextension 87305 "wan Standard Sales Order Conf." extends "Standard Sales - Order Conf."
@@ -29,10 +29,13 @@ reportextension 87305 "wan Standard Sales Order Conf." extends "Standard Sales -
             column(wanMailBodyText; wanMailBody_Lbl) { }
             column(wanMailClosingText; wanMailClosing_Lbl) { }
             column(wanReqDelivDate; DocumentHelper.FormatDate("Requested Delivery Date")) { }
-            column(wanReqDelivDate_Lbl; FieldCaption("Requested Delivery Date")) { }
+            column(wanReqDelivDate_Lbl; DocumentHelper.iIf("Requested Delivery Date" = 0D, '', FieldCaption("Requested Delivery Date"))) { }
             column(wanPromDelivDate; DocumentHelper.FormatDate("Promised Delivery Date")) { }
-            column(wanPromDelivDate_Lbl; FieldCaption("Promised Delivery Date")) { }
+            column(wanPromDelivDate_Lbl; DocumentHelper.iIf("Promised Delivery Date" = 0D, '', FieldCaption("Promised Delivery Date"))) { }
             column(wanVersion; DocumentHelper.GetVersion("No. of Archived Versions")) { }
+            column(wanQuoteNo_Lbl; DocumentHelper.iIf("Quote No." = '', '', FieldCaption("Quote No."))) { }
+            column(wanShipmentMethodDescription_Lbl; DocumentHelper.iIf(ShipmentMethod.Description = '', '', ShptMethodDescLbl)) { }
+            column(wanRegistrationNo_Lbl; DocumentHelper.iIf("VAT Registration No." = '', '', FieldCaption("VAT Registration No."))) { }
         }
         modify(Header)
         {
@@ -55,6 +58,7 @@ reportextension 87305 "wan Standard Sales Order Conf." extends "Standard Sales -
                 wanLine.SetRange("Document No.", "No.");
                 wanLine.SetFilter("Line Discount %", '<>0');
                 wanHasLineDiscount := not wanLine.IsEmpty();
+                CheckPromisedDeliveryAndShipmentDates(Header);
             end;
         }
         modify(Line)
@@ -160,6 +164,27 @@ reportextension 87305 "wan Standard Sales Order Conf." extends "Standard Sales -
             exit(pLine."Unit of Measure")
         else
             exit(DocumentHelper.iif(pLine.Type = pLine.Type::" ", '', Format(pLine.Quantity) + MemoPad.LineFeed() + pLine."Unit of Measure"));
+    end;
+
+    local procedure CheckPromisedDeliveryAndShipmentDates(pHeader: Record "Sales Header")
+    var
+        SalesLine: Record "Sales Line";
+        CantBeGTLineErr: Label 'can''t be greater than the earliest one on outstanding sales lines';
+    begin
+        pHeader.TestField("Shipment Date");
+        pHeader.TestField("Promised Delivery Date");
+        SalesLine.SetRange("Document Type", pHeader."Document Type");
+        SalesLine.SetRange("Document No.", pHeader."No.");
+        SalesLine.SetFilter(Type, '<>%1', SalesLine.Type::" ");
+        SalesLine.SetFilter("Outstanding Quantity", '>0');
+        SalesLine.SetLoadFields("Promised Delivery Date", "Shipment Date");
+        if SalesLine.FindSet() then
+            repeat
+                if SalesLine."Promised Delivery Date" < pHeader."Promised Delivery Date" then
+                    pHeader.FieldError("Promised Delivery Date", CantBeGTLineErr);
+                if SalesLine."Shipment Date" < pHeader."Shipment Date" then
+                    pHeader.FieldError("Shipment Date", CantBeGTLineErr);
+            until SalesLine.Next() = 0;
     end;
 
     [IntegrationEvent(true, false)]

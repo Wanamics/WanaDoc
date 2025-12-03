@@ -1,10 +1,10 @@
 namespace Wanamics.WanaDoc.Document;
 
+using Wanamics.WanaDoc.MemoPad;
 using Microsoft.Sales.Document;
 using Microsoft.Sales.Customer;
 using Microsoft.Finance.VAT.Clause;
 using Microsoft.Finance.VAT.Setup;
-using Wanamics.WanaDoc.MemoPad;
 using Microsoft.Foundation.Address;
 using Microsoft.Inventory.Item;
 using System.Utilities;
@@ -37,6 +37,9 @@ reportextension 87302 "wan Standard Sales ProFormaInv" extends "Standard Sales -
             column(wanPromDelivDate; DocumentHelper.FormatDate("Promised Delivery Date")) { }
             column(wanPromDelivDate_Lbl; DocumentHelper.iIf("Promised Delivery Date" = 0D, '', FieldCaption("Promised Delivery Date"))) { }
             column(wanVersion; DocumentHelper.GetVersion("No. of Archived Versions")) { }
+            column(wanQuoteNo_Lbl; DocumentHelper.iIf("Quote No." = '', '', FieldCaption("Quote No."))) { }
+            column(wanShipmentMethodDescription_Lbl; DocumentHelper.iIf(ShipmentMethod.Description = '', '', ShipmentMethod.TableCaption())) { }
+            column(wanRegistrationNo_Lbl; DocumentHelper.iIf("VAT Registration No." = '', '', FieldCaption("VAT Registration No."))) { }
             //[+ from SalesOrderConf to inherit from the same layout
             column(Page_Lbl; Page_Lbl) { }
             column(SalesPersonText_Lbl; SalepersonPurchaser.TableCaption()) { }
@@ -50,6 +53,16 @@ reportextension 87302 "wan Standard Sales ProFormaInv" extends "Standard Sales -
             column(VATRegistrationNo; "VAT Registration No.") { }
             column(CompanyLegalStatement; '') { }
             column(Invoice_Lbl; Invoice_Lbl) { }
+
+            // column(ShipToAddress_Lbl; ShiptoAddrLbl) { }
+            // column(ShipToAddress1; ShipToAddr[1]) { }
+            // column(ShipToAddress2; ShipToAddr[2]) { }
+            // column(ShipToAddress3; ShipToAddr[3]) { }
+            // column(ShipToAddress4; ShipToAddr[4]) { }
+            // column(ShipToAddress5; ShipToAddr[5]) { }
+            // column(ShipToAddress6; ShipToAddr[6]) { }
+            // column(ShipToAddress7; ShipToAddr[7]) { }
+            // column(ShipToAddress8; ShipToAddr[8]) { }
             //]
         }
         modify(Header)
@@ -83,6 +96,7 @@ reportextension 87302 "wan Standard Sales ProFormaInv" extends "Standard Sales -
                     PaymentTerms.TranslateDescription(PaymentTerms, "Language Code")
                 else
                     PaymentTerms.Init();
+                FormatAddr.SalesHeaderShipTo(ShipToAddr, CustomerAddress, Header);
                 //]
             end;
         }
@@ -150,7 +164,7 @@ reportextension 87302 "wan Standard Sales ProFormaInv" extends "Standard Sales -
     }
     var
         MemoPad: Codeunit "wan MemoPad Sales";
-        FormatAddress: Codeunit "Format Address";
+        FormatAddr: Codeunit "Format Address";
         SellToAddress_Lbl: Label 'Sell-to';
         SellToAddress: Text;
         ShipToAddress_Lbl: Label 'Ship-to';
@@ -171,9 +185,11 @@ reportextension 87302 "wan Standard Sales ProFormaInv" extends "Standard Sales -
         //[+ from SalesOrderConf to inherit from the same layout
         Invoice_Lbl: Label 'Proforma invoice';
         Page_Lbl: Label 'Page';
+        ShiptoAddrLbl: Label 'Ship-to Address';
         SalepersonPurchaser: Record "Salesperson/Purchaser";
         ShipmentMethod: Record "Shipment Method";
         PaymentTerms: Record "Payment Terms";
+        ShipToAddr: array[8] of Text[100];
     //]
 
     var
