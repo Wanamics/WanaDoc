@@ -21,10 +21,17 @@ codeunit 87301 "wan Document Helper"
         CompanyInfo: Record "Company Information";
         BankAccount: Record "Bank Account";
         PaymentMethod: Record "Payment Method";
+        DefaultBankAccount: Record "Bank Account";
 
     procedure GetCompanyInfo(var pCompanyAddress: Text; var pCompanyContactInfo: Text; var pCompanyLegalInfo: Text)
     var
         Addr: array[8] of Text[100];
+        CompanyInfoRecordRef: RecordRef;
+        frLegalFormCaption, frLegalFormValue : Text;
+        frStockCapitalCaption, frStockCapitalValue : Text;
+        frAPECodeCaption, frAPECodeValue : Text;
+        frTradeRegisterCaption, frTradeRegisterValue : Text;
+        frDefaultBalAccountCaption, frDefaultBalAccountValue : Text;
     begin
         CompanyInfo.Get();
         FormatAddress.Company(Addr, CompanyInfo);
@@ -37,10 +44,35 @@ codeunit 87301 "wan Document Helper"
         if CompanyInfo."Home Page" <> '' then
             pCompanyContactInfo += LineFeed() + CompanyInfo."Home Page";
 
+        CompanyInfoRecordRef.GetTable(CompanyInfo);
+        GetLocalizationField(CompanyInfoRecordRef, 10801, frTradeRegisterCaption, frTradeRegisterValue);
+        GetLocalizationField(CompanyInfoRecordRef, 10802, frAPECodeCaption, frAPECodeValue);
+        GetLocalizationField(CompanyInfoRecordRef, 10803, frLegalFormCaption, frLegalFormValue);
+        GetLocalizationField(CompanyInfoRecordRef, 10804, frStockCapitalCaption, frStockCapitalValue);
+        GetLocalizationField(CompanyInfoRecordRef, 10810, frDefaultBalAccountCaption, frDefaultBalAccountValue);
+
+        if (frLegalFormValue <> '') or (frStockCapitalValue <> '') then
+            pCompanyLegalInfo += frLegalFormValue + ', ' + frStockCapitalCaption + ' ' + frStockCapitalValue + LineFeed();
         if CompanyInfo."Registration No." <> '' then
-            pCompanyLegalInfo += LineFeed() + CompanyInfo.FieldCaption("Registration No.") + ' ' + CompanyInfo."Registration No.";
+            pCompanyLegalInfo += CompanyInfo.FieldCaption("Registration No.") + ' ' + CompanyInfo."Registration No." + LineFeed();
+        if frAPECodeValue <> '' then
+            pCompanyLegalInfo += frAPECodeCaption + ' ' + frAPECodeValue + LineFeed();
+        if frTradeRegisterValue <> '' then
+            pCompanyLegalInfo += frTradeRegisterCaption + ' ' + frTradeRegisterValue + LineFeed();
         if CompanyInfo."VAT Registration No." <> '' then
-            pCompanyLegalInfo += LineFeed() + CompanyInfo.FieldCaption("VAT Registration No.") + ' ' + CompanyInfo."VAT Registration No.";
+            pCompanyLegalInfo += CompanyInfo.FieldCaption("VAT Registration No.") + ' ' + CompanyInfo."VAT Registration No." + LineFeed();
+
+        if frDefaultBalAccountValue <> '' then
+            DefaultBankAccount.Get(frDefaultBalAccountValue);
+    end;
+
+    local procedure GetLocalizationField(var pRecordRef: RecordRef; pFieldNo: Integer; pCaption: Text; pValue: Text)
+    var
+        FldRef: Fieldref;
+    begin
+        FldRef := pRecordRef.Field(pFieldNo);
+        pCaption := FldRef.Caption;
+        pValue := FldRef.Value;
     end;
 
     procedure PaymentMethodText(pLanguageCode: Code[10]; pPaymentMethodCode: Code[10]; pCompanyBankAccountNo: Code[20]; pCustomerNo: Code[20]; pSDDMandateId: Code[35]): Text;
@@ -63,7 +95,9 @@ codeunit 87301 "wan Document Helper"
                 if CustomerBankAccount.Get(pCustomerNo, SDDMandate."Customer Bank Account Code") then;
             exit(StrSubstNo(DirectDebitLbl, pSDDMandateId, CustomerBankAccount.Name, FormatIBAN(CustomerBankAccount.IBAN)));
         end else begin
-            if pCompanyBankAccountNo <> BankAccount."No." then
+            if pCompanyBankAccountNo = '' then
+                BankAccount := DefaultBankAccount
+            else
                 BankAccount.Get(pCompanyBankAccountNo);
             exit(StrSubstNo(PaymentMethodLbl, PaymentMethod.Description, BankAccount.Name, FormatIBAN(BankAccount.IBAN), BankAccount."SWIFT Code"))
         end;
