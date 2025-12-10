@@ -11,6 +11,7 @@ using Microsoft.Sales.Document;
 using Microsoft.Inventory.Ledger;
 using Microsoft.CRM.Contact;
 using Microsoft.CRM.Setup;
+using System.Reflection;
 codeunit 87301 "wan Document Helper"
 {
     var
@@ -66,10 +67,13 @@ codeunit 87301 "wan Document Helper"
             DefaultBankAccount.Get(frDefaultBalAccountValue);
     end;
 
-    local procedure GetLocalizationField(var pRecordRef: RecordRef; pFieldNo: Integer; pCaption: Text; pValue: Text)
+    local procedure GetLocalizationField(var pRecordRef: RecordRef; pFieldNo: Integer; var pCaption: Text; var pValue: Text)
     var
         FldRef: Fieldref;
+        Field: Record Field;
     begin
+        if not Field.Get(pRecordRef.Number(), pFieldNo) then
+            exit;
         FldRef := pRecordRef.Field(pFieldNo);
         pCaption := FldRef.Caption;
         pValue := FldRef.Value;
