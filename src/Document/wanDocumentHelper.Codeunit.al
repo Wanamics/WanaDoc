@@ -111,6 +111,9 @@ codeunit 87301 "wan Document Helper"
     var
         i: Integer;
     begin
+        if StrLen(pIBAN) >= 27 /* FR IBAN without space */ then
+            exit(pIBAN);
+        pIBAN := DelChr(pIBAN, '=', ' ');
         for i := 1 to StrLen(pIBAN) do begin
             if (i - 1) mod 4 = 0 then
                 ReturnValue += ' ';

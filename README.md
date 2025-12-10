@@ -119,7 +119,7 @@ Les balises ci-après sont applicables à d’autres documents :
 |||
 |-|-|
 wanVersion	|Préfixe *R* suivi du **Nbre versions archivées** (vide si aucune version archivée).
-| | |
+wanPaymentMethodText|Reprend la désignation du mode de règlement complétée des coordonnées bancaires de la société et du N° de mandat le cas échéant.|
 
 ### Configuration
 Vous devrez alors sélectionner l’état et la présentation souhaitée (Cf. [Soignez votre image avec des états personnalisés – Wanamics](https://www.wanamics.fr/soignez-votre-image-avec-des-etats-personnalises/)) parmi les suivants :
