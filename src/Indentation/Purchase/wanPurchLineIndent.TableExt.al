@@ -34,7 +34,7 @@ tableextension 87315 "wan Purch. Line Indent" extends "Purchase Line"
         if "Attached to Line No." = 0 then
             exit(Rec."wan Indentation")
         else
-            if AttachedToLine.Get("Document No.", "Attached to Line No.") then
+            if AttachedToLine.Get("Document Type", "Document No.", "Attached to Line No.") then
                 exit(AttachedToLine."wan Indentation");
     end;
 
