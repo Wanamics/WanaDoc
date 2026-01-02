@@ -165,7 +165,7 @@ Lors de l’impression, les lignes ainsi attachées forment également un mémo 
 ![MemoPad - Impression](images/memopad-impression.png)
 
 ### Relances
-La fonction MemoPad est également disponible pour définir les textes de début et fin associés aux niveaux de relance.
+La fonction MemoPad est également disponible pour définir les textes de début et fin associés aux niveaux de relance (qu'il s'agisse des anciens textes ou des nouveaux associés à la **Communication client**).
 
 ![MemoPad - Relances](images/memopad-relances.png)
 

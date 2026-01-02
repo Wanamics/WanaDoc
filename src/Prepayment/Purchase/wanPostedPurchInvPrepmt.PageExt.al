@@ -1,11 +1,8 @@
 namespace Wanamics.WanaDoc.Prepayment;
 
-using Microsoft.Sales.History;
 using Microsoft.Purchases.History;
-using Microsoft.Purchases.Comment;
-using Microsoft.Purchases.Document;
 
-pageextension 87306 "wan Posted Purch. Inv. Prepmt." extends "Posted Purch. Invoice Subform"
+pageextension 87307 "wan Posted Purch. Inv. Prepmt." extends "Posted Purch. Invoice Subform"
 {
     layout
     {
