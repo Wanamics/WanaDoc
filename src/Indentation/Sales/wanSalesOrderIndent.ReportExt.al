@@ -1,7 +1,6 @@
 namespace Wanamics.WanaDoc.Indentation;
 
 using Microsoft.Sales.Document;
-using Wanamics.WanaDoc.MemoPad;
 using System.Text;
 reportextension 87313 "wan Sales Order Indent" extends "Standard Sales - Order Conf."
 {
@@ -35,7 +34,6 @@ reportextension 87313 "wan Sales Order Indent" extends "Standard Sales - Order C
                     "wan Indentation" > 0:
                         begin
                             for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
-                                // wanTotalLines[i]."Order Amount" += "Order Amount"; // for Invoice and CreditMemo
                                 wanTotalLines[i]."Line Amount" += "Line Amount";
                                 wanTotalLines[i]."Prepmt. Line Amount" += "Prepmt. Line Amount";
                                 wanTotalLines[i]."Prepmt. Amt. Inv." += "Prepmt. Amt. Inv.";
@@ -69,6 +67,4 @@ reportextension 87313 "wan Sales Order Indent" extends "Standard Sales - Order C
         wanTitleLineMemo: Text;
         wanTotalLineMemo: Text;
         wanTotalLineAmount: Text;
-    // wanTotalPrepmtLineAmount: Text;
-    // wanpTotalPrepmtAmtInvLineAmount: Text;
 }

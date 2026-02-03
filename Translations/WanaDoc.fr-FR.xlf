@@ -1635,6 +1635,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales - Cr. Memo - NamedType wanMailGreeting_Lbl</note>
         </trans-unit>
+        <trans-unit id="ReportExtension 2185700357 - ReportLayout 1516863036 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2400634003">
+          <source>The WanaDoc Sales Cr. Memo (Word) provides a detailed layout.</source>
+          <target>La présentation WanaDoc est détaillée.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales - Cr. Memo - ReportLayout WanaDocSalesInvoice - Property Summary</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 2185700357 - ReportLayout 1516863036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2400634003">
+          <source>WanaDoc Sales Cr. Memo (Word)</source>
+          <target>Avoir vente (WanaDoc)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales - Cr. Memo - ReportLayout WanaDocSalesInvoice - Property Caption</note>
+        </trans-unit>
         <trans-unit id="ReportExtension 1413056673 - NamedType 2057050429" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 1413056673">
           <source>Bill-to</source>
           <target>Facturation</target>
@@ -1677,17 +1689,17 @@
           <note from="Developer" annotates="general" priority="2">%1: Document No., %2: Posting Date</note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales - Invoice - Method ShipmentLines - NamedType Shipment_Lbl</note>
         </trans-unit>
-        <trans-unit id="ReportExtension 1413056673 - ReportLayout 786170738 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+        <trans-unit id="ReportExtension 1413056673 - ReportLayout 1516863036 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
           <source>The WanaDoc Sales Invoice (Word) provides a detailed layout.</source>
           <target>La présentation Facture vente WanaDoc (Word) est détaillée.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales - Invoice - ReportLayout StandardSalesQuote.rdlc - Property Summary</note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales - Invoice - ReportLayout WanaDocSalesInvoice - Property Summary</note>
         </trans-unit>
-        <trans-unit id="ReportExtension 1413056673 - ReportLayout 786170738 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+        <trans-unit id="ReportExtension 1413056673 - ReportLayout 1516863036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
           <source>WanaDoc Sales Invoice (Word)</source>
           <target>Facture vente WanaDoc (Word)</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales - Invoice - ReportLayout StandardSalesQuote.rdlc - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales - Invoice - ReportLayout WanaDocSalesInvoice - Property Caption</note>
         </trans-unit>
         <trans-unit id="ReportExtension 1062312616 - NamedType 2057050429" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 1062312616">
           <source>Bill-to</source>
@@ -1833,6 +1845,12 @@
           <note from="Developer" annotates="general" priority="2">%1:FieldCaption("Net Weight"), %2: TotalNetWeight</note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales Order Conf. - NamedType wanTotalNetWeightLbl</note>
         </trans-unit>
+        <trans-unit id="ReportExtension 2169442377 - Method 4197677543 - NamedType 1125251473" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 2169442377">
+          <source>can't be greater than the earliest one on outstanding sales lines</source>
+          <target>ne peut être postérieure à celle au plus tôt des lignes</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales Order Conf. - Method CheckPromisedDeliveryAndShipmentDates - NamedType CantBeGTLineErr</note>
+        </trans-unit>
         <trans-unit id="ReportExtension 2169442377 - ReportLayout 3147185419 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2043161662">
           <source>The WanaDoc Sales Order Confirmation (Word) provides a detailed layout.</source>
           <target>La présentation Confirmation commande vente WanaDoc (Word) est détaillée.</target>
@@ -1875,6 +1893,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales ProFormaInv - NamedType ShipToAddress_Lbl</note>
         </trans-unit>
+        <trans-unit id="ReportExtension 591706244 - NamedType 2039684796" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 591706244">
+          <source>Ship-to Address</source>
+          <target>Adresse destinataire</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales ProFormaInv - NamedType ShiptoAddrLbl</note>
+        </trans-unit>
         <trans-unit id="ReportExtension 591706244 - NamedType 1667486000" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 591706244">
           <source>Thank you for your business. Our order confirmation is attached to this message.</source>
           <target>Nous vous remercions de votre confiance. Confirmation de commande en pièce jointe.</target>
@@ -1916,30 +1940,6 @@
           <target>Facture proforma WanaDoc (Word)</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Standard Sales ProFormaInv - ReportLayout WanaDocProFormaInv - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="ReportExtension 2801569361 - ReportLayout 366754897 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 87408810">
-          <source>The WanaDoc Reminder (Word) provides a detailed layout.</source>
-          <target>La présentation Relance WanaDoc (Word) reprend le détail des lignes.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension WanaDoc Reminder - ReportLayout WanaDocReminder - Property Summary</note>
-        </trans-unit>
-        <trans-unit id="ReportExtension 2801569361 - ReportLayout 366754897 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 87408810">
-          <source>WanaDoc Reminder (Word)</source>
-          <target>Relance WanaDoc (Word)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension WanaDoc Reminder - ReportLayout WanaDocReminder - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="ReportExtension 2801569361 - ReportLayout 2489336813 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 87408810">
-          <source>The WanaDoc Reminder e-mail (Word) provides a detailed layout.</source>
-          <target>La présentation Relance e-mail WanaDoc (Word) reprend le détail des lignes.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension WanaDoc Reminder - ReportLayout WanaDocReminderEmail - Property Summary</note>
-        </trans-unit>
-        <trans-unit id="ReportExtension 2801569361 - ReportLayout 2489336813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 87408810">
-          <source>WanaDoc Reminder e-mail (Word)</source>
-          <target>Relance e-mail WanaDoc (Word)</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension WanaDoc Reminder - ReportLayout WanaDocReminderEmail - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2793207324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Excel Buffer Extended</source>

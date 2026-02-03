@@ -171,8 +171,6 @@ reportextension 87305 "wan Standard Sales Order Conf." extends "Standard Sales -
         SalesLine: Record "Sales Line";
         CantBeGTLineErr: Label 'can''t be greater than the earliest one on outstanding sales lines';
     begin
-        // pHeader.TestField("Shipment Date");
-        // pHeader.TestField("Promised Delivery Date");
         if (pHeader."Shipment Date" = 0D) and (pHeader."Promised Delivery Date" = 0D) then
             exit;
         SalesLine.SetRange("Document Type", pHeader."Document Type");
@@ -182,10 +180,8 @@ reportextension 87305 "wan Standard Sales Order Conf." extends "Standard Sales -
         SalesLine.SetLoadFields("Promised Delivery Date", "Shipment Date");
         if SalesLine.FindSet() then
             repeat
-                // if pHeader."Promised Delivery Date" <> 0D then
-                if SalesLine."Promised Delivery Date" < pHeader."Promised Delivery Date" then
+                if (SalesLine."Promised Delivery Date" < pHeader."Promised Delivery Date") and (SalesLine."Promised Delivery Date" <> 0D) then
                     pHeader.FieldError("Promised Delivery Date", CantBeGTLineErr);
-                // if pHeader."Shipment Date" <> 0D then
                 if SalesLine."Shipment Date" < pHeader."Shipment Date" then
                     pHeader.FieldError("Shipment Date", CantBeGTLineErr);
             until SalesLine.Next() = 0;

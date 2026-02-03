@@ -34,9 +34,6 @@ reportextension 87310 "wan Sales Quote Indent" extends "Standard Sales - Quote"
                     "wan Indentation" > 0:
                         begin
                             for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
-                                // wanTotalLines[i]."Order Amount" += "Order Amount"; // for Invoice and CreditMemo
-                                // wanTotalLines[i]."Prepmt. Line Amount" += "Prepmt. Line Amount";
-                                // wanTotalLines[i]."Prepmt. Amt. Inv." += "Prepmt. Amt. Inv.";
                                 wanTotalLines[i]."Line Amount" += "Line Amount";
                             end;
                         end;
@@ -69,8 +66,5 @@ reportextension 87310 "wan Sales Quote Indent" extends "Standard Sales - Quote"
         wanTotalLines: array[10] of Record "Sales Line" temporary;
         wanTitleLineMemo: Text;
         wanTotalLineMemo: Text;
-        // wanTotalOrderLineAmount : Text;
-        // wanTotalPrepmtLineAmount: Text;
-        // wanTotalPrepmtAmtInvLineAmount: Text;
         wanTotalLineAmount: Text;
 }
