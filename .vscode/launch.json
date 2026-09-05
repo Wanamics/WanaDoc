@@ -20,6 +20,25 @@
         //     "enableSqlInformationDebugger": true
         // }
         // ,
+        {
+            "name": "Wanamics BC28",
+            "request": "launch",
+            "type": "al",
+            "server": "https://businesscentral.dynamics.com/",
+            "environmentType": "Sandbox",
+            "environmentName": "BC28",
+            "tenant": "e58e4362-4ba1-46f8-b9da-326a8fa42dc7",
+            "port": 7049,
+            "authentication": "AAD",
+            "startupObjectType": "Page",
+            "startupObjectId": 143,
+            // "schemaUpdateMode": "ForceSync",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true
+        }
+        ,
         // {
         //     "name": "Wanamics Development",
         //     "request": "launch",

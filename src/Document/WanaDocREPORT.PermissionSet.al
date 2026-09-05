@@ -1,3 +1,6 @@
+namespace Wanamics.WanaDoc.Document;
+using Wanamics.WanaDoc.Prepayment;
+
 permissionset 87300 "WanaDoc_REPORT"
 {
     Access = Internal;
@@ -13,7 +16,7 @@ permissionset 87300 "WanaDoc_REPORT"
         codeunit "WanaDoc Purchase Events" = X,
         codeunit "WanaDoc Sales Events" = X,
         page "wan Document Contents" = X,
-        page "wan Reminder Level" = X,
+        // page "wan Reminder Level" = X,
         report "wan Purchase - Blanket Order" = X,
         report "wan Purchase - Quote" = X,
         report "wan Sales - Blanket Order" = X;

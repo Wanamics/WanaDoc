@@ -43,6 +43,7 @@ page 87301 "wan Document Contents"
                     Caption = 'Content';
                     MultiLine = true;
                     // ExtendedDatatype = RichContent;
+                    ToolTip = 'Specifies the value of the Content field.';
 
                     trigger OnValidate()
                     begin

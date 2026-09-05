@@ -1,75 +1,71 @@
 namespace Wanamics.WanaDoc.Excel;
 
+using Microsoft.Finance.GeneralLedger.Setup;
 using Microsoft.Sales.Document;
 using System.IO;
-using Microsoft.Finance.GeneralLedger.Setup;
 Codeunit 87369 "wan Excel Sales Lines"
 {
-    trigger OnRun()
-    begin
-    end;
-
     var
-        ExcelBuffer: Record "Excel Buffer" temporary;
+        TempExcelBuffer: Record "Excel Buffer" temporary;
+        TempExcelBufferExtended: Record "wan Excel Buffer Extended" temporary;
         RowNo: Integer;
         ColumnNo: Integer;
-        SheetName: Label 'Data';
-        ExcelBufferExtended: Record "wan Excel Buffer Extended" temporary;
+        SheetNameLbl: Label 'Data';
         DescriptionMemo: Text;
 
     procedure Import(var pRec: Record "Sales Line")
     var
-        ImportFromExcelTitle: Label 'Import Excel File';
-        ExcelFileCaption: Label 'Excel Files (*.xlsx)';
+        ImportFromExcelTitleLbl: Label 'Import Excel File';
+        ExcelFileCaptionLbl: Label 'Excel Files (*.xlsx)';
         ExcelFileExtensionTok: Label '.xlsx', Locked = true;
         InStream: InStream;
         FileName: Text;
     begin
         if UploadIntoStream('', '', '', FileName, InStream) then begin
-            ExcelBuffer.LOCKTABLE;
-            ExcelBuffer.OpenBookStream(InStream, SheetName);
-            ExcelBuffer.ReadSheet();
+            TempExcelBuffer.LOCKTABLE;
+            TempExcelBuffer.OpenBookStream(InStream, SheetNameLbl);
+            TempExcelBuffer.ReadSheet();
             AnalyzeData(pRec);
-            ExcelBuffer.DeleteAll();
-            ExcelBufferExtended.DeleteAll();
+            TempExcelBuffer.DeleteAll();
+            TempExcelBufferExtended.DeleteAll();
         end;
     end;
 
     local procedure AnalyzeData(pRec: Record "Sales Line")
     var
+        lRec: Record "Sales Line";
         lRowNo: Integer;
         lNext: Integer;
-        lExists: Boolean;
+        // lExists: Boolean;
         lCount: Integer;
         lProgress: Integer;
         lDialog: Dialog;
-        ltAnalyzing: Label 'Analyzing Data...\\';
-        lRec: Record "Sales Line";
+        ltAnalyzingLbl: Label 'Analyzing Data...\\';
     begin
         lRec.SetRange("Document Type", pRec."Document Type");
         lRec.SetRange("Document No.", pRec."Document No.");
         if lRec.FindLast then;
-        lDialog.Open(ltAnalyzing + '@1@@@@@@@@@@@@@@@@@@@@@@@@@\');
+        lDialog.Open(ltAnalyzingLbl + '@1@@@@@@@@@@@@@@@@@@@@@@@@@\');
         lDialog.Update(1, 0);
-        ExcelBuffer.SetFilter("Row No.", '>1');
-        lCount := ExcelBuffer.Count;
-        if ExcelBuffer.FindSet then
+        TempExcelBuffer.SetFilter("Row No.", '>1');
+        lCount := TempExcelBuffer.Count;
+        if TempExcelBuffer.FindSet() then
             repeat
                 InitLine(lRec, pRec);
-                lRowNo := ExcelBuffer."Row No.";
+                lRowNo := TempExcelBuffer."Row No.";
                 repeat
                     lProgress += 1;
-                    GetCell(lRec, ExcelBuffer."Column No.", ExcelBuffer."Cell Value as Text");
-                    lNext := ExcelBuffer.Next;
-                until (lNext = 0) or (ExcelBuffer."Row No." <> lRowNo);
-                InsertLine(lRec, pRec);
+                    GetCell(lRec, TempExcelBuffer."Column No.", TempExcelBuffer."Cell Value as Text");
+                    lNext := TempExcelBuffer.Next();
+                until (lNext = 0) or (TempExcelBuffer."Row No." <> lRowNo);
+                InsertLine(lRec);
                 lDialog.Update(1, Round(lProgress / lCount * 10000, 1));
             until lNext = 0;
     end;
 
     local procedure InitLine(var pRec: Record "Sales Line"; pToRec: Record "Sales Line")
     begin
-        pRec.Init;
+        pRec.Init();
         pRec."Document Type" := pToRec."Document Type";
         pRec."Document No." := pToRec."Document No.";
         pRec."Line No." += 10000;
@@ -77,10 +73,10 @@ Codeunit 87369 "wan Excel Sales Lines"
         DescriptionMemo := '';
     end;
 
-    local procedure InsertLine(var pRec: Record "Sales Line"; pToRec: Record "Sales Line")
+    local procedure InsertLine(var pRec: Record "Sales Line")
     begin
         if DescriptionMemo <> '' then
-            pRec.Description := ExcelBufferExtended.NextLine(DescriptionMemo, MaxStrLen(pRec.Description));
+            pRec.Description := TempExcelBufferExtended.NextLine(DescriptionMemo, MaxStrLen(pRec.Description));
         pRec.Insert(true);
         AfterInsert(pRec);
         InsertExtendedText(pRec);
@@ -88,13 +84,13 @@ Codeunit 87369 "wan Excel Sales Lines"
 
     local procedure ToDecimal() ReturnValue: Decimal
     begin
-        Evaluate(ReturnValue, ExcelBuffer."Cell Value as Text");
+        Evaluate(ReturnValue, TempExcelBuffer."Cell Value as Text");
     end;
 
-    local procedure ToDate(pCell: Text) ReturnValue: Date
-    begin
-        Evaluate(ReturnValue, ExcelBuffer."Cell Value as Text");
-    end;
+    // local procedure ToDate(pCell: Text) ReturnValue: Date
+    // begin
+    //     Evaluate(ReturnValue, TempExcelBuffer."Cell Value as Text");
+    // end;
 
     local procedure InsertExtendedText(var pLine: Record "Sales Line")
     var
@@ -105,24 +101,24 @@ Codeunit 87369 "wan Excel Sales Lines"
 
         lAttachedToLine := pLine;
         repeat
-            pLine.Init;
+            pLine.Init();
             pLine."Line No." += 10000;
             pLine."Attached to Line No." := lAttachedToLine."Line No.";
-            pLine.Description := ExcelBufferExtended.NextLine(DescriptionMemo, MaxStrLen(pLine.Description));
-            pLine.Insert;
+            pLine.Description := TempExcelBufferExtended.NextLine(DescriptionMemo, MaxStrLen(pLine.Description));
+            pLine.Insert();
         until StrLen(DescriptionMemo) = 0;
     end;
 
     procedure Export(var pRec: Record "Sales Line")
     var
-        lblConfirm: Label 'Do-you want to create an Excel book for %1 %2(s)?', Comment = '%1: Count, %2: TableCaption';
-        ProgressDialog: Codeunit "Excel Buffer Dialog Management";
         lRec: Record "Sales Line";
+        ProgressDialog: Codeunit "Excel Buffer Dialog Management";
+        ConfirmLbl: Label 'Do-you want to create an Excel book for %1 %2(s)?', Comment = '%1: Count, %2: TableCaption';
     begin
         lRec.SetRange("Document Type", pRec."Document Type");
         lRec.SetRange("Document No.", pRec."Document No.");
         lRec.SetRange("Attached to Line No.", 0);
-        if not Confirm(lblConfirm, true, lRec.Count(), lRec.TableCaption()) then
+        if not Confirm(ConfirmLbl, true, lRec.Count(), lRec.TableCaption()) then
             exit;
 
         ProgressDialog.Open('');
@@ -138,17 +134,17 @@ Codeunit 87369 "wan Excel Sales Lines"
             until lRec.Next = 0;
         ProgressDialog.Close;
 
-        ExcelBuffer.CreateNewBook(SheetName);
-        ExcelBuffer.WriteSheet(Format(pRec."Document Type"), CompanyName, UserId);
-        ExcelBuffer.CloseBook;
-        ExcelBuffer.SetFriendlyFilename(SafeFileName(pRec));
-        ExcelBuffer.OpenExcel;
+        TempExcelBuffer.CreateNewBook(SheetNameLbl);
+        TempExcelBuffer.WriteSheet(Format(pRec."Document Type"), CompanyName, UserId);
+        TempExcelBuffer.CloseBook();
+        TempExcelBuffer.SetFriendlyFilename(SafeFileName(pRec));
+        TempExcelBuffer.OpenExcel();
     end;
 
     local procedure SafeFileName(pRec: Record "Sales Line"): Text
     var
-        FileManagement: Codeunit "File Management";
         lHeader: Record "Sales Header";
+        FileManagement: Codeunit "File Management";
     begin
         lHeader.Get(pRec."Document Type", pRec."Document No.");
         exit(FileManagement.GetSafeFileName(Format(lHeader."Document Type") + ' ' + lHeader."No." + ' - ' + lHeader."Sell-to Customer Name" /*+ ' - ' + Description*/));
@@ -156,19 +152,19 @@ Codeunit 87369 "wan Excel Sales Lines"
 
     local procedure SetCell(pRowNo: Integer; var pColumnNo: Integer; pCellValue: Text; pBold: Boolean; pUnderLine: Boolean; pNumberFormat: Text; pCellType: Option)
     begin
-        ExcelBuffer.Init;
-        ExcelBuffer.Validate("Row No.", pRowNo);
-        ExcelBuffer.Validate("Column No.", pColumnNo);
-        if StrLen(pCellValue) > MaxStrLen(ExcelBuffer."Cell Value as text") then
-            ExcelBuffer.SetExtendedText(pCellValue)
+        TempExcelBuffer.Init();
+        TempExcelBuffer.Validate("Row No.", pRowNo);
+        TempExcelBuffer.Validate("Column No.", pColumnNo);
+        if StrLen(pCellValue) > MaxStrLen(TempExcelBuffer."Cell Value as text") then
+            TempExcelBuffer.SetExtendedText(pCellValue)
         else
-            ExcelBuffer."Cell Value as Text" := pCellValue;
-        ExcelBuffer.Formula := '';
-        ExcelBuffer.Bold := pBold;
-        ExcelBuffer.Underline := pUnderLine;
-        ExcelBuffer.NumberFormat := pNumberFormat;
-        ExcelBuffer."Cell Type" := pCellType;
-        ExcelBuffer.Insert;
+            TempExcelBuffer."Cell Value as Text" := pCellValue;
+        TempExcelBuffer.Formula := '';
+        TempExcelBuffer.Bold := pBold;
+        TempExcelBuffer.Underline := pUnderLine;
+        TempExcelBuffer.NumberFormat := pNumberFormat;
+        TempExcelBuffer."Cell Type" := pCellType;
+        TempExcelBuffer.Insert();
         pColumnNo += 1;
     end;
 
@@ -188,29 +184,29 @@ Codeunit 87369 "wan Excel Sales Lines"
 
     local procedure ExportTitles(pRec: Record "Sales Line")
     var
-        lRec: Record "Sales Line";
-        i: Integer;
+        // lRec: Record "Sales Line";
         GLSetup: Record "General Ledger Setup";
+        i: Integer;
     begin
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption(Type), true, false, '', ExcelBuffer."Cell Type"::Text); // 1
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption("No."), true, false, '', ExcelBuffer."Cell Type"::Text); // 2
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption(Description), true, false, '', ExcelBuffer."Cell Type"::Text); // 3
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Unit of Measure Code"), true, false, '', ExcelBuffer."Cell Type"::Text); // 4
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption(Quantity), true, false, '', ExcelBuffer."Cell Type"::Text); // 5
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Unit Price"), true, false, '', ExcelBuffer."Cell Type"::Text); // 6
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption(Amount), true, false, '', ExcelBuffer."Cell Type"::Text); // 7
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption("VAT Prod. Posting Group"), true, false, '', ExcelBuffer."Cell Type"::Text); // 8
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Job No."), true, false, '', ExcelBuffer."Cell Type"::Text); // 9
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Job Task No."), true, false, '', ExcelBuffer."Cell Type"::Text); // 10
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Shortcut Dimension 1 Code"), true, false, '', ExcelBuffer."Cell Type"::Text); // 11
-        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Shortcut Dimension 2 Code"), true, false, '', ExcelBuffer."Cell Type"::Text); // 12
-        GLSetup.Get;
-        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 3 Code", true, false, '', ExcelBuffer."Cell Type"::Text); // 13
-        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 4 Code", true, false, '', ExcelBuffer."Cell Type"::Text); // 14
-        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 5 Code", true, false, '', ExcelBuffer."Cell Type"::Text); // 15
-        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 6 Code", true, false, '', ExcelBuffer."Cell Type"::Text); // 16
-        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 7 Code", true, false, '', ExcelBuffer."Cell Type"::Text); // 17
-        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 8 Code", true, false, '', ExcelBuffer."Cell Type"::Text); // 18
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption(Type), true, false, '', TempExcelBuffer."Cell Type"::Text); // 1
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption("No."), true, false, '', TempExcelBuffer."Cell Type"::Text); // 2
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption(Description), true, false, '', TempExcelBuffer."Cell Type"::Text); // 3
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Unit of Measure Code"), true, false, '', TempExcelBuffer."Cell Type"::Text); // 4
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption(Quantity), true, false, '', TempExcelBuffer."Cell Type"::Text); // 5
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Unit Price"), true, false, '', TempExcelBuffer."Cell Type"::Text); // 6
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption(Amount), true, false, '', TempExcelBuffer."Cell Type"::Text); // 7
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption("VAT Prod. Posting Group"), true, false, '', TempExcelBuffer."Cell Type"::Text); // 8
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Job No."), true, false, '', TempExcelBuffer."Cell Type"::Text); // 9
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Job Task No."), true, false, '', TempExcelBuffer."Cell Type"::Text); // 10
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Shortcut Dimension 1 Code"), true, false, '', TempExcelBuffer."Cell Type"::Text); // 11
+        SetCell(RowNo, ColumnNo, pRec.FieldCaption("Shortcut Dimension 2 Code"), true, false, '', TempExcelBuffer."Cell Type"::Text); // 12
+        GLSetup.Get();
+        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 3 Code", true, false, '', TempExcelBuffer."Cell Type"::Text); // 13
+        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 4 Code", true, false, '', TempExcelBuffer."Cell Type"::Text); // 14
+        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 5 Code", true, false, '', TempExcelBuffer."Cell Type"::Text); // 15
+        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 6 Code", true, false, '', TempExcelBuffer."Cell Type"::Text); // 16
+        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 7 Code", true, false, '', TempExcelBuffer."Cell Type"::Text); // 17
+        SetCell(RowNo, ColumnNo, GLSetup."Shortcut Dimension 8 Code", true, false, '', TempExcelBuffer."Cell Type"::Text); // 18
 
         OnAfterExportTitles(pRec, ColumnNo);
     end;
@@ -220,22 +216,22 @@ Codeunit 87369 "wan Excel Sales Lines"
         ShortcutDimCode: array[8] of Code[20];
         i: Integer;
     begin
-        SetCell(RowNo, ColumnNo, Format(pRec.Type, 0, 1), false, false, '', ExcelBuffer."Cell Type"::Text); // 1
-        SetCell(RowNo, ColumnNo, pRec."No.", false, false, '', ExcelBuffer."Cell Type"::Text); // 2
-        SetCell(RowNo, ColumnNo, FullDescription(pRec), false, false, '', ExcelBuffer."Cell Type"::Text); // 3
+        SetCell(RowNo, ColumnNo, Format(pRec.Type, 0, 1), false, false, '', TempExcelBuffer."Cell Type"::Text); // 1
+        SetCell(RowNo, ColumnNo, pRec."No.", false, false, '', TempExcelBuffer."Cell Type"::Text); // 2
+        SetCell(RowNo, ColumnNo, FullDescription(pRec), false, false, '', TempExcelBuffer."Cell Type"::Text); // 3
         if pRec.Type <> pRec.Type::" " then begin
-            SetCell(RowNo, ColumnNo, pRec."Unit of Measure Code", false, false, '', ExcelBuffer."Cell Type"::Text); // 4
-            SetCell(RowNo, ColumnNo, Format(pRec.Quantity), false, false, '', ExcelBuffer."Cell Type"::Number); // 5
-            SetCell(RowNo, ColumnNo, Format(pRec."Unit Price"), false, false, '', ExcelBuffer."Cell Type"::Number); // 6
-            SetCell(RowNo, ColumnNo, Format(pRec.Amount), false, false, '', ExcelBuffer."Cell Type"::Number); // 7
-            SetCell(RowNo, ColumnNo, pRec."VAT Prod. Posting Group", false, false, '', ExcelBuffer."Cell Type"::Text); // 8
-            SetCell(RowNo, ColumnNo, pRec."Job No.", false, false, '', ExcelBuffer."Cell Type"::Text); // 9
-            SetCell(RowNo, ColumnNo, pRec."Job Task No.", false, false, '', ExcelBuffer."Cell Type"::Text); // 10
-            SetCell(RowNo, ColumnNo, pRec."Shortcut Dimension 1 Code", false, false, '', ExcelBuffer."Cell Type"::Text); // 11
-            SetCell(RowNo, ColumnNo, pRec."Shortcut Dimension 2 Code", false, false, '', ExcelBuffer."Cell Type"::Text); // 12
+            SetCell(RowNo, ColumnNo, pRec."Unit of Measure Code", false, false, '', TempExcelBuffer."Cell Type"::Text); // 4
+            SetCell(RowNo, ColumnNo, Format(pRec.Quantity), false, false, '', TempExcelBuffer."Cell Type"::Number); // 5
+            SetCell(RowNo, ColumnNo, Format(pRec."Unit Price"), false, false, '', TempExcelBuffer."Cell Type"::Number); // 6
+            SetCell(RowNo, ColumnNo, Format(pRec.Amount), false, false, '', TempExcelBuffer."Cell Type"::Number); // 7
+            SetCell(RowNo, ColumnNo, pRec."VAT Prod. Posting Group", false, false, '', TempExcelBuffer."Cell Type"::Text); // 8
+            SetCell(RowNo, ColumnNo, pRec."Job No.", false, false, '', TempExcelBuffer."Cell Type"::Text); // 9
+            SetCell(RowNo, ColumnNo, pRec."Job Task No.", false, false, '', TempExcelBuffer."Cell Type"::Text); // 10
+            SetCell(RowNo, ColumnNo, pRec."Shortcut Dimension 1 Code", false, false, '', TempExcelBuffer."Cell Type"::Text); // 11
+            SetCell(RowNo, ColumnNo, pRec."Shortcut Dimension 2 Code", false, false, '', TempExcelBuffer."Cell Type"::Text); // 12
             pRec.ShowShortcutDimCode(ShortcutDimCode);
             for i := 3 to 8 do
-                SetCell(RowNo, ColumnNo, ShortcutDimCode[i], false, false, '', ExcelBuffer."Cell Type"::Text); // 13..18
+                SetCell(RowNo, ColumnNo, ShortcutDimCode[i], false, false, '', TempExcelBuffer."Cell Type"::Text); // 13..18
 
         end;
 
@@ -256,24 +252,22 @@ Codeunit 87369 "wan Excel Sales Lines"
             2:
                 pRec.Validate("No.", pText);
             3:
-                begin
-                    if StrLen(pText) <= MaxStrLen(pRec.Description) then
-                        pRec.Description := pText
-                    else
-                        if not ExcelBuffer."Cell Value as Blob".HasValue then
-                            DescriptionMemo := pText
-                        else begin
-                            ExcelBuffer.Calcfields("Cell Value as Blob");
-                            ExcelBuffer."Cell Value as Blob".CreateInStream(InStream, TextEncoding::Windows);
-                            InStream.Read(DescriptionMemo);
-                        end;
-                end;
+                if StrLen(pText) <= MaxStrLen(pRec.Description) then
+                    pRec.Description := pText
+                else
+                    if not TempExcelBuffer."Cell Value as Blob".HasValue then
+                        DescriptionMemo := pText
+                    else begin
+                        TempExcelBuffer.Calcfields("Cell Value as Blob");
+                        TempExcelBuffer."Cell Value as Blob".CreateInStream(InStream, TextEncoding::Windows);
+                        InStream.Read(DescriptionMemo);
+                    end;
             4:
                 pRec.Validate("Unit of Measure Code", pText);
             5:
-                pRec.Validate(Quantity, ToDecimal);
+                pRec.Validate(Quantity, ToDecimal());
             6:
-                pRec.Validate("Unit Price", ToDecimal);
+                pRec.Validate("Unit Price", ToDecimal());
             7:
                 ;//Amount
             8:

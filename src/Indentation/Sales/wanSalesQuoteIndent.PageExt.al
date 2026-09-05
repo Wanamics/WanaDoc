@@ -40,8 +40,8 @@ pageextension 87310 "wan Sales Quote Indent" extends "Sales Quote Subform"
                 Enabled = wanEnabled and (Rec."wan Indentation" > 0);
                 trigger OnAction()
                 var
-                    wanIndentMgt: Codeunit "wan Sales Indent. Mgt.";
                     Selection: Record "Sales Line";
+                    wanIndentMgt: Codeunit "wan Sales Indent. Mgt.";
                 begin
                     CurrPage.SetSelectionFilter(Selection);
                     wanIndentMgt.Shift(Selection, -1);
@@ -56,8 +56,8 @@ pageextension 87310 "wan Sales Quote Indent" extends "Sales Quote Subform"
                 Enabled = wanEnabled;
                 trigger OnAction()
                 var
-                    wanIndentMgt: Codeunit "wan Sales Indent. Mgt.";
                     Selection: Record "Sales Line";
+                    wanIndentMgt: Codeunit "wan Sales Indent. Mgt.";
                 begin
                     CurrPage.SetSelectionFilter(Selection);
                     wanIndentMgt.Shift(Selection, +1);
@@ -72,6 +72,7 @@ pageextension 87310 "wan Sales Quote Indent" extends "Sales Quote Subform"
                 Caption = 'Insert Total Lines';
                 Image = Totals;
                 Enabled = wanEnabled;
+                ToolTip = 'Insert missing total line for each title line.';
                 trigger OnAction()
                 var
                     wanIndentMgt: Codeunit "wan Sales Indent. Mgt.";

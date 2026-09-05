@@ -40,6 +40,7 @@ pageextension 87307 "wan Posted Purch. Inv. Prepmt." extends "Posted Purch. Invo
                 ApplicationArea = All;
                 Visible = wanPrepaymentVisible;
                 BlankZero = true;
+                ToolTip = 'Prepmt. Amount to Invoice';
             }
         }
     }

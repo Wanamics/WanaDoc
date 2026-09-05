@@ -61,6 +61,7 @@ pageextension 87311 "wan Sales Order Indent" extends "Sales Order Subform"
                 Caption = 'Insert Total Lines';
                 Image = Totals;
                 Enabled = wanEnabled;
+                ToolTip = 'Insert missing total line for each title line.';
                 trigger OnAction()
                 var
                     wanIndentMgt: Codeunit "wan Sales Indent. Mgt.";

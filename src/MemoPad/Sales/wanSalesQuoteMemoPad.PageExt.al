@@ -32,7 +32,7 @@ pageextension 87395 "wan Sales Quote MemoPad" extends "Sales Quote Subform"
         }
     }
     var
-        wanSetup: Record "Sales & Receivables Setup";
+        // wanSetup: Record "Sales & Receivables Setup";
         wanIsAttached: Boolean;
 
     trigger OnAfterGetCurrRecord()

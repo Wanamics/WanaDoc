@@ -1,8 +1,8 @@
 namespace Wanamics.WanaDoc.Indentation;
 
 using Microsoft.Purchases.Document;
-using Wanamics.WanaDoc.MemoPad;
 using System.Text;
+using Wanamics.WanaDoc.MemoPad;
 reportextension 87314 "wan Purch. Order Indent" extends "Standard Purchase - Order"
 {
     dataset
@@ -34,14 +34,13 @@ reportextension 87314 "wan Purch. Order Indent" extends "Standard Purchase - Ord
                             SetTotalAmounts(wanTotalLines["wan Indentation"], wanTotalLineAmount);
                         end;
                     "wan Indentation" > 0:
-                        begin
-                            for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
-                                // wanTotalLines[i]."Order Amount" += "Order Amount"; // for Invoice and CreditMemo
-                                wanTotalLines[i]."Line Amount" += "Line Amount";
-                                // wanTotalLines[i]."Prepmt. Line Amount" += "Prepmt. Line Amount";
-                                // wanTotalLines[i]."Prepmt. Amt. Inv." += "Prepmt. Amt. Inv.";
-                            end;
-                        end;
+                        for i := "wan Indentation" to ArrayLen(wanTotalLines) do
+                            // begin
+                            // wanTotalLines[i]."Order Amount" += "Order Amount"; // for Invoice and CreditMemo
+                            wanTotalLines[i]."Line Amount" += "Line Amount";
+                // wanTotalLines[i]."Prepmt. Line Amount" += "Prepmt. Line Amount";
+                // wanTotalLines[i]."Prepmt. Amt. Inv." += "Prepmt. Amt. Inv.";
+                // end;
                 end;
             end;
         }

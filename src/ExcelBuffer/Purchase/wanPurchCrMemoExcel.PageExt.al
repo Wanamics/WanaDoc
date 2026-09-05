@@ -12,6 +12,7 @@ pageextension 87378 "wan Purch. Cr. Memo Excel" extends "Purch. Cr. Memo Subform
                 ApplicationArea = All;
                 Caption = 'Excel Export';
                 Image = ExportToExcel;
+                Tooltip = 'Export the current document to Excel.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Purchase Lines";
@@ -24,6 +25,7 @@ pageextension 87378 "wan Purch. Cr. Memo Excel" extends "Purch. Cr. Memo Subform
                 ApplicationArea = All;
                 Caption = 'Excel Import';
                 Image = ImportExcel;
+                Tooltip = 'Import lines from an Excel file.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Purchase Lines";

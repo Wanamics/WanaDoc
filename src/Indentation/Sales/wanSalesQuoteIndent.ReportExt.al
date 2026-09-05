@@ -32,11 +32,8 @@ reportextension 87310 "wan Sales Quote Indent" extends "Standard Sales - Quote"
                             SetTotalAmounts(wanTotalLines["wan Indentation"], wanTotalLineAmount);
                         end;
                     "wan Indentation" > 0:
-                        begin
-                            for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
-                                wanTotalLines[i]."Line Amount" += "Line Amount";
-                            end;
-                        end;
+                        for i := "wan Indentation" to ArrayLen(wanTotalLines) do
+                            wanTotalLines[i]."Line Amount" += "Line Amount";
                 end;
             end;
         }

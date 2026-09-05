@@ -12,6 +12,7 @@ pageextension 87375 "wan Purchase Order Excel" extends "Purchase Order Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Export';
                 Image = ExportToExcel;
+                Tooltip = 'Export Purchase Order Lines to Excel';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Purchase Lines";
@@ -24,6 +25,7 @@ pageextension 87375 "wan Purchase Order Excel" extends "Purchase Order Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Import';
                 Image = ImportExcel;
+                Tooltip = 'Import Purchase Order Lines from Excel';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Purchase Lines";

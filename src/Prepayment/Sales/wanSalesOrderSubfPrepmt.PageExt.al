@@ -30,6 +30,7 @@ pageextension 87302 "wan Sales Order Subf. Prepmt." extends "Sales Order Subform
                 ApplicationArea = All;
                 Visible = wanPrepaymentVisible;
                 BlankZero = true;
+                Tooltip = 'Specifies the remaining prepayment amount that is yet to be invoiced.';
             }
         }
 

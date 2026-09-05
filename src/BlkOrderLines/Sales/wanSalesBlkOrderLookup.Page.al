@@ -7,6 +7,7 @@ page 87390 "wan Sales BlkOrder Lookup"
     Caption = 'Sales Blanket Orders';
     DataCaptionFields = "Document Type";
     ApplicationArea = All;
+    UsageCategory = None;
     Editable = false;
     PageType = List;
     SourceTable = "Sales Header";
@@ -82,6 +83,7 @@ page 87390 "wan Sales BlkOrder Lookup"
                     Caption = 'Show Document';
                     Image = EditLines;
                     ShortCutKey = 'Return';
+                    Tooltip = 'Show the document for the selected line.';
 
                     trigger OnAction()
                     var

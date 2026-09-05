@@ -1,3 +1,4 @@
+namespace Wanamics.WanaDoc.Prepayment;
 permissionset 87305 "WanaDoc_PREPMT"
 {
     Access = Internal;

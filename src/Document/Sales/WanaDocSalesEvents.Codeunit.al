@@ -1,7 +1,7 @@
 namespace Wanamics.WanaDoc.Document;
 
-using Microsoft.Sales.Document;
 using Microsoft.Sales.Customer;
+using Microsoft.Sales.Document;
 codeunit 87304 "WanaDoc Sales Events"
 {
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", OnBeforeInitPostingDescription, '', false, false)]

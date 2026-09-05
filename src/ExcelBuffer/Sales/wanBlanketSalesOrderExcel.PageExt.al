@@ -13,6 +13,7 @@ pageextension 87389 "wan Blanket Sales Order Excel" extends "Blanket Sales Order
                 ApplicationArea = All;
                 Caption = 'Excel Export';
                 Image = ExportToExcel;
+                Tooltip = 'Export the Blanket Sales Order to Excel.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Sales Lines";
@@ -25,6 +26,7 @@ pageextension 87389 "wan Blanket Sales Order Excel" extends "Blanket Sales Order
                 ApplicationArea = All;
                 Caption = 'Excel Import';
                 Image = ImportExcel;
+                Tooltip = 'Import data from an Excel file.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Sales Lines";

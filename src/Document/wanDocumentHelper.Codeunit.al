@@ -1,28 +1,28 @@
 namespace Wanamics.WanaDoc.Document;
 
-using Microsoft.Foundation.Address;
-using System.Text;
-using Microsoft.Inventory.Item;
-using Microsoft.Foundation.Company;
 using Microsoft.Bank.BankAccount;
 using Microsoft.Bank.DirectDebit;
-using Microsoft.Sales.Customer;
-using Microsoft.Sales.Document;
-using Microsoft.Inventory.Ledger;
 using Microsoft.CRM.Contact;
 using Microsoft.CRM.Setup;
+using Microsoft.Foundation.Address;
+using Microsoft.Foundation.Company;
+using Microsoft.Inventory.Item;
+using Microsoft.Inventory.Ledger;
+using Microsoft.Sales.Customer;
+using Microsoft.Sales.Document;
 using System.Reflection;
+using System.Text;
 codeunit 87301 "wan Document Helper"
 {
     var
-        FormatAddress: Codeunit "Format Address";
-        AutoFormat: Codeunit "Auto Format";
-        Item: Record Item;
         CountryRegion: Record "Country/Region";
         CompanyInfo: Record "Company Information";
         BankAccount: Record "Bank Account";
         PaymentMethod: Record "Payment Method";
         DefaultBankAccount: Record "Bank Account";
+        FormatAddress: Codeunit "Format Address";
+        AutoFormat: Codeunit "Auto Format";
+    // Item: Record Item;
 
     procedure GetCompanyInfo(var pCompanyAddress: Text; var pCompanyContactInfo: Text; var pCompanyLegalInfo: Text)
     var
@@ -69,8 +69,8 @@ codeunit 87301 "wan Document Helper"
 
     local procedure GetLocalizationField(var pRecordRef: RecordRef; pFieldNo: Integer; var pCaption: Text; var pValue: Text)
     var
-        FldRef: Fieldref;
         Field: Record Field;
+        FldRef: Fieldref;
     begin
         if not Field.Get(pRecordRef.Number(), pFieldNo) then
             exit;
@@ -81,10 +81,10 @@ codeunit 87301 "wan Document Helper"
 
     procedure PaymentMethodText(pLanguageCode: Code[10]; pPaymentMethodCode: Code[10]; pCompanyBankAccountNo: Code[20]; pCustomerNo: Code[20]; pSDDMandateId: Code[35]): Text;
     var
-        PaymentMethodLbl: Label 'Pay by %1 to our bank account %2, IBAN %3, Code SWIFT %4', Comment = '%1:PaymentMethod.Description, %2:BankAccount.Name, %3:BankAccount.IBAN, %4:BankAccount."SWIFT Code")';
-        DirectDebitLbl: Label 'Direct Debit ID %1 from your bank account %2 IBAN %3', Comment = '%1:SDDMandateId, %2:CustomerBankAccount.Name, %3:CustomerBankAccount.IBAN)';
         SDDMandate: Record "SEPA Direct Debit Mandate";
         CustomerBankAccount: Record "Customer Bank Account";
+        PaymentMethodLbl: Label 'Pay by %1 to our bank account %2, IBAN %3, Code SWIFT %4', Comment = '%1:PaymentMethod.Description, %2:BankAccount.Name, %3:BankAccount.IBAN, %4:BankAccount."SWIFT Code")';
+        DirectDebitLbl: Label 'Direct Debit ID %1 from your bank account %2 IBAN %3', Comment = '%1:SDDMandateId, %2:CustomerBankAccount.Name, %3:CustomerBankAccount.IBAN)';
     begin
         if pPaymentMethodCode <> PaymentMethod.Code then
             if pPaymentMethodCode = '' then
@@ -178,7 +178,7 @@ codeunit 87301 "wan Document Helper"
 
     procedure GetVersion(pNoOfArchivedVersions: Integer): Text;
     var
-        VersionTxt: Label ' R%1';
+        VersionTxt: Label ' R%1', comment = '%1: Number of archived versions';
     begin
         if pNoOfArchivedVersions = 0 then
             exit;
@@ -217,8 +217,8 @@ codeunit 87301 "wan Document Helper"
     end;
 
     local procedure IsIntrastat(pShipToCountryRegionCode: code[10]): Boolean
-    var
-        CompanyInfo: Record "Company Information";
+    // var
+    //     CompanyInfo: Record "Company Information";
     begin
         if pShipToCountryRegionCode = '' then
             exit(false);
@@ -289,8 +289,8 @@ codeunit 87301 "wan Document Helper"
     end;
 
     procedure ContactSalutation(pContact: Record Contact; pLanguageCode: Code[10]): Text
-    var
-        Salutation: Record "Salutation Formula";
+    // var
+    //     Salutation: Record "Salutation Formula";
     begin
         if pContact."Salutation Code" = '' then
             exit(pContact.CalculatedName())

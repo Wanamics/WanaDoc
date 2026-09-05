@@ -40,8 +40,8 @@ tableextension 87320 "wan Purch. Inv. Line Indent" extends "Purch. Inv. Line"
 
     procedure wanStyle(): Text
     var
-        wanIndentHelper: Codeunit "wan Indent Helper";
         AttachedToLine: Record "Purch. Inv. Line";
+        wanIndentHelper: Codeunit "wan Indent Helper";
     begin
         if "Attached to Line No." = 0 then
             exit(wanIndentHelper.Style(Type, "No."))

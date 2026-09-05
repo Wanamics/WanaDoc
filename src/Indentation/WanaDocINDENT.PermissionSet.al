@@ -1,3 +1,4 @@
+namespace Wanamics.WanaDoc.Indentation;
 permissionset 87301 "WanaDoc_INDENT"
 {
     Access = Internal;

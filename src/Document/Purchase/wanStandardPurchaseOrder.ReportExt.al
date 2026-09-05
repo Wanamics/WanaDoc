@@ -1,12 +1,12 @@
 namespace Wanamics.WanaDoc.Document;
 
-using Microsoft.Purchases.Document;
-using Microsoft.Purchases.Vendor;
 using Microsoft.Finance.VAT.Clause;
 using Microsoft.Finance.VAT.Setup;
-using Wanamics.WanaDoc.MemoPad;
 using Microsoft.Foundation.Address;
 using Microsoft.Inventory.Item;
+using Microsoft.Purchases.Document;
+using Microsoft.Purchases.Vendor;
+using Wanamics.WanaDoc.MemoPad;
 reportextension 87322 "wan Standard Purchase - Order" extends "Standard Purchase - Order"
 {
     dataset
@@ -99,8 +99,11 @@ reportextension 87322 "wan Standard Purchase - Order" extends "Standard Purchase
         }
     }
     protected var
+        Vendor: Record Vendor;
+        wanVATClause: Record "VAT Clause";
+        DocumentHelper: Codeunit "wan Document Helper";
         MemoPad: Codeunit "wan MemoPad Purchase";
-        FormatAddress: Codeunit "Format Address";
+        // FormatAddress: Codeunit "Format Address";
         BuyFromAddress_Lbl: Label 'Buy-from';
         BuyFromAddress: Text;
         ShipToAddress_Lbl: Label 'Ship-to';
@@ -110,9 +113,6 @@ reportextension 87322 "wan Standard Purchase - Order" extends "Standard Purchase
         CompanyAddress: Text;
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
-        DocumentHelper: Codeunit "wan Document Helper";
-        Vendor: Record Vendor;
-        wanVATClause: Record "VAT Clause";
         wanMailGreeting_Lbl: Label 'Dear vendor';
         wanMailBody_Lbl: Label 'Please find enclosed an order, to which we kindly ask you to acknowledge receipt as soon as possible.';
         wanMailClosing_Lbl: Label 'Sincerely';
@@ -129,7 +129,7 @@ reportextension 87322 "wan Standard Purchase - Order" extends "Standard Purchase
     local procedure GetMemo(pHeader: Record "Purchase Header"; pLine: Record "Purchase Line") ReturnValue: Text;
     var
         AttachedLines: Text;
-        Item: Record Item;
+    // Item: Record Item;
     begin
         ReturnValue := pLine.Description;
         OnBeforeGetMemo(pHeader, pLine, ReturnValue);
@@ -138,8 +138,8 @@ reportextension 87322 "wan Standard Purchase - Order" extends "Standard Purchase
             ReturnValue += DocumentHelper.Tariff(pLine."No.", pHeader."Ship-to Country/Region Code");
         end;
         AttachedLines := MemoPad.GetAttachedLines(pLine);
-        if AttachedLines = '' then
-            AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
+        // if AttachedLines = '' then
+        //     AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
         if AttachedLines <> '' then
             ReturnValue += MemoPad.LineFeed() + AttachedLines;
         OnAfterGetMemo(pHeader, pLine, ReturnValue);
@@ -150,7 +150,7 @@ reportextension 87322 "wan Standard Purchase - Order" extends "Standard Purchase
         if pLine.Quantity = 0 then
             exit(pLine."Unit of Measure")
         else
-            exit(DocumentHelper.iif(pLine.Type = pLine.Type::" ", '', Format(pLine.Quantity) + MemoPad.LineFeed + pLine."Unit of Measure"));
+            exit(DocumentHelper.iif(pLine.Type = pLine.Type::" ", '', Format(pLine.Quantity) + MemoPad.LineFeed() + pLine."Unit of Measure"));
     end;
 
     [IntegrationEvent(true, false)]

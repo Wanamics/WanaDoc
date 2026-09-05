@@ -57,13 +57,13 @@ Codeunit 87391 "wan Sales BlkOrder Copy Lines"
 
     local procedure InitNewLine(var pBlanketOrderLine: Record "Sales Line"; pBelowLine: Record "Sales Line"; var pNewLine: Record "Sales Line"; var pStep: Integer)
     var
-        UnableToInsertErr: label 'There is no more space to insert %1 line(s) between lines %2 and  %3';
+        UnableToInsertErr: label 'There is no more space to insert %1 line(s) between lines %2 and  %3', Comment = '%1: Number of lines to insert, %2: Line No. of the line above, %3: Line No. of the line below';
     begin
         pNewLine.Copy(pBelowLine);
         pNewLine.SetRange("Document Type", pBelowLine."Document Type");
         pNewLine.SetRange("Document No.", pBelowLine."Document No.");
         if pBelowLine."Line No." = 0 then begin
-            if pNewLine.FindLast then;
+            if pNewLine.FindLast() then;
             pStep := 10000;
         end else begin
             if pNewLine.Next(-1) = 0 then
@@ -72,7 +72,7 @@ Codeunit 87391 "wan Sales BlkOrder Copy Lines"
             if pStep = 0 then
                 Error(UnableToInsertErr, CountLines(pBlanketOrderLine), pNewLine."Line No.", pBelowLine."Line No.");
         end;
-        pNewLine.Init;
+        pNewLine.Init();
     end;
 
     local procedure CountLines(pLine: Record "Sales Line") ReturnValue: Integer
@@ -85,7 +85,7 @@ Codeunit 87391 "wan Sales BlkOrder Copy Lines"
                 AttachedLine.SetRange("Document No.", pLine."Document No.");
                 AttachedLine.SetRange("Attached to Line No.", pLine."Line No.");
                 ReturnValue += AttachedLine.Count + 1;
-            until pLine.Next = 0;
+            until pLine.Next() = 0;
     end;
 
     local procedure CopyAttachedLines(var pNewLine: Record "Sales Line"; pBlanketOrderLine: Record "Sales Line"; pStep: Integer)

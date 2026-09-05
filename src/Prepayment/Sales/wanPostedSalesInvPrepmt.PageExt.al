@@ -40,6 +40,7 @@ pageextension 87303 "wan Posted Sales Inv. Prepmt." extends "Posted Sales Invoic
                 ApplicationArea = All;
                 Visible = wanPrepaymentVisible;
                 BlankZero = true;
+                Tooltip = 'The amount of the prepayment that is still to be invoiced.';
             }
         }
     }

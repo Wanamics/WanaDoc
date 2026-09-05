@@ -12,6 +12,7 @@ pageextension 87377 "wan Purch. Quote Excel" extends "Purchase Quote Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Export';
                 Image = ExportToExcel;
+                ToolTip = 'Export the purchase quote to an Excel file.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Purchase Lines";
@@ -24,6 +25,7 @@ pageextension 87377 "wan Purch. Quote Excel" extends "Purchase Quote Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Import';
                 Image = ImportExcel;
+                ToolTip = 'Import purchase quote lines from an Excel file.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Purchase Lines";

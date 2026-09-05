@@ -1,7 +1,7 @@
 namespace Wanamics.WanaDoc.MemoPad;
 
-using Microsoft.Sales.History;
 using Microsoft.Sales.Document;
+using Microsoft.Sales.History;
 tableextension 87338 "wan Sales Inv. Line MemoPad" extends "Sales Invoice Line"
 {
     procedure wanMemoPad()
@@ -9,9 +9,9 @@ tableextension 87338 "wan Sales Inv. Line MemoPad" extends "Sales Invoice Line"
         AttachedLine: Record "Sales Invoice Line";
         AttachedToLine: Record "Sales Invoice Line";
         MemoPadPage: Page "wan MemoPad";
-        Memo: Text;
-        CaptionLbl: Label '%1 %2';
         Document: Page "Sales Invoice";
+        Memo: Text;
+        CaptionLbl: Label '%1 %2', Comment = '%1: Document Type, %2: Document Number';
     begin
         if Rec."Attached to Line No." = 0 then
             AttachedToLine := Rec

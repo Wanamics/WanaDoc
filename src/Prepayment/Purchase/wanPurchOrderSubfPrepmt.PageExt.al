@@ -30,6 +30,7 @@ pageextension 87304 "wan Purch. Order Subf. Prepmt." extends "Purchase Order Sub
                 ApplicationArea = All;
                 Visible = wanPrepaymentVisible;
                 BlankZero = true;
+                Tooltip = 'Specifies the remaining prepayment amount to be invoiced.';
             }
         }
 

@@ -18,7 +18,7 @@ codeunit 87315 "wan Purch. Indent. Mgt."
         pLine.Setrange("Attached to Line No.", 0);
         if pShift < 0 then
             pLine.SetAscending("Line No.", false);
-        if pLine.FindSet then begin
+        if pLine.FindSet() then begin
             SubLine.SetLoadFields("wan Indentation");
             SubLine.SetRange("Document Type", pLine."Document Type");
             SubLine.SetRange("Document No.", pLine."Document No.");
@@ -61,10 +61,11 @@ codeunit 87315 "wan Purch. Indent. Mgt."
                 exit(false);
             if not GetLine(pLine, '>', NextLine) then
                 exit(true)
-            else if pLine.wanIsTitle() then
-                exit(NextLine."wan Indentation" <= pLine."wan Indentation")
             else
-                exit(NextLine."wan Indentation" < pLine."wan Indentation");
+                if pLine.wanIsTitle() then
+                    exit(NextLine."wan Indentation" <= pLine."wan Indentation")
+                else
+                    exit(NextLine."wan Indentation" < pLine."wan Indentation");
         end;
     end;
 
@@ -183,7 +184,7 @@ codeunit 87315 "wan Purch. Indent. Mgt."
         xLine: Record "Purchase Line";
         TotalLbl: Label 'Total : %1', Comment = '%1:Title description';
     begin
-        Line.SetLoadFields(Type, "No.", "Attached to Line No.", "wan Indentation");
+        Line.SetLoadFields(Type, "No.", "Attached to Line No.", "wan Indentation", Description);
         Line.SetRange("Document Type", pLine."Document Type");
         Line.SetRange("Document No.", pLine."Document No.");
         Line.SetFilter("Line No.", '>%1', pLine."Line No.");

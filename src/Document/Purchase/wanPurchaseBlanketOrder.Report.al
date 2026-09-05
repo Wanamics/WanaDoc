@@ -1,28 +1,28 @@
 namespace Wanamics.WanaDoc.Document;
 
-using Microsoft.Purchases.Document;
-using System.Utilities;
-using Microsoft.Foundation.Company;
-using Microsoft.CRM.Team;
 using Microsoft.CRM.Contact;
+using Microsoft.CRM.Interaction;
+using Microsoft.CRM.Segment;
+using Microsoft.CRM.Team;
+using Microsoft.Finance.Currency;
+using Microsoft.Finance.GeneralLedger.Setup;
+using Microsoft.Finance.ReceivablesPayables;
+using Microsoft.Finance.VAT.Calculation;
+using Microsoft.Foundation.Address;
+using Microsoft.Foundation.Company;
 using Microsoft.Foundation.PaymentTerms;
 using Microsoft.Foundation.Shipping;
-using Wanamics.WanaDoc.MemoPad;
-using Microsoft.Finance.VAT.Calculation;
-using Microsoft.Finance.ReceivablesPayables;
-using Microsoft.Finance.GeneralLedger.Setup;
-using Microsoft.Inventory.Location;
-using Microsoft.Finance.Currency;
-using Microsoft.Purchases.Setup;
-using System.Globalization;
-using Microsoft.Foundation.Address;
-using Microsoft.Utilities;
-using Microsoft.Purchases.Posting;
-using Microsoft.CRM.Segment;
-using System.EMail;
 using Microsoft.Inventory.Item;
+using Microsoft.Inventory.Location;
+using Microsoft.Purchases.Document;
+using Microsoft.Purchases.Posting;
+using Microsoft.Purchases.Setup;
 using Microsoft.Purchases.Vendor;
-using Microsoft.CRM.Interaction;
+using Microsoft.Utilities;
+using System.EMail;
+using System.Globalization;
+using System.Utilities;
+using Wanamics.WanaDoc.MemoPad;
 report 87310 "wan Purchase - Blanket Order"
 // Copy from "Standard Purchase - Order", 'Order' replaced by 'Quote' + '[+ wan Extension +]
 {
@@ -120,22 +120,22 @@ report 87310 "wan Purchase - Blanket Order"
             column(CompanyLogoPosition; CompanyLogoPosition)
             {
             }
-            column(CompanyRegistrationNumber; CompanyInfo.GetRegistrationNumber)
+            column(CompanyRegistrationNumber; CompanyInfo.GetRegistrationNumber())
             {
             }
-            column(CompanyRegistrationNumber_Lbl; CompanyInfo.GetRegistrationNumberLbl)
+            column(CompanyRegistrationNumber_Lbl; CompanyInfo.GetRegistrationNumberLbl())
             {
             }
-            column(CompanyVATRegNo; CompanyInfo.GetVATRegistrationNumber)
+            column(CompanyVATRegNo; CompanyInfo.GetVATRegistrationNumber())
             {
             }
-            column(CompanyVATRegNo_Lbl; CompanyInfo.GetVATRegistrationNumberLbl)
+            column(CompanyVATRegNo_Lbl; CompanyInfo.GetVATRegistrationNumberLbl())
             {
             }
-            column(CompanyVATRegistrationNo; CompanyInfo.GetVATRegistrationNumber)
+            column(CompanyVATRegistrationNo; CompanyInfo.GetVATRegistrationNumber())
             {
             }
-            column(CompanyVATRegistrationNo_Lbl; CompanyInfo.GetVATRegistrationNumberLbl)
+            column(CompanyVATRegistrationNo_Lbl; CompanyInfo.GetVATRegistrationNumberLbl())
             {
             }
             // column(CompanyLegalOffice; CompanyInfo.GetLegalOffice)
@@ -633,7 +633,7 @@ report 87310 "wan Purchase - Blanket Order"
                 column(wanPromRcptDate; DocumentHelper.FormatDate("Purchase Line"."Promised Receipt Date")) { }
                 column(wanPromRcptDate_Lbl; "Purchase Line".FieldCaption("Promised Receipt Date")) { }
                 column(wanMemoPad; GetMemo("Purchase Header", "Purchase Line")) { }
-                column(wanQuantity_UOM; DocumentHelper.iif("Purchase Line".Type = "Purchase Line".Type::" ", '', Format("Purchase Line".Quantity) + MemoPad.LineFeed + "Purchase Line"."Unit of Measure")) { }
+                column(wanQuantity_UOM; DocumentHelper.iif("Purchase Line".Type = "Purchase Line".Type::" ", '', Format("Purchase Line".Quantity) + MemoPad.LineFeed() + "Purchase Line"."Unit of Measure")) { }
                 column(wanVATPercent; DocumentHelper.iif("Purchase Line".Type = "Purchase Line".Type::" ", '', Format("Purchase Line"."VAT %"))) { }
                 column(wanVATPercent_lbl; "Purchase Line".FieldCaption("VAT %")) { }
                 column(wanLineDiscPercent; DocumentHelper.BlankZero("Purchase Line"."Line Discount %")) { }
@@ -664,7 +664,7 @@ report 87310 "wan Purchase - Blanket Order"
             dataitem(Totals; "Integer")
             {
                 DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
-                column(VATAmountText; TempVATAmountLine.VATAmountText)
+                column(VATAmountText; TempVATAmountLine.VATAmountText())
                 {
                 }
                 column(TotalVATAmount; VATAmount)
@@ -723,11 +723,11 @@ report 87310 "wan Purchase - Blanket Order"
                     PurchPost.GetPurchLines("Purchase Header", TempPurchLine, 0);
                     TempPurchLine.CalcVATAmountLines(0, "Purchase Header", TempPurchLine, TempVATAmountLine);
                     TempPurchLine.UpdateVATOnLines(0, "Purchase Header", TempPurchLine, TempVATAmountLine);
-                    VATAmount := TempVATAmountLine.GetTotalVATAmount;
-                    VATBaseAmount := TempVATAmountLine.GetTotalVATBase;
+                    VATAmount := TempVATAmountLine.GetTotalVATAmount();
+                    VATBaseAmount := TempVATAmountLine.GetTotalVATBase();
                     VATDiscountAmount :=
                       TempVATAmountLine.GetTotalVATDiscount("Purchase Header"."Currency Code", "Purchase Header"."Prices Including VAT");
-                    TotalAmountInclVAT := TempVATAmountLine.GetTotalAmountInclVAT;
+                    TotalAmountInclVAT := TempVATAmountLine.GetTotalAmountInclVAT();
 
                     TempPrepaymentInvLineBuffer.DeleteAll();
                     PurchasePostPrepayments.GetPurchLines("Purchase Header", 0, TempPrepmtPurchLine);
@@ -740,9 +740,9 @@ report 87310 "wan Purchase - Blanket Order"
                     TempPrepmtVATAmountLine.DeductVATAmountLine(TempPrePmtVATAmountLineDeduct);
                     PurchasePostPrepayments.UpdateVATOnLines("Purchase Header", TempPrepmtPurchLine, TempPrepmtVATAmountLine, 0);
                     PurchasePostPrepayments.BuildInvLineBuffer("Purchase Header", TempPrepmtPurchLine, 0, TempPrepaymentInvLineBuffer);
-                    PrepmtVATAmount := TempPrepmtVATAmountLine.GetTotalVATAmount;
-                    PrepmtVATBaseAmount := TempPrepmtVATAmountLine.GetTotalVATBase;
-                    PrepmtTotalAmountInclVAT := TempPrepmtVATAmountLine.GetTotalAmountInclVAT;
+                    PrepmtVATAmount := TempPrepmtVATAmountLine.GetTotalVATAmount();
+                    PrepmtVATBaseAmount := TempPrepmtVATAmountLine.GetTotalVATBase();
+                    PrepmtTotalAmountInclVAT := TempPrepmtVATAmountLine.GetTotalAmountInclVAT();
                 end;
             }
             dataitem(VATCounter; "Integer")
@@ -826,7 +826,7 @@ report 87310 "wan Purchase - Blanket Order"
                 begin
                     if (not GLSetup."Print VAT specification in LCY") or
                        ("Purchase Header"."Currency Code" = '') or
-                       (TempVATAmountLine.GetTotalVATAmount = 0)
+                       (TempVATAmountLine.GetTotalVATAmount() = 0)
                     then
                         CurrReport.Break();
 
@@ -866,7 +866,7 @@ report 87310 "wan Purchase - Blanket Order"
                     AutoFormatExpression = "Purchase Header"."Currency Code";
                     AutoFormatType = 1;
                 }
-                column(PrepmtVATAmountText; TempPrepmtVATAmountLine.VATAmountText)
+                column(PrepmtVATAmountText; TempPrepmtVATAmountLine.VATAmountText())
                 {
                 }
                 column(PrepmtVATAmount; PrepmtVATAmount)
@@ -965,8 +965,8 @@ report 87310 "wan Purchase - Blanket Order"
                 if BuyFromContact.Get("Buy-from Contact No.") then;
                 if PayToContact.Get("Pay-to Contact No.") then;
 
-                if not IsReportInPreviewMode then begin
-                    CODEUNIT.Run(CODEUNIT::"Purch.Header-Printed", "Purchase Header");
+                if not IsReportInPreviewMode() then begin
+                    Codeunit.Run(Codeunit::"Purch.Header-Printed", "Purchase Header");
                     if ArchiveDocument then
                         ArchiveManagement.StorePurchDocument("Purchase Header", LogInteraction);
                     /*
@@ -1052,10 +1052,38 @@ report 87310 "wan Purchase - Blanket Order"
     trigger OnPreReport()
     begin
         if not CurrReport.UseRequestPage then
-            InitLogInteraction;
+            InitLogInteraction();
     end;
 
     var
+        GLSetup: Record "General Ledger Setup";
+        CompanyInfo: Record "Company Information";
+        ShipmentMethod: Record "Shipment Method";
+        PaymentTerms: Record "Payment Terms";
+        PrepmtPaymentTerms: Record "Payment Terms";
+        SalespersonPurchaser: Record "Salesperson/Purchaser";
+        TempVATAmountLine: Record "VAT Amount Line" temporary;
+        TempPrepmtVATAmountLine: Record "VAT Amount Line" temporary;
+        TempPurchLine: Record "Purchase Line" temporary;
+        TempPrepaymentInvLineBuffer: Record "Prepayment Inv. Line Buffer" temporary;
+        TempPrePmtVATAmountLineDeduct: Record "VAT Amount Line" temporary;
+        RespCenter: Record "Responsibility Center";
+        CurrExchRate: Record "Currency Exchange Rate";
+        PurchSetup: Record "Purchases & Payables Setup";
+        BuyFromContact: Record Contact;
+        PayToContact: Record Contact;
+        // [+
+        MemoPad: Codeunit "wan MemoPad Purchase";
+        DocumentHelper: Codeunit "wan Document Helper";
+        AddressesHelper: Codeunit "wan Purch. Addresses Helper";
+        wanLanguage: Codeunit Language;
+        // +]
+        FormatAddr: Codeunit "Format Address";
+        FormatDocument: Codeunit "Format Document";
+        PurchPost: Codeunit "Purch.-Post";
+        SegManagement: Codeunit SegManagement;
+        PurchasePostPrepayments: Codeunit "Purchase-Post Prepayments";
+        ArchiveManagement: Codeunit ArchiveManagement;
         VATAmountSpecificationLbl: Label 'VAT Amount Specification in ';
         LocalCurrentyLbl: Label 'Local Currency';
         ExchangeRateLbl: Label 'Exchange rate: %1/%2', Comment = '%1 = CurrExchRate."Relational Exch. Rate Amount", %2 = CurrExchRate."Exchange Rate Amount"';
@@ -1100,29 +1128,6 @@ report 87310 "wan Purchase - Blanket Order"
         PayToContactPhoneNoLbl: Label 'Pay-to Contact Phone No.';
         PayToContactMobilePhoneNoLbl: Label 'Pay-to Contact Mobile Phone No.';
         PayToContactEmailLbl: Label 'Pay-to Contact E-Mail';
-        GLSetup: Record "General Ledger Setup";
-        CompanyInfo: Record "Company Information";
-        ShipmentMethod: Record "Shipment Method";
-        PaymentTerms: Record "Payment Terms";
-        PrepmtPaymentTerms: Record "Payment Terms";
-        SalespersonPurchaser: Record "Salesperson/Purchaser";
-        TempVATAmountLine: Record "VAT Amount Line" temporary;
-        TempPrepmtVATAmountLine: Record "VAT Amount Line" temporary;
-        TempPurchLine: Record "Purchase Line" temporary;
-        TempPrepaymentInvLineBuffer: Record "Prepayment Inv. Line Buffer" temporary;
-        TempPrePmtVATAmountLineDeduct: Record "VAT Amount Line" temporary;
-        RespCenter: Record "Responsibility Center";
-        CurrExchRate: Record "Currency Exchange Rate";
-        PurchSetup: Record "Purchases & Payables Setup";
-        BuyFromContact: Record Contact;
-        PayToContact: Record Contact;
-        wanLanguage: Codeunit Language;
-        FormatAddr: Codeunit "Format Address";
-        FormatDocument: Codeunit "Format Document";
-        PurchPost: Codeunit "Purch.-Post";
-        SegManagement: Codeunit SegManagement;
-        PurchasePostPrepayments: Codeunit "Purchase-Post Prepayments";
-        ArchiveManagement: Codeunit ArchiveManagement;
         VendAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
@@ -1197,7 +1202,6 @@ report 87310 "wan Purchase - Blanket Order"
         PlannedReceiptDateLbl: Label 'Planned Receipt Date';
         ItemNo: Text;
         //[+
-        MemoPad: Codeunit "wan MemoPad Purchase";
         CompanyAddress: Text;
         BuyFromAddress_Lbl: Label 'Buy-from';
         BuyFromAddress: Text;
@@ -1207,8 +1211,6 @@ report 87310 "wan Purchase - Blanket Order"
         PayToAddress: Text;
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
-        DocumentHelper: Codeunit "wan Document Helper";
-        AddressesHelper: Codeunit "wan Purch. Addresses Helper";
     //+]
 
     procedure InitializeRequest(LogInteractionParam: Boolean)
@@ -1220,7 +1222,7 @@ report 87310 "wan Purchase - Blanket Order"
     var
         MailManagement: Codeunit "Mail Management";
     begin
-        exit(CurrReport.Preview or MailManagement.IsHandlingGetEmailBody);
+        exit(CurrReport.Preview or MailManagement.IsHandlingGetEmailBody());
     end;
 
     local procedure FormatAddressFields(var PurchaseHeader: Record "Purchase Header")
@@ -1255,16 +1257,16 @@ report 87310 "wan Purchase - Blanket Order"
     //[+
     local procedure GetMemo(pHeader: Record "Purchase Header"; pLine: Record "Purchase Line") ReturnValue: Text;
     var
+        // Item: Record Item;
         AttachedLines: Text;
-        Item: Record Item;
     begin
         ReturnValue := pLine.Description;
         OnBeforeGetMemo(pHeader, pLine, ReturnValue);
         if pLine.Type = pLine.Type::Item then
             ReturnValue += DocumentHelper.ItemReferences(pLine."No.", pLine."Item Reference No.");
         AttachedLines := MemoPad.GetAttachedLines(pLine);
-        if AttachedLines = '' then
-            AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
+        // if AttachedLines = '' then
+        //     AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
         if AttachedLines <> '' then
             ReturnValue += MemoPad.LineFeed() + AttachedLines;
         OnAfterGetMemo(pHeader, pLine, ReturnValue);

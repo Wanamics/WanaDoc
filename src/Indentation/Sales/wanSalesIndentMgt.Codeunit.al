@@ -18,7 +18,7 @@ codeunit 87310 "wan Sales Indent. Mgt."
         pLine.Setrange("Attached to Line No.", 0);
         if pShift < 0 then
             pLine.SetAscending("Line No.", false);
-        if pLine.FindSet then begin
+        if pLine.FindSet() then begin
             SubLine.SetLoadFields("wan Indentation");
             SubLine.SetRange("Document Type", pLine."Document Type");
             SubLine.SetRange("Document No.", pLine."Document No.");
@@ -39,7 +39,7 @@ codeunit 87310 "wan Sales Indent. Mgt."
                 end;
                 pLine."wan Indentation" += pShift;
                 pLine.Modify();
-                ShiftAttachedLines(pLine, pShift);
+                ShiftAttachedLines(pLine);
             until pLine.Next() = 0;
         end;
     end;
@@ -81,7 +81,7 @@ codeunit 87310 "wan Sales Indent. Mgt."
             exit(pTargetLine.FindFirst());
     end;
 
-    local procedure ShiftAttachedLines(var pRec: Record "Sales Line"; pShift: Integer)
+    local procedure ShiftAttachedLines(var pRec: Record "Sales Line")
     var
         Line: Record "Sales Line";
     begin
@@ -106,13 +106,14 @@ codeunit 87310 "wan Sales Indent. Mgt."
             exit;
         if PrevLine.wanIsTotal() then
             Rec."wan Indentation" := Math.Max(PrevLine."wan Indentation" - 1, 0)
-        else if PrevLine.wanIsTitle() then
-            // if Rec.wanIsTitle() then
-            //     Rec."wan Indentation" := PrevLine."wan Indentation"
-            // else 
-                Rec."wan Indentation" := PrevLine."wan Indentation" + 1
         else
-            Rec."wan Indentation" := PrevLine."wan Indentation";
+            if PrevLine.wanIsTitle() then
+                // if Rec.wanIsTitle() then
+                //     Rec."wan Indentation" := PrevLine."wan Indentation"
+                // else 
+                Rec."wan Indentation" := PrevLine."wan Indentation" + 1
+            else
+                Rec."wan Indentation" := PrevLine."wan Indentation";
         Rec.Modify(false);
     end;
 
@@ -183,7 +184,7 @@ codeunit 87310 "wan Sales Indent. Mgt."
         xLine: Record "Sales Line";
         TotalLbl: Label 'Total : %1', Comment = '%1:Title description';
     begin
-        Line.SetLoadFields(Type, "No.", "Attached to Line No.", "wan Indentation");
+        Line.SetLoadFields(Type, "No.", "Attached to Line No.", "wan Indentation", Description);
         Line.SetRange("Document Type", pLine."Document Type");
         Line.SetRange("Document No.", pLine."Document No.");
         Line.SetFilter("Line No.", '>%1', pLine."Line No.");

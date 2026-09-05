@@ -1,3 +1,4 @@
+namespace Wanamics.WanaProj.BlkOrderLines;
 permissionset 87304 "WanaDoc_BLKORDER"
 {
     Access = Internal;

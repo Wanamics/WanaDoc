@@ -33,13 +33,11 @@ reportextension 87312 "wan Sales Credit Memo Indent" extends "Standard Sales - C
                             SetTotalAmounts(wanTotalLines["wan Indentation"], wanTotalLineAmount, wanTotalPrepmtLineAmount, wanTotalPrepmtAmtInvLineAmount);
                         end;
                     "wan Indentation" > 0:
-                        begin
-                            for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
-                                wanTotalLines[i]."wan Order Amount" += "wan Order Amount"; // for Invoice and CreditMemo
-                                wanTotalLines[i]."Line Amount" += "Line Amount";
-                                wanTotalLines[i]."wan Prepmt. Line Amount" += "wan Prepmt. Line Amount";
-                                wanTotalLines[i]."wan Prepmt. Amt. Inv." += "wan Prepmt. Amt. Inv.";
-                            end;
+                        for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
+                            wanTotalLines[i]."wan Order Amount" += "wan Order Amount"; // for Invoice and CreditMemo
+                            wanTotalLines[i]."Line Amount" += "Line Amount";
+                            wanTotalLines[i]."wan Prepmt. Line Amount" += "wan Prepmt. Line Amount";
+                            wanTotalLines[i]."wan Prepmt. Amt. Inv." += "wan Prepmt. Amt. Inv.";
                         end;
                 end;
             end;

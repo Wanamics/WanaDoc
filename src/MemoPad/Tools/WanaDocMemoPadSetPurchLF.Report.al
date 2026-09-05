@@ -1,8 +1,8 @@
 namespace Wanamics.WanaDoc.MemoPad;
 
+using Microsoft.Purchases.Archive;
 using Microsoft.Purchases.Document;
 using Microsoft.Purchases.History;
-using Microsoft.Purchases.Archive;
 
 report 87302 "WanaDoc MemoPad Set Purch. LF"
 {
@@ -224,13 +224,13 @@ report 87302 "WanaDoc MemoPad Set Purch. LF"
     end;
 
     var
-        LineFeed: Text[1];
-        Window: Dialog;
-        StartDateTime: DateTime;
         xLine: Record "Purchase Line";
         xShipmentLine: Record "Purch. Rcpt. Line";
         xInvoiceLine: Record "Purch. Inv. Line";
         xCrMemoLine: Record "Purch. Cr. Memo Line";
         xReturnLine: Record "Return Shipment Line";
         xLineArchive: Record "Purchase Line Archive";
+        LineFeed: Text[1];
+        Window: Dialog;
+        StartDateTime: DateTime;
 }

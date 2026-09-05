@@ -1,8 +1,6 @@
 namespace Wanamics.WanaDoc.Indentation;
 
 using Microsoft.Sales.History;
-using Wanamics.WanaDoc.MemoPad;
-using System.Text;
 reportextension 87311 "wan Sales Invoice Indent" extends "Standard Sales - Invoice"
 {
     dataset
@@ -41,13 +39,11 @@ reportextension 87311 "wan Sales Invoice Indent" extends "Standard Sales - Invoi
                             wanTotalLineAmount := DocumentHelper.BlankZero(wanTotalLines["wan Indentation"]."Line Amount", wanAutoFormat::AmountFormat, Header."Currency Code");
                         end;
                     "wan Indentation" > 0:
-                        begin
-                            for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
-                                wanTotalLines[i]."wan Order Amount" += "wan Order Amount"; // for Invoice and CreditMemo
-                                wanTotalLines[i]."wan Prepmt. Line Amount" += "wan Prepmt. Line Amount";
-                                wanTotalLines[i]."wan Prepmt. Amt. Inv." += "wan Prepmt. Amt. Inv.";
-                                wanTotalLines[i]."Line Amount" += "Line Amount";
-                            end;
+                        for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
+                            wanTotalLines[i]."wan Order Amount" += "wan Order Amount"; // for Invoice and CreditMemo
+                            wanTotalLines[i]."wan Prepmt. Line Amount" += "wan Prepmt. Line Amount";
+                            wanTotalLines[i]."wan Prepmt. Amt. Inv." += "wan Prepmt. Amt. Inv.";
+                            wanTotalLines[i]."Line Amount" += "Line Amount";
                         end;
                 end;
             end;

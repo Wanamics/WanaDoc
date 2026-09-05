@@ -40,8 +40,8 @@ tableextension 87310 "wan Sales Line Indent" extends "Sales Line"
 
     procedure wanStyle(): Text
     var
-        wanIndentHelper: Codeunit "wan Indent Helper";
         AttachedToLine: Record "Sales Line";
+        wanIndentHelper: Codeunit "wan Indent Helper";
     begin
         if "Attached to Line No." = 0 then
             exit(wanIndentHelper.Style(Type, "No."))

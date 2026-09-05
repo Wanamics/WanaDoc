@@ -3,8 +3,8 @@ namespace Wanamics.WanaDoc.MemoPad;
 using Microsoft.Foundation.ExtendedText;
 codeunit 87320 "wan MemoPad Management"
 {
-    var
-        MemoPad: Page "wan MemoPad";
+    // var
+    //     MemoPad: Page "wan MemoPad";
 
     procedure MemoToBuffer(var pMemo: Text; pMaxLength: Integer; var pMemoPadBuffer: Record "Extended text Line" temporary)
     var
@@ -90,13 +90,13 @@ codeunit 87320 "wan MemoPad Management"
         ETL."No." := pNo;
         ETL."Language Code" := '';
         ETL."Text No." := 0;
-        if TempExtendedTextLine.FindSet then begin
+        if TempExtendedTextLine.FindSet() then begin
             repeat
                 ETL.Init();
                 ETL."Line No." += 10000;
                 ETL.Text := TempExtendedTextLine.Text;
                 ETL.Insert();
-            until TempExtendedTextLine.Next = 0;
+            until TempExtendedTextLine.Next() = 0;
         end;
     end;
 }

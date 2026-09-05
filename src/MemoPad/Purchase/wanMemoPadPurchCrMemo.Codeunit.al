@@ -1,13 +1,13 @@
 namespace Wanamics.WanaDoc.MemoPad;
 
-using Microsoft.Purchases.History;
 using Microsoft.Foundation.ExtendedText;
+using Microsoft.Purchases.History;
 codeunit 87324 "wan MemoPad Purch. Cr. Memo"
 {
     procedure GetExtendedText(pHeader: Record "Purch. Cr. Memo Hdr."; pLine: Record "Purch. Cr. Memo Line") ReturnValue: text;
     var
         ETH: Record "Extended Text Header";
-        ETL: Record "Extended Text Line" temporary;
+        TempETL: Record "Extended Text Line" temporary;
         TransferExtendedText: Codeunit "Transfer Extended Text";
     begin
         case pLine.Type of
@@ -23,12 +23,11 @@ codeunit 87324 "wan MemoPad Purch. Cr. Memo"
         ETH.SetRange("No.", pLine."No.");
         ETH.SetRange("Purchase Credit Memo", true);
         TransferExtendedText.ReadExtTextLines(ETH, pHeader."Document Date", pHeader."Language Code");
-        TransferExtendedText.GetTempExtTextLine(ETL);
-        if ETL.FindSet() then begin
+        TransferExtendedText.GetTempExtTextLine(TempETL);
+        if TempETL.FindSet() then
             repeat
-                ReturnValue += ETL.Text;
-            Until ETL.Next() = 0;
-        end;
+                ReturnValue += TempETL.Text;
+            Until TempETL.Next() = 0;
     end;
 
     procedure GetAttachedLines(pLine: Record "Purch. Cr. Memo Line") ReturnValue: Text;

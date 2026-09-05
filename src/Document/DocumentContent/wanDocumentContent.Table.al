@@ -48,8 +48,8 @@ table 87301 "wan Document Content"
     }
     procedure Fetch(pReportId: Text; pPlaceHolder: Enum "wan Document Content Placement"; pLanguageCode: Code[10]) ReturnValue: Text
     var
-        ReportID: Integer;
         DocumentContent: Record "wan Document Content";
+        ReportID: Integer;
         ContentInStream: InStream;
     begin
         Evaluate(ReportID, pReportId.Substring(8));

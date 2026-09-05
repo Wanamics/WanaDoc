@@ -1,17 +1,17 @@
 namespace Wanamics.WanaDoc.Document;
 
-using Microsoft.Sales.History;
-using Microsoft.Sales.Customer;
+using Microsoft.Finance.GeneralLedger.Setup;
 using Microsoft.Finance.VAT.Clause;
 using Microsoft.Finance.VAT.Setup;
-using System.Text;
 using Microsoft.Foundation.Address;
-using Microsoft.Finance.GeneralLedger.Setup;
+using Microsoft.Foundation.ExtendedText;
 using Microsoft.Inventory.Item;
 using Microsoft.Inventory.Ledger;
-using Microsoft.Sales.Document;
-using Microsoft.Foundation.ExtendedText;
 using Microsoft.Inventory.Tracking;
+using Microsoft.Sales.Customer;
+using Microsoft.Sales.Document;
+using Microsoft.Sales.History;
+using System.Text;
 using Wanamics.WanaDoc.MemoPad;
 reportextension 87306 "wan Standard Sales - Invoice" extends "Standard Sales - Invoice"
 {
@@ -103,7 +103,7 @@ reportextension 87306 "wan Standard Sales - Invoice" extends "Standard Sales - I
                             wanTotal[3] += "wan Prepmt. Amt. Inv.";
                         end;
                     else
-                        wanColumn[1] := DocumentHelper.BlankZero("Quantity") + MemoPad.LineFeed + "Unit of Measure";
+                        wanColumn[1] := DocumentHelper.BlankZero("Quantity") + MemoPad.LineFeed() + "Unit of Measure";
                         wanColumn[2] := DocumentHelper.BlankZero("Unit price", wanAutoFormat::UnitAmountFormat, Header."Currency Code");
                         wanColumn[3] := DocumentHelper.BlankZero("Line Discount %");
                 end;
@@ -113,7 +113,7 @@ reportextension 87306 "wan Standard Sales - Invoice" extends "Standard Sales - I
         {
             column(wanPosition; DocumentHelper.iif(Type <> Type::" ", format(wanPosition), '')) { }
             column(wanMemoPad; wanMemo) { }
-            column(wanQuantity_UOM; DocumentHelper.iif(Line.Type = Line.Type::" ", '', Format(Line.Quantity) + MemoPad.LineFeed + Line."Unit of Measure")) { }
+            column(wanQuantity_UOM; DocumentHelper.iif(Line.Type = Line.Type::" ", '', Format(Line.Quantity) + MemoPad.LineFeed() + Line."Unit of Measure")) { }
             column(wanColumn1; wanColumn[1]) { }
             column(wanColumn2; wanColumn[2]) { }
             column(wanColumn3; wanColumn[3]) { }
@@ -151,8 +151,13 @@ reportextension 87306 "wan Standard Sales - Invoice" extends "Standard Sales - I
         }
     }
     protected var
+        Customer: Record Customer;
+        wanVATClause: Record "VAT Clause";
+        wanGenBusPostingGroup: Record "Gen. Business Posting Group";
+        DocumentHelper: Codeunit "wan Document Helper";
+        AddressesHelper: Codeunit "wan Sales Addresses Helper";
         MemoPad: Codeunit "wan MemoPad Sales Invoice";
-        FormatAddress: Codeunit "Format Address";
+        // FormatAddress: Codeunit "Format Address";
         SellToAddress_Lbl: Label 'Sell-to';
         SellToAddress: Text;
         ShipToAddress_Lbl: Label 'Ship-to';
@@ -162,20 +167,15 @@ reportextension 87306 "wan Standard Sales - Invoice" extends "Standard Sales - I
         CompanyAddress: Text;
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
-        DocumentHelper: Codeunit "wan Document Helper";
-        AddressesHelper: Codeunit "wan Sales Addresses Helper";
-        Customer: Record Customer;
-        wanVATClause: Record "VAT Clause";
-        wanMailGreeting_Lbl: Label 'Dear customer',;
-        wanMailBody_Lbl: Label 'Thank you for your business. Your invoice is attached to this message.';
-        wanMailClosing_Lbl: Label 'Sincerely';
+        // wanMailGreeting_Lbl: Label 'Dear customer',;
+        // wanMailBody_Lbl: Label 'Thank you for your business. Your invoice is attached to this message.';
+        // wanMailClosing_Lbl: Label 'Sincerely';
         wanMemo: Text;
         wanPosition: Integer;
         wanColumn_Lbl: array[3] of Text;
         wanColumn: array[3] of Text;
         wanTotal: array[3] of Decimal;
         wanAutoFormat: Enum "Auto Format";
-        wanGenBusPostingGroup: Record "Gen. Business Posting Group";
         wanLatePaymentClause: Text;
         wanHasLineDiscount: Boolean;
 
@@ -186,10 +186,10 @@ reportextension 87306 "wan Standard Sales - Invoice" extends "Standard Sales - I
 
     local procedure GetMemo(pHeader: Record "Sales Invoice Header"; pLine: Record "Sales Invoice Line") ReturnValue: Text;
     var
-        AttachedLines: Text;
-        Item: Record Item;
-        ItemLedgerEntry: Record "Item Ledger Entry";
+        // Item: Record Item;
+        // ItemLedgerEntry: Record "Item Ledger Entry";
         OrderLine: Record "Sales Line";
+        AttachedLines: Text;
     begin
         ReturnValue := pLine.Description;
         OnBeforeGetMemo(pHeader, pLine, ReturnValue);
@@ -197,18 +197,17 @@ reportextension 87306 "wan Standard Sales - Invoice" extends "Standard Sales - I
             ReturnValue += DocumentHelper.ItemReferences(pLine."No.", pLine."Item Reference No.");
             ReturnValue += DocumentHelper.Tariff(pLine."No.", pHeader."Ship-to Country/Region Code");
             ReturnValue += TrackingLinesSerialNos(pLine);
-            ReturnValue += ShipmentLines;
+            ReturnValue += ShipmentLines();
         end else
-            if pHeader."Prepayment Invoice" and (pLine.Type = pLine.Type::"G/L Account") then begin
+            if pHeader."Prepayment Invoice" and (pLine.Type = pLine.Type::"G/L Account") then
                 if OrderLine.Get(OrderLine."Document Type"::Order, pHeader."Prepayment Order No.", pLine."Line No.") and
                    (OrderLine.Type = OrderLine.Type::Item) then begin
                     ReturnValue += DocumentHelper.ItemReferences(OrderLine."No.", pLine."Item Reference No.");
                     ReturnValue += DocumentHelper.Tariff(OrderLine."No.", pHeader."Ship-to Country/Region Code");
                 end;
-            end;
         AttachedLines := MemoPad.GetAttachedLines(pLine);
-        if AttachedLines = '' then
-            AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
+        // if AttachedLines = '' then
+        //     AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
         if AttachedLines <> '' then
             ReturnValue += MemoPad.LineFeed() + AttachedLines;
         OnAfterGetMemo(pHeader, pLine, ReturnValue);
@@ -227,17 +226,17 @@ reportextension 87306 "wan Standard Sales - Invoice" extends "Standard Sales - I
     local procedure GetExtendedText(pDate: date; pLanguageCode: Code[10]; pNo: Code[20]) ReturnValue: text;
     var
         ETH: Record "Extended Text Header";
-        ETL: Record "Extended Text Line" temporary;
+        TempETL: Record "Extended Text Line" temporary;
         TransferExtendedText: Codeunit "Transfer Extended Text";
     begin
         ETH.SetRange("Table Name", ETH."Table Name"::"Standard Text");
         ETH.SetRange("No.", pNo);
         TransferExtendedText.ReadExtTextLines(ETH, pDate, pLanguageCode);
-        TransferExtendedText.GetTempExtTextLine(ETL);
-        if ETL.FindSet() then begin
+        TransferExtendedText.GetTempExtTextLine(TempETL);
+        if TempETL.FindSet() then begin
             repeat
-                ReturnValue += ETL.Text;
-            Until ETL.Next() = 0;
+                ReturnValue += TempETL.Text;
+            Until TempETL.Next() = 0;
         end;
     end;
 
@@ -259,8 +258,8 @@ reportextension 87306 "wan Standard Sales - Invoice" extends "Standard Sales - I
     procedure TrackingLinesSerialNos(pSalesInvoiceLine: Record "Sales Invoice Line") ReturnValue: Text
     var
         TempItemLedgerEntry: Record "Item Ledger Entry" temporary;
-        Tab: Text[1];
         ItemTrackingDocManagement: Codeunit "Item Tracking Doc. Management";
+        Tab: Text[1];
     begin
         ItemTrackingDocManagement.RetrieveEntriesFromPostedInvoice(TempItemLedgerEntry, pSalesInvoiceLine.RowID1());
         Tab[1] := 9;

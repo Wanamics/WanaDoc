@@ -27,10 +27,11 @@ report 87306 "WanaDoc MemoPad Attach Purch."
                 if ("Document Type" <> xLine."Document Type") or ("Document No." <> xLine."Document No.") or
                     ("No." <> '') or (Type <> Type::" ") then
                     xLine := Line
-                else if Type = Type::" " then begin
-                    "Attached to Line No." := xLine."Line No.";
-                    Modify();
-                end;
+                else
+                    if Type = Type::" " then begin
+                        "Attached to Line No." := xLine."Line No.";
+                        Modify();
+                    end;
             end;
 
             trigger OnPostDataItem()

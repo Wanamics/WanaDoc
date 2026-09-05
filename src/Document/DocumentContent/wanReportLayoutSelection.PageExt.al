@@ -12,6 +12,7 @@ pageextension 87301 "wan Report Layout Selection" extends "Report Layout Selecti
                 Caption = 'Document Content';
                 ApplicationArea = All;
                 Image = Text;
+                Tooltip = 'Show the document for the selected line.';
                 trigger OnAction()
                 var
                     DocumentContent: Record "wan Document Content";

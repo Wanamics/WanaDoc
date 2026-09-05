@@ -13,6 +13,7 @@ pageextension 87387 "wan Sales Quote Excel" extends "Sales Quote Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Export';
                 Image = ExportToExcel;
+                Tooltip = 'Export the sales quote lines to an Excel file.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Sales Lines";
@@ -25,6 +26,7 @@ pageextension 87387 "wan Sales Quote Excel" extends "Sales Quote Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Import';
                 Image = ImportExcel;
+                Tooltip = 'Import the sales quote lines from an Excel file.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Sales Lines";

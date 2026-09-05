@@ -13,6 +13,7 @@ pageextension 87386 "wan Sales Invoice Excel" extends "Sales Invoice Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Export';
                 Image = ExportToExcel;
+                Tooltip = 'Export the sales invoice lines to an Excel file.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Sales Lines";
@@ -25,6 +26,7 @@ pageextension 87386 "wan Sales Invoice Excel" extends "Sales Invoice Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Import';
                 Image = ImportExcel;
+                Tooltip = 'Import the sales invoice lines from an Excel file.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Sales Lines";

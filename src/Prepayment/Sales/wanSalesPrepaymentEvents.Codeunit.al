@@ -1,18 +1,18 @@
 namespace Wanamics.WanaDoc.Prepayment;
 
-using Microsoft.Sales.Document;
-using Microsoft.Sales.History;
 using Microsoft.Finance.ReceivablesPayables;
-using Wanamics.WanaDoc.MemoPad;
 using Microsoft.Foundation.ExtendedText;
 using Microsoft.Inventory.Item;
+using Microsoft.Sales.Document;
+using Microsoft.Sales.History;
 using Microsoft.Sales.Posting;
+using Wanamics.WanaDoc.MemoPad;
 codeunit 87300 "wan Sales Prepayment Events"
 {
     Permissions = tabledata "Sales invoice Line" = im;
 
-    var
-        StatusCheckSuspended: Boolean;
+    // var
+    //     StatusCheckSuspended: Boolean;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", OnBeforeInsertEvent, '', false, false)]
     local procedure OnBeforeInsertHeader(var Rec: Record "Sales Header")
@@ -30,10 +30,10 @@ codeunit 87300 "wan Sales Prepayment Events"
     [EventSubscriber(ObjectType::Report, Report::"Standard Sales - Invoice", OnBeforeGetDocumentCaption, '', false, false)]
     local procedure OnBeforeGetDocumentCaption(SalesInvoiceHeader: Record "Sales Invoice Header"; var DocCaption: Text)
     var
-        PrepaymentInvoice: Label 'Prepayment Invoice';
+        PrepaymentInvoiceLbl: Label 'Prepayment Invoice';
     begin
         if SalesInvoiceHeader."Prepayment Invoice" then
-            DocCaption := PrepaymentInvoice;
+            DocCaption := PrepaymentInvoiceLbl;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post Prepayments", OnAfterCreateLinesOnBeforeGLPosting, '', false, false)]
@@ -146,10 +146,10 @@ codeunit 87300 "wan Sales Prepayment Events"
     var
         SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
-        MemoPad: Codeunit "wan MemoPad Sales";
         TempExtendedTextLine: Record "Extended Text Line" temporary;
-        Item: Record Item;
+        // Item: Record Item;
         ExtendedLine: Record "Sales Invoice Line";
+        MemoPad: Codeunit "wan MemoPad Sales";
     begin
         if SalesInvHeader."wan Compress Prepayment" then
             exit;

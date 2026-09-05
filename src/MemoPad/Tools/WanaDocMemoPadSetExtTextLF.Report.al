@@ -47,6 +47,6 @@ report 87303 "WanaDoc MemoPad Set ExtText LF"
     end;
 
     var
-        LineFeed: Text[1];
         xLine: Record "Extended Text Line";
+        LineFeed: Text[1];
 }

@@ -13,6 +13,7 @@ pageextension 87388 "wan Sales Cr.Memo Excel" extends "Sales Cr. Memo Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Export';
                 Image = ExportToExcel;
+                Tooltip = 'Export the current document to Excel.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Sales Lines";
@@ -25,6 +26,7 @@ pageextension 87388 "wan Sales Cr.Memo Excel" extends "Sales Cr. Memo Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Import';
                 Image = ImportExcel;
+                Tooltip = 'Import the current document from Excel.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Sales Lines";

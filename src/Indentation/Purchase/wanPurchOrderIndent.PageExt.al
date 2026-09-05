@@ -39,7 +39,7 @@ pageextension 87316 "wan Purch. Order Indent" extends "Purchase Order Subform"
             {
                 ApplicationArea = All;
                 Caption = ' ', Locked = true;
-                ToolTip = 'Shift Lines Left';
+                ToolTip = 'Shift Lines Right';
                 Image = NextRecord;
                 Enabled = wanEnabled;
                 trigger OnAction()
@@ -59,6 +59,7 @@ pageextension 87316 "wan Purch. Order Indent" extends "Purchase Order Subform"
                 Caption = 'Insert Total Lines';
                 Image = Totals;
                 Enabled = wanEnabled;
+                ToolTip = 'Insert missing total line for each title line.';
                 trigger OnAction()
                 var
                     ConfirmLbl: Label 'Do you want to insert missing total line for each title line?';

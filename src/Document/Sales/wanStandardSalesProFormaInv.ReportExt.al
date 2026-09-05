@@ -1,16 +1,16 @@
 namespace Wanamics.WanaDoc.Document;
 
-using Wanamics.WanaDoc.MemoPad;
-using Microsoft.Sales.Document;
-using Microsoft.Sales.Customer;
+using Microsoft.CRM.Team;
 using Microsoft.Finance.VAT.Clause;
 using Microsoft.Finance.VAT.Setup;
 using Microsoft.Foundation.Address;
-using Microsoft.Inventory.Item;
-using System.Utilities;
-using Microsoft.CRM.Team;
-using Microsoft.Foundation.Shipping;
 using Microsoft.Foundation.PaymentTerms;
+using Microsoft.Foundation.Shipping;
+using Microsoft.Inventory.Item;
+using Microsoft.Sales.Customer;
+using Microsoft.Sales.Document;
+using System.Utilities;
+using Wanamics.WanaDoc.MemoPad;
 reportextension 87302 "wan Standard Sales ProFormaInv" extends "Standard Sales - Pro Forma Inv"
 {
     dataset
@@ -138,7 +138,7 @@ reportextension 87302 "wan Standard Sales ProFormaInv" extends "Standard Sales -
 
         add(Totals)
         {
-            column(wanTotalNetWeight; DocumentHelper.iIf(wanTotalNetWeight <> 0, StrSubstNo(wanTotalNetWeightLbl, wanTempItem.FieldCaption("Net Weight"), wanTotalNetWeight), '')) { }
+            column(wanTotalNetWeight; DocumentHelper.iIf(wanTotalNetWeight <> 0, StrSubstNo(wanTotalNetWeightLbl, TempWanItem.FieldCaption("Net Weight"), wanTotalNetWeight), '')) { }
         }
         addbefore(Totals)
         {
@@ -163,6 +163,13 @@ reportextension 87302 "wan Standard Sales ProFormaInv" extends "Standard Sales -
         }
     }
     var
+        SalepersonPurchaser: Record "Salesperson/Purchaser";
+        ShipmentMethod: Record "Shipment Method";
+        PaymentTerms: Record "Payment Terms";
+        Customer: Record Customer;
+        wanVATClause: Record "VAT Clause";
+        DocumentHelper: Codeunit "wan Document Helper";
+        AddressesHelper: Codeunit "wan Sales Addresses Helper";
         MemoPad: Codeunit "wan MemoPad Sales";
         FormatAddr: Codeunit "Format Address";
         SellToAddress_Lbl: Label 'Sell-to';
@@ -174,10 +181,6 @@ reportextension 87302 "wan Standard Sales ProFormaInv" extends "Standard Sales -
         wanCompanyAddress: Text; // CompanyAddress defined in "Standard Sales - Pro Forma Inv" as : array[8] of Text[100];
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
-        DocumentHelper: Codeunit "wan Document Helper";
-        AddressesHelper: Codeunit "wan Sales Addresses Helper";
-        Customer: Record Customer;
-        wanVATClause: Record "VAT Clause";
         wanMailGreeting_Lbl: Label 'Dear customer';
         wanMailBody_Lbl: Label 'Thank you for your business. Our order confirmation is attached to this message.';
         wanMailClosing_Lbl: Label 'Sincerely';
@@ -185,19 +188,16 @@ reportextension 87302 "wan Standard Sales ProFormaInv" extends "Standard Sales -
         //[+ from SalesOrderConf to inherit from the same layout
         Invoice_Lbl: Label 'Proforma invoice';
         Page_Lbl: Label 'Page';
-        ShiptoAddrLbl: Label 'Ship-to Address';
-        SalepersonPurchaser: Record "Salesperson/Purchaser";
-        ShipmentMethod: Record "Shipment Method";
-        PaymentTerms: Record "Payment Terms";
+        // ShiptoAddrLbl: Label 'Ship-to Address';
         ShipToAddr: array[8] of Text[100];
     //]
 
     var
-        wanTempItem: Record Item temporary;
+        TempWanItem: Record Item temporary;
         wanTotalNetWeight: Decimal;
         wanTotalNetWeightLbl: Label 'Total %1: %2', Comment = '%1:FieldCaption("Net Weight"), %2: TotalNetWeight';
         wanPosition: Integer;
-        wanOptionLbl: Label '-';
+        // wanOptionLbl: Label '-';
         wanHasLineDiscount: Boolean;
 
     trigger OnPreReport()
@@ -216,8 +216,8 @@ reportextension 87302 "wan Standard Sales ProFormaInv" extends "Standard Sales -
             ReturnValue += DocumentHelper.Tariff(pLine."No.", pHeader."Ship-to Country/Region Code");
         end;
         AttachedLines := MemoPad.GetAttachedLines(pLine);
-        if AttachedLines = '' then
-            AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
+        // if AttachedLines = '' then
+        //     AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
         if AttachedLines <> '' then
             ReturnValue += MemoPad.LineFeed() + AttachedLines;
         OnAfterGetMemo(pHeader, pLine, ReturnValue);

@@ -61,6 +61,7 @@ pageextension 87315 "wan Purch. Quote Indent" extends "Purchase Quote Subform"
                 Caption = 'Insert Total Lines';
                 Image = Totals;
                 Enabled = wanEnabled;
+                ToolTip = 'Insert missing total line for each title line.';
                 trigger OnAction()
                 var
                     wanIndentMgt: Codeunit "wan Purch. Indent. Mgt.";

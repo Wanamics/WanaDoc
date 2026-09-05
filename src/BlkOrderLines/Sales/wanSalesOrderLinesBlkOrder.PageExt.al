@@ -13,6 +13,7 @@ pageextension 87392 "wan Sales Order Lines BlkOrder" extends "Sales Order Subfor
                 Caption = 'Select Blanket Order Lines';
                 Ellipsis = true;
                 Image = BlanketOrder;
+                Tooltip = 'Select Blanket Order Lines';
                 trigger OnAction()
                 begin
                     Codeunit.Run(Codeunit::"wan Sales BlkOrder Copy Lines", Rec);

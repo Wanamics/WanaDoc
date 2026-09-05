@@ -29,8 +29,8 @@ pageextension 87319 "wan Purch. Blk. Order Indent" extends "Blanket Purchase Ord
                 Enabled = wanEnabled and (Rec."wan Indentation" > 0);
                 trigger OnAction()
                 var
-                    wanIndentMgt: Codeunit "wan Purch. Indent. Mgt.";
                     Selection: Record "Purchase Line";
+                    wanIndentMgt: Codeunit "wan Purch. Indent. Mgt.";
                 begin
                     CurrPage.SetSelectionFilter(Selection);
                     wanIndentMgt.Shift(Selection, -1);
@@ -45,8 +45,8 @@ pageextension 87319 "wan Purch. Blk. Order Indent" extends "Blanket Purchase Ord
                 Enabled = wanEnabled;
                 trigger OnAction()
                 var
-                    wanIndentMgt: Codeunit "wan Purch. Indent. Mgt.";
                     Selection: Record "Purchase Line";
+                    wanIndentMgt: Codeunit "wan Purch. Indent. Mgt.";
                 begin
                     CurrPage.SetSelectionFilter(Selection);
                     wanIndentMgt.Shift(Selection, +1);
@@ -61,6 +61,7 @@ pageextension 87319 "wan Purch. Blk. Order Indent" extends "Blanket Purchase Ord
                 Caption = 'Insert Total Lines';
                 Image = Totals;
                 Enabled = wanEnabled;
+                ToolTip = 'Insert missing total line for each title line.';
                 trigger OnAction()
                 var
                     wanIndentMgt: Codeunit "wan Purch. Indent. Mgt.";

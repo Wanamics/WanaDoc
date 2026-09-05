@@ -1,8 +1,8 @@
 namespace Wanamics.WanaDoc.MemoPad;
 
+using Microsoft.Sales.Archive;
 using Microsoft.Sales.Document;
 using Microsoft.Sales.History;
-using Microsoft.Sales.Archive;
 
 report 87301 "WanaDoc MemoPad Set Sales LF"
 {
@@ -224,13 +224,13 @@ report 87301 "WanaDoc MemoPad Set Sales LF"
     end;
 
     var
-        LineFeed: Text[1];
-        Window: Dialog;
-        StartDateTime: DateTime;
         xLine: Record "Sales Line";
         xShipmentLine: Record "Sales Shipment Line";
         xInvoiceLine: Record "Sales Invoice Line";
         xCrMemoLine: Record "Sales Cr.Memo Line";
         xReturnLine: Record "Return Receipt Line";
         xLineArchive: Record "Sales Line Archive";
+        LineFeed: Text[1];
+        Window: Dialog;
+        StartDateTime: DateTime;
 }

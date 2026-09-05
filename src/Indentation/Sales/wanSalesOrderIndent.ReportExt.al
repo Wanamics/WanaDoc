@@ -32,12 +32,10 @@ reportextension 87313 "wan Sales Order Indent" extends "Standard Sales - Order C
                             SetTotalAmounts(wanTotalLines["wan Indentation"], wanTotalLineAmount);
                         end;
                     "wan Indentation" > 0:
-                        begin
-                            for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
-                                wanTotalLines[i]."Line Amount" += "Line Amount";
-                                wanTotalLines[i]."Prepmt. Line Amount" += "Prepmt. Line Amount";
-                                wanTotalLines[i]."Prepmt. Amt. Inv." += "Prepmt. Amt. Inv.";
-                            end;
+                        for i := "wan Indentation" to ArrayLen(wanTotalLines) do begin
+                            wanTotalLines[i]."Line Amount" += "Line Amount";
+                            wanTotalLines[i]."Prepmt. Line Amount" += "Prepmt. Line Amount";
+                            wanTotalLines[i]."Prepmt. Amt. Inv." += "Prepmt. Amt. Inv.";
                         end;
                 end;
             end;

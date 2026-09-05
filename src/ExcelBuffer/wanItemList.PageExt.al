@@ -1,7 +1,7 @@
 namespace Wanamics.WanaDoc.Excel;
 
-using Microsoft.Inventory.Item;
 using Microsoft.Foundation.ExtendedText;
+using Microsoft.Inventory.Item;
 pageextension 87331 "wan_ Item List" extends "Item List"
 {
     layout
@@ -17,10 +17,11 @@ pageextension 87331 "wan_ Item List" extends "Item List"
                 Caption = 'Export Extended text';
                 ApplicationArea = All;
                 Image = Export;
+                ToolTip = 'Export Extended text to Excel';
                 trigger OnAction()
                 var
-                    ExcelExtendedTexts: codeunit "wan Excel Extended Texts";
-                    ExtendedTextHeader: record "Extended Text Header";
+                    ExtendedTextHeader: Record "Extended Text Header";
+                    ExcelExtendedTexts: Codeunit "wan Excel Extended Texts";
                 begin
                     ExcelExtendedTexts.Export(ExtendedTextHeader);
                 end;
@@ -30,10 +31,11 @@ pageextension 87331 "wan_ Item List" extends "Item List"
                 Caption = 'Import Extended text';
                 ApplicationArea = All;
                 Image = Import;
+                ToolTip = 'Import Extended text from Excel';
                 trigger OnAction()
                 var
-                    ExcelExtendedTexts: codeunit "wan Excel Extended Texts";
-                    ExtendedTextHeader: record "Extended Text Header";
+                    ExtendedTextHeader: Record "Extended Text Header";
+                    ExcelExtendedTexts: Codeunit "wan Excel Extended Texts";
                 begin
                     ExcelExtendedTexts.Import(ExtendedTextHeader);
                 end;

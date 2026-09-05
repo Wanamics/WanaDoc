@@ -1,7 +1,7 @@
 namespace Wanamics.WanaDoc.MemoPad;
 
-using Microsoft.Sales.Reminder;
 using Microsoft.Foundation.ExtendedText;
+using Microsoft.Sales.Reminder;
 page 87321 "wan Reminder Level"
 {
     PageType = Card;
@@ -50,8 +50,8 @@ page 87321 "wan Reminder Level"
         }
     }
     var
-        BeginningMemo, EndingMemo : Text;
         MemoPadManagement: Codeunit "wan MemoPad Management";
+        BeginningMemo, EndingMemo : Text;
 
     trigger OnAfterGetRecord()
     var
@@ -87,13 +87,12 @@ page 87321 "wan Reminder Level"
         ReminderText."Reminder Terms Code" := Rec."Reminder Terms Code";
         ReminderText."Reminder Level" := Rec."No.";
         ReminderText.Position := pPosition;
-        if TempExtendedTextLine.FindSet then begin
+        if TempExtendedTextLine.FindSet() then
             repeat
                 ReminderText.Init();
                 ReminderText."Line No." += 10000;
                 ReminderText.Text := TempExtendedTextLine.Text;
                 ReminderText.Insert();
-            until TempExtendedTextLine.Next = 0;
-        end;
+            until TempExtendedTextLine.Next() = 0;
     end;
 }

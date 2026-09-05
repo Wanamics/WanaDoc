@@ -40,8 +40,8 @@ tableextension 87314 "wan Sales C.M. Line Indent" extends "Sales Cr.Memo Line"
 
     procedure wanStyle(): Text
     var
+        AttachedToLine: Record "Sales Cr.Memo Line";
         wanIndentHelper: Codeunit "wan Indent Helper";
-        AttachedToLine: Record "Sales Invoice Line";
     begin
         if "Attached to Line No." = 0 then
             exit(wanIndentHelper.Style(Type, "No."))

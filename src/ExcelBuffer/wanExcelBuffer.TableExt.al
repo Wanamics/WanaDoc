@@ -11,6 +11,7 @@ tableextension 87370 "wan Excel Buffer" extends "Excel Buffer"
         lMaxStrLen: Integer;
     begin
         if StrLen(pText) > MaxStrLen("Cell Value as Text") then begin
+            gExcelBufferExtended.Init();
             gExcelBufferExtended."Row No." := "Row No.";
             gExcelBufferExtended."Column No." := "Column No.";
             while StrLen(pText) <> 0 do begin
@@ -26,7 +27,7 @@ tableextension 87370 "wan Excel Buffer" extends "Excel Buffer"
         end;
     end;
 
-    Procedure GetExtendedText() ReturnValue: Text;
+    procedure GetExtendedText() ReturnValue: Text;
     begin
         gExcelBufferExtended.SetRange("Row No.", "Row No.");
         gExcelBufferExtended.SetRange("Column No.", "Column No.");

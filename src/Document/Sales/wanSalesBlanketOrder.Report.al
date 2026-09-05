@@ -1,34 +1,34 @@
 namespace Wanamics.WanaDoc.Document;
 
-using Microsoft.Sales.Document;
 using Microsoft.Assembly.Document;
-using System.Utilities;
-using Microsoft.Finance.VAT.Calculation;
-using Microsoft.Foundation.Reporting;
-using Microsoft.Foundation.Company;
 using Microsoft.Bank.BankAccount;
 using Microsoft.CRM.Contact;
-using Microsoft.Foundation.Address;
-using Microsoft.Foundation.Shipping;
-using Microsoft.Foundation.PaymentTerms;
+using Microsoft.CRM.Interaction;
+using Microsoft.CRM.Segment;
 using Microsoft.CRM.Team;
-using Microsoft.Sales.Customer;
-using Microsoft.Finance.VAT.Clause;
-using Wanamics.WanaDoc.MemoPad;
-using System.Text;
 using Microsoft.Finance.Currency;
 using Microsoft.Finance.GeneralLedger.Setup;
-using Microsoft.Utilities;
-using Microsoft.Sales.Posting;
+using Microsoft.Finance.VAT.Calculation;
+using Microsoft.Finance.VAT.Clause;
 using Microsoft.Finance.VAT.Setup;
-using Microsoft.Sales.Setup;
-using Microsoft.Inventory.Location;
-using System.Globalization;
-using Microsoft.CRM.Segment;
-using System.EMail;
+using Microsoft.Foundation.Address;
+using Microsoft.Foundation.Company;
+using Microsoft.Foundation.PaymentTerms;
+using Microsoft.Foundation.Reporting;
+using Microsoft.Foundation.Shipping;
 using Microsoft.Foundation.UOM;
 using Microsoft.Inventory.Item;
-using Microsoft.CRM.Interaction;
+using Microsoft.Inventory.Location;
+using Microsoft.Sales.Customer;
+using Microsoft.Sales.Document;
+using Microsoft.Sales.Posting;
+using Microsoft.Sales.Setup;
+using Microsoft.Utilities;
+using System.EMail;
+using System.Globalization;
+using System.Text;
+using System.Utilities;
+using Wanamics.WanaDoc.MemoPad;
 report 87300 "wan Sales - Blanket Order"
 // Copy from report 1305 "Standard Sales - Order Conf." + //[ ... //] from extension
 {
@@ -572,7 +572,7 @@ report 87300 "wan Sales - Blanket Order"
                 }
                 //[
                 column(wanMemoPad; GetMemo(Header, Line)) { }
-                column(wanQuantity_UOM; DocumentHelper.iif(Line.Type = Line.Type::" ", '', Format(Line.Quantity) + MemoPad.LineFeed + Line."Unit of Measure")) { }
+                column(wanQuantity_UOM; DocumentHelper.iif(Line.Type = Line.Type::" ", '', Format(Line.Quantity) + MemoPad.LineFeed() + Line."Unit of Measure")) { }
                 //]
                 dataitem(AssemblyLine; "Assembly Line")
                 {
@@ -936,14 +936,14 @@ report 87300 "wan Sales - Blanket Order"
 
             trigger OnAfterGetRecord()
             var
+                //[
+                VATPostingSetup: Record "VAT Posting Setup";
+                //]
                 CurrencyExchangeRate: Record "Currency Exchange Rate";
                 Currency: Record Currency;
                 GeneralLedgerSetup: Record "General Ledger Setup";
                 ArchiveManagement: Codeunit ArchiveManagement;
                 SalesPost: Codeunit "Sales-Post";
-                //[
-                VATPostingSetup: Record "VAT Posting Setup";
-            //]
             begin
                 FirstLineHasBeenOutput := false;
                 Clear(Line);
@@ -1147,6 +1147,14 @@ report 87300 "wan Sales - Blanket Order"
         AsmHeader: Record "Assembly Header";
         SellToContact: Record Contact;
         BillToContact: Record Contact;
+        //[
+        Customer: Record Customer;
+        wanVATClause: Record "VAT Clause";
+        MemoPad: Codeunit "wan MemoPad Sales";
+        // FormatAddress: Codeunit "Format Address";
+        DocumentHelper: Codeunit "wan Document Helper";
+        AddressesHelper: Codeunit "wan Sales Addresses Helper";
+        //]
         LanguageMgt: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
@@ -1207,8 +1215,6 @@ report 87300 "wan Sales - Blanket Order"
         LCYTxt: label ' (LCY)';
         LegalOfficeTxt, LegalOfficeLbl, CustomGiroTxt, CustomGiroLbl, LegalStatementLbl : Text;
         //[
-        MemoPad: Codeunit "wan MemoPad Sales";
-        FormatAddress: Codeunit "Format Address";
         SellToAddress_Lbl: Label 'Sell-to';
         SellToAddress: Text;
         ShipToAddress_Lbl: Label 'Ship-to';
@@ -1218,10 +1224,6 @@ report 87300 "wan Sales - Blanket Order"
         CompanyAddress: Text;
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
-        DocumentHelper: Codeunit "wan Document Helper";
-        AddressesHelper: Codeunit "wan Sales Addresses Helper";
-        Customer: Record Customer;
-        wanVATClause: Record "VAT Clause";
     //]
 
     protected var
@@ -1374,7 +1376,7 @@ report 87300 "wan Sales - Blanket Order"
     local procedure GetMemo(pHeader: Record "Sales Header"; pLine: Record "Sales Line") ReturnValue: Text;
     var
         AttachedLines: Text;
-        Item: Record Item;
+    // Item: Record Item;
     begin
         ReturnValue := pLine.Description;
         OnBeforeGetMemo(pHeader, pLine, ReturnValue);
@@ -1383,8 +1385,8 @@ report 87300 "wan Sales - Blanket Order"
             ReturnValue += DocumentHelper.Tariff(pLine."No.", pHeader."Ship-to Country/Region Code");
         end;
         AttachedLines := MemoPad.GetAttachedLines(pLine);
-        if AttachedLines = '' then
-            AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
+        // if AttachedLines = '' then
+        //     AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
         if AttachedLines <> '' then
             ReturnValue += MemoPad.LineFeed() + AttachedLines;
         OnAfterGetMemo(pHeader, pLine, ReturnValue);

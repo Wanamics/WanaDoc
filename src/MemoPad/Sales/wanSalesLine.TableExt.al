@@ -1,13 +1,15 @@
 namespace Wanamics.WanaDoc.MemoPad;
 
-using Microsoft.Sales.Document;
 using Microsoft.Foundation.ExtendedText;
+using Microsoft.Sales.Document;
 tableextension 87337 "wan Sales Line" extends "Sales Line"
 {
     trigger OnAfterInsert()
     var
         PrevLine: Record "Sales Line";
     begin
+        if Rec.IsTemporary then
+            exit;
         if (Type = Type::" ") and ("No." = '') and ("Attached to Line No." = 0) then begin
             PrevLine.SetRange("Document Type", "Document Type");
             PrevLine.SetRange("Document No.", "Document No.");
@@ -34,10 +36,11 @@ tableextension 87337 "wan Sales Line" extends "Sales Line"
         if pLine.Description = '' then begin
             pLine.Description += LineFeed;
             pLine.Modify(false);
-        end else if pLine.Description[StrLen(pLine.Description)] <> LineFeed then begin
-            pLine.Description += LineFeed;
-            pLine.Modify(false);
-        end;
+        end else
+            if pLine.Description[StrLen(pLine.Description)] <> LineFeed then begin
+                pLine.Description += LineFeed;
+                pLine.Modify(false);
+            end;
     end;
 
     local procedure HasNextCommentLine(): Boolean
@@ -57,18 +60,18 @@ tableextension 87337 "wan Sales Line" extends "Sales Line"
     var
         AttachedLine: Record "Sales Line";
         AttachedToLine: Record "Sales Line";
-        MemoPadPage: Page "wan MemoPad";
+        TempMemoPadBuffer: Record "Extended Text Line" temporary;
         MemoPadManagement: Codeunit "wan MemoPad Management";
-        MemoPadBuffer: Record "Extended Text Line" temporary;
+        MemoPadPage: Page "wan MemoPad";
         Memo: Text;
-        lOldText: Text;
-        tCaption: Label '%1 %2';
+        OldText: Text;
+        CaptionLbl: Label '%1 %2', comment = '%1: Document type, %2: Document No.';
     begin
         if Rec."Attached to Line No." = 0 then
             AttachedToLine := Rec
         else
             AttachedToLine.Get(Rec."Document Type", Rec."Document No.", Rec."Attached to Line No.");
-        MemoPadPage.SetCaption(StrSubstNo(tCaption, Rec."Document Type", Rec."Document No."));
+        MemoPadPage.SetCaption(StrSubstNo(CaptionLbl, Rec."Document Type", Rec."Document No."));
 
         AttachedLine.SetRange("Document Type", Rec."Document Type");
         AttachedLine.SetRange("Document No.", Rec."Document No.");
@@ -83,27 +86,26 @@ tableextension 87337 "wan Sales Line" extends "Sales Line"
         MemoPadPage.LookupMode := true;
         MemoPadPage.Editable := pEditable;
         if (MemoPadPage.RunModal() = Action::LookupOK) and pEditable then begin
-            lOldText := Memo;
+            OldText := Memo;
             Memo := MemoPadPage.GetText();
-            if Memo = lOldText then
+            if Memo = OldText then
                 exit(false)
             else
                 ReturnValue := true;
             AttachedLine.DeleteAll();
-            MemoPadManagement.MemoToBuffer(Memo, MaxStrLen(Rec.Description), MemoPadBuffer);
+            MemoPadManagement.MemoToBuffer(Memo, MaxStrLen(Rec.Description), TempMemoPadBuffer);
             AttachedLine."Document Type" := Rec."Document Type";
             AttachedLine."Document No." := Rec."Document No.";
             AttachedLine."Line No." := AttachedToLine."Line No.";
-            if MemoPadBuffer.FindSet then begin
+            if TempMemoPadBuffer.FindSet() then
                 repeat
                     AttachedLine.Init();
                     AttachedLine."Line No." += 10;
                     AttachedLine."Attached to Line No." := AttachedToLine."Line No.";
-                    AttachedLine.Description := MemoPadBuffer.Text;
+                    AttachedLine.Description := TempMemoPadBuffer.Text;
                     OnBeforeAttachedLineInsert(AttachedLine, Rec);
                     AttachedLine.Insert();
-                until MemoPadBuffer.Next = 0;
-            end;
+                until TempMemoPadBuffer.Next() = 0;
         end;
     end;
 

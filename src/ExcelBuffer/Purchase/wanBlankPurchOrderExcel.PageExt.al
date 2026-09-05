@@ -12,6 +12,7 @@ pageextension 87379 "wan Blank. Purch. Order Excel" extends "Blanket Purchase Or
                 ApplicationArea = All;
                 Caption = 'Excel Export';
                 Image = ExportToExcel;
+                ToolTip = 'Export Blanket Purchase Order to Excel';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Purchase Lines";
@@ -24,6 +25,7 @@ pageextension 87379 "wan Blank. Purch. Order Excel" extends "Blanket Purchase Or
                 ApplicationArea = All;
                 Caption = 'Excel Import';
                 Image = ImportExcel;
+                ToolTip = 'Import Blanket Purchase Order from Excel';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Purchase Lines";

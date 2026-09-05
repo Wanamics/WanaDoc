@@ -12,6 +12,7 @@ pageextension 87376 "wan Purch. Invoice Excel" extends "Purch. Invoice Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Export';
                 Image = ExportToExcel;
+                Tooltip = 'Export Purchase Invoice Lines to Excel';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Purchase Lines";
@@ -24,6 +25,7 @@ pageextension 87376 "wan Purch. Invoice Excel" extends "Purch. Invoice Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Import';
                 Image = ImportExcel;
+                Tooltip = 'Import Purchase Invoice Lines from Excel';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Purchase Lines";

@@ -1,8 +1,8 @@
 namespace Wanamics.WanaDoc.Document;
 
-using Microsoft.Sales.History;
 using Microsoft.Foundation.Address;
 using Microsoft.Sales.Document;
+using Microsoft.Sales.History;
 codeunit 87308 "wan Sales Addresses Helper"
 {
     var

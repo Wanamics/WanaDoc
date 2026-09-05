@@ -1,7 +1,7 @@
 namespace Wanamics.WanaDoc.Document;
 
-using Microsoft.Utilities;
 using Microsoft.Finance.GeneralLedger.Setup;
+using Microsoft.Utilities;
 tableextension 87300 "wan Gen. Bus. Posting Group" extends "Gen. Business Posting Group"
 {
     fields
@@ -11,6 +11,7 @@ tableextension 87300 "wan Gen. Bus. Posting Group" extends "Gen. Business Postin
             Caption = 'Late Payment Text Code';
             DataClassification = ToBeClassified;
             TableRelation = "Standard Text";
+            Tooltip = 'Specifies the standard text code for late payment clauses.';
         }
     }
 }

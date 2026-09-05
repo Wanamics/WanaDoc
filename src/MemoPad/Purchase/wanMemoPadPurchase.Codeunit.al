@@ -1,18 +1,18 @@
 namespace Wanamics.WanaDoc.MemoPad;
 
-using Microsoft.Purchases.Document;
 using Microsoft.Foundation.ExtendedText;
+using Microsoft.Purchases.Document;
 codeunit 87325 "wan MemoPad Purchase"
 {
     procedure GetExtendedText(pHeader: Record "Purchase Header"; pLine: Record "Purchase Line") ReturnValue: text;
     var
-        ETL: Record "Extended Text Line" temporary;
+        TempETL: Record "Extended Text Line" temporary;
     begin
-        GetExtendedTextLines(pHeader, pLine, ETL);
-        if ETL.FindSet() then
+        GetExtendedTextLines(pHeader, pLine, TempETL);
+        if TempETL.FindSet() then
             repeat
-                ReturnValue += ETL.Text;
-            until ETL.Next() = 0;
+                ReturnValue += TempETL.Text;
+            until TempETL.Next() = 0;
     end;
 
     procedure GetExtendedTextLines(pHeader: Record "Purchase Header"; pLine: Record "Purchase Line"; var pExtendedTextLine: Record "Extended Text Line" temporary)

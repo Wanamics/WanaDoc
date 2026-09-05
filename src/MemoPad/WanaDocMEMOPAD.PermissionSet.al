@@ -1,3 +1,4 @@
+namespace Wanamics.WanaDoc.MemoPad;
 permissionset 87302 "WanaDoc_MEMOPAD"
 {
     Access = Internal;

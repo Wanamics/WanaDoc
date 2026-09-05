@@ -1,8 +1,8 @@
-namespace WanaProj.WanaProj;
+namespace Wanamics.WanaProj.BlkOrderLines;
 
+using Microsoft.Inventory.Item;
 using Microsoft.Inventory.Item.Catalog;
 using Microsoft.Sales.Document;
-using Microsoft.Inventory.Item;
 
 codeunit 87390 "wan Sales BlkOrder Events"
 {

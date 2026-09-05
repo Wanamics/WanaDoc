@@ -1,18 +1,18 @@
 namespace Wanamics.WanaDoc.Prepayment;
 
-using Microsoft.Purchases.Document;
-using Microsoft.Purchases.History;
 using Microsoft.Finance.ReceivablesPayables;
-using Wanamics.WanaDoc.MemoPad;
 using Microsoft.Foundation.ExtendedText;
 using Microsoft.Inventory.Item;
+using Microsoft.Purchases.Document;
+using Microsoft.Purchases.History;
 using Microsoft.Purchases.Posting;
+using Wanamics.WanaDoc.MemoPad;
 codeunit 87307 "wan Purch. Prepayment Events"
 {
     Permissions = tabledata "Purch. Inv. Line" = im;
 
-    var
-        StatusCheckSuspended: Boolean;
+    // var
+    //     StatusCheckSuspended: Boolean;
 
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", OnBeforeInsertEvent, '', false, false)]
     local procedure OnBeforeInsertHeader(var Rec: Record "Purchase Header")
@@ -139,10 +139,10 @@ codeunit 87307 "wan Purch. Prepayment Events"
     var
         PurchaseHeader: Record "Purchase Header";
         PurchaseLine: Record "Purchase Line";
-        MemoPad: Codeunit "wan MemoPad Purchase";
         TempExtendedTextLine: Record "Extended Text Line" temporary;
-        Item: Record Item;
+        // Item: Record Item;
         ExtendedLine: Record "Purch. Inv. Line";
+        MemoPad: Codeunit "wan MemoPad Purchase";
     begin
         if PurchInvHeader."wan Compress Prepayment" then
             exit;

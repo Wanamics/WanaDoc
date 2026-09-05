@@ -27,8 +27,8 @@ pageextension 87320 "wan Extended Text" extends "Extended Text"
         }
     }
     var
-        Memo: Text;
         MemoPadManagement: Codeunit "wan MemoPad Management";
+        Memo: Text;
 
     trigger OnAfterGetRecord()
     begin

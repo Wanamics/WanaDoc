@@ -40,8 +40,8 @@ tableextension 87315 "wan Purch. Line Indent" extends "Purchase Line"
 
     procedure wanStyle(): Text
     var
-        wanIndentHelper: Codeunit "wan Indent Helper";
         AttachedToLine: Record "Purchase Line";
+        wanIndentHelper: Codeunit "wan Indent Helper";
     begin
         if "Attached to Line No." = 0 then
             exit(wanIndentHelper.Style(Type, "No."))

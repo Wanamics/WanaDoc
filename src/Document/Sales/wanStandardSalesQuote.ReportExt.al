@@ -1,12 +1,12 @@
 namespace Wanamics.WanaDoc.Document;
 
-using Microsoft.Sales.Document;
-using Microsoft.Sales.Customer;
 using Microsoft.Finance.VAT.Clause;
 using Microsoft.Finance.VAT.Setup;
-using Wanamics.WanaDoc.MemoPad;
 using Microsoft.Foundation.Address;
 using Microsoft.Inventory.Item;
+using Microsoft.Sales.Customer;
+using Microsoft.Sales.Document;
+using Wanamics.WanaDoc.MemoPad;
 reportextension 87304 "wan Standard Sales - Quote" extends "Standard Sales - Quote"
 {
     dataset
@@ -85,7 +85,7 @@ reportextension 87304 "wan Standard Sales - Quote" extends "Standard Sales - Quo
         }
         add(Totals)
         {
-            column(wanTotalNetWeight; DocumentHelper.iIf(wanTotalNetWeight <> 0, StrSubstNo(wanTotalNetWeightLbl, wanTempItem.FieldCaption("Net Weight"), wanTotalNetWeight), '')) { }
+            column(wanTotalNetWeight; DocumentHelper.iIf(wanTotalNetWeight <> 0, StrSubstNo(wanTotalNetWeightLbl, TempWanItem.FieldCaption("Net Weight"), wanTotalNetWeight), '')) { }
         }
         add(LetterText)
         {
@@ -105,8 +105,12 @@ reportextension 87304 "wan Standard Sales - Quote" extends "Standard Sales - Quo
         }
     }
     protected var
+        Customer: Record Customer;
+        wanVATClause: Record "VAT Clause";
+        DocumentHelper: Codeunit "wan Document Helper";
+        AddressesHelper: Codeunit "wan Sales Addresses Helper";
         MemoPad: Codeunit "wan MemoPad Sales";
-        FormatAddress: Codeunit "Format Address";
+        // FormatAddress: Codeunit "Format Address";
         SellToAddress_Lbl: Label 'Sell-to';
         SellToAddress: Text;
         ShipToAddress_Lbl: Label 'Ship-to';
@@ -116,17 +120,13 @@ reportextension 87304 "wan Standard Sales - Quote" extends "Standard Sales - Quo
         CompanyAddress: Text;
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
-        DocumentHelper: Codeunit "wan Document Helper";
-        AddressesHelper: Codeunit "wan Sales Addresses Helper";
-        Customer: Record Customer;
-        wanVATClause: Record "VAT Clause";
         wanMailGreeting_Lbl: Label 'Dear customer';
         wanMailBody_Lbl: Label 'Thank you for your business. Your quote is attached to this message.';
         wanMailClosing_Lbl: Label 'Sincerely';
         wanMemo: Text;
 
     var
-        wanTempItem: Record Item temporary;
+        TempWanItem: Record Item temporary;
         wanTotalNetWeight: Decimal;
         wanTotalNetWeightLbl: Label 'Total %1: %2', Comment = '%1:FieldCaption("Net Weight"), %2: TotalNetWeight';
         wanPosition: Integer;
@@ -149,8 +149,8 @@ reportextension 87304 "wan Standard Sales - Quote" extends "Standard Sales - Quo
             ReturnValue += DocumentHelper.Tariff(pLine."No.", pHeader."Ship-to Country/Region Code");
         end;
         AttachedLines := MemoPad.GetAttachedLines(pLine);
-        if AttachedLines = '' then
-            AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
+        // if AttachedLines = '' then
+        //     AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
         if AttachedLines <> '' then
             ReturnValue += MemoPad.LineFeed() + AttachedLines;
         OnAfterGetMemo(pHeader, pLine, ReturnValue);

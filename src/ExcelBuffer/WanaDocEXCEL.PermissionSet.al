@@ -1,3 +1,5 @@
+
+namespace Wanamics.WanaDoc.Excel;
 permissionset 87303 "WanaDoc_EXCEL"
 {
     Access = Internal;

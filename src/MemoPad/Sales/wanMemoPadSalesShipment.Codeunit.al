@@ -1,13 +1,13 @@
 namespace Wanamics.WanaDoc.MemoPad;
 
-using Microsoft.Sales.History;
 using Microsoft.Foundation.ExtendedText;
+using Microsoft.Sales.History;
 codeunit 87326 "wan MemoPad Sales Shipment"
 {
     procedure GetExtendedText(pHeader: Record "Sales Shipment Header"; pLine: Record "Sales Shipment Line") ReturnValue: text;
     var
         ETH: Record "Extended Text Header";
-        ETL: Record "Extended Text Line" temporary;
+        TempETL: Record "Extended Text Line" temporary;
         TransferExtendedText: Codeunit "Transfer Extended Text";
     begin
         case pLine.Type of
@@ -23,11 +23,11 @@ codeunit 87326 "wan MemoPad Sales Shipment"
         ETH.SetRange("No.", pLine."No.");
         ETH.SetRange("Sales Order", true);
         TransferExtendedText.ReadExtTextLines(ETH, pHeader."Document Date", pHeader."Language Code");
-        TransferExtendedText.GetTempExtTextLine(ETL);
-        if ETL.FindSet() then begin
+        TransferExtendedText.GetTempExtTextLine(TempETL);
+        if TempETL.FindSet() then begin
             repeat
-                ReturnValue += ETL.Text;
-            Until ETL.Next() = 0;
+                ReturnValue += TempETL.Text;
+            Until TempETL.Next() = 0;
         end;
     end;
 

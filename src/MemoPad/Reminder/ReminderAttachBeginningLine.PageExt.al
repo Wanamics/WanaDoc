@@ -1,7 +1,7 @@
 namespace Wanamics.WanaDoc.MemoPad;
 
-using Microsoft.Sales.Reminder;
 using Microsoft.Foundation.ExtendedText;
+using Microsoft.Sales.Reminder;
 
 pageextension 87305 "Reminder Attach Beginning Line" extends "Reminder Attach Beginning Line"
 {
@@ -19,8 +19,8 @@ pageextension 87305 "Reminder Attach Beginning Line" extends "Reminder Attach Be
                 MultiLine = true;
                 ShowCaption = false;
                 trigger OnValidate()
-                var
-                    ReminderText: Record "Reminder Text";
+                // var
+                //     ReminderText: Record "Reminder Text";
                 begin
                     SetMemo(MemoPad);
                 end;
@@ -28,8 +28,8 @@ pageextension 87305 "Reminder Attach Beginning Line" extends "Reminder Attach Be
         }
     }
     var
-        MemoPad: Text;
         MemoPadManagement: Codeunit "wan MemoPad Management";
+        MemoPad: Text;
 
     trigger OnAfterGetRecord()
     var
@@ -72,13 +72,12 @@ pageextension 87305 "Reminder Attach Beginning Line" extends "Reminder Attach Be
         ReminderAttachmentTextLine.Id := Rec.Id;
         ReminderAttachmentTextLine."Language Code" := Rec."Language Code";
         ReminderAttachmentTextLine.Position := Rec.Position;
-        if TempExtendedTextLine.FindSet then begin
+        if TempExtendedTextLine.FindSet() then
             repeat
                 ReminderAttachmentTextLine.Init();
                 ReminderAttachmentTextLine."Line No." += 10000;
                 ReminderAttachmentTextLine.Text := TempExtendedTextLine.Text;
                 ReminderAttachmentTextLine.Insert();
-            until TempExtendedTextLine.Next = 0;
-        end;
+            until TempExtendedTextLine.Next() = 0;
     end;
 }

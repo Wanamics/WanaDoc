@@ -40,8 +40,8 @@ tableextension 87331 "wan Purch. C.M. Line Indent" extends "Purch. Cr. Memo Line
 
     procedure wanStyle(): Text
     var
-        wanIndentHelper: Codeunit "wan Indent Helper";
         AttachedToLine: Record "Purch. Cr. Memo Line";
+        wanIndentHelper: Codeunit "wan Indent Helper";
     begin
         if "Attached to Line No." = 0 then
             exit(wanIndentHelper.Style(Type, "No."))

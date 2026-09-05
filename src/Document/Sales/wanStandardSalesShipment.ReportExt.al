@@ -1,12 +1,12 @@
 namespace Wanamics.WanaDoc.Document;
 
-using Microsoft.Sales.History;
-using Microsoft.Sales.Customer;
-using Microsoft.Foundation.Shipping;
-using Wanamics.WanaDoc.MemoPad;
 using Microsoft.Foundation.Address;
+using Microsoft.Foundation.Shipping;
 using Microsoft.Inventory.Item;
 using Microsoft.Inventory.Ledger;
+using Microsoft.Sales.Customer;
+using Microsoft.Sales.History;
+using Wanamics.WanaDoc.MemoPad;
 reportextension 87308 "wan Standard Sales - Shipment" extends "Standard Sales - Shipment"
 {
     WordLayout = './ReportLayouts/wanSalesShipment.docx';
@@ -67,7 +67,7 @@ reportextension 87308 "wan Standard Sales - Shipment" extends "Standard Sales - 
         add(Line)
         {
             column(wanMemoPad; GetMemo(Header, Line)) { }
-            column(wanQuantity_UOM; DocumentHelper.iif(Line.Type = Line.Type::" ", '', Format(Line.Quantity) + MemoPad.LineFeed + Line."Unit of Measure")) { }
+            column(wanQuantity_UOM; DocumentHelper.iif(Line.Type = Line.Type::" ", '', Format(Line.Quantity) + MemoPad.LineFeed() + Line."Unit of Measure")) { }
         }
         add(LetterText)
         {
@@ -90,8 +90,13 @@ reportextension 87308 "wan Standard Sales - Shipment" extends "Standard Sales - 
         }
     }
     protected var
+        Customer: Record Customer;
+        ShippingAgent: Record "Shipping Agent";
+        ShippingAgentServices: Record "Shipping Agent Services";
+        DocumentHelper: Codeunit "wan Document Helper";
+        AddressesHelper: Codeunit "wan Sales Addresses Helper";
         MemoPad: Codeunit "wan MemoPad Sales Shipment";
-        FormatAddress: Codeunit "Format Address";
+        // FormatAddress: Codeunit "Format Address";
         SellToAddress_Lbl: Label 'Sell-to';
         SellToAddress: Text;
         ShipToAddress_Lbl: Label 'Ship-to';
@@ -101,18 +106,13 @@ reportextension 87308 "wan Standard Sales - Shipment" extends "Standard Sales - 
         CompanyAddress: Text;
         CompanyContactInfo: Text;
         CompanyLegalInfo: Text;
-        DocumentHelper: Codeunit "wan Document Helper";
-        AddressesHelper: Codeunit "wan Sales Addresses Helper";
-        Customer: Record Customer;
         PhoneNo_Lbl: Label 'Phone No.';
-        ShippingAgent: Record "Shipping Agent";
-        ShippingAgentServices: Record "Shipping Agent Services";
         ShowLinesWithoutQuantity: Boolean;
 
     var
-        wanTempItem: Record Item temporary;
+        // TempWanItem: Record Item temporary;
         wanTotalNetWeight: Decimal;
-        wanTotalNetWeightLbl: Label 'Total %1: %2', Comment = '%1:FieldCaption("Net Weight"), %2: TotalNetWeight';
+    // wanTotalNetWeightLbl: Label 'Total %1: %2', Comment = '%1:FieldCaption("Net Weight"), %2: TotalNetWeight';
 
     trigger OnPreReport()
     begin
@@ -132,8 +132,8 @@ reportextension 87308 "wan Standard Sales - Shipment" extends "Standard Sales - 
             ReturnValue += DocumentHelper.TrackingLines(ItemLedgerEntry."Document Type"::"Sales Shipment".AsInteger(), pLine."Document No.", pLine."Line No.");
         end;
         AttachedLines := MemoPad.GetAttachedLines(pLine);
-        if AttachedLines = '' then
-            AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
+        // if AttachedLines = '' then
+        //     AttachedLines := MemoPad.GetExtendedText(pHeader, pLine);
         if AttachedLines <> '' then
             ReturnValue += MemoPad.LineFeed() + AttachedLines;
         OnAfterGetMemo(pHeader, pLine, ReturnValue);

@@ -16,6 +16,7 @@ pageextension 87332 "wan Reminder Levels" extends "Reminder Levels"
                 PromotedIsBig = true;
                 PromotedOnly = true;
                 Image = Text;
+                Tooltip = 'Open the MemoPad for this Reminder Level.';
 
                 trigger OnAction()
                 begin

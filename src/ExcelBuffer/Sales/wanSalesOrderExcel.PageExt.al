@@ -13,6 +13,7 @@ pageextension 87385 "wan Sales Order Excel" extends "Sales Order Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Export';
                 Image = ExportToExcel;
+                ToolTip = 'Export the sales order lines to an Excel file.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Sales Lines";
@@ -25,6 +26,7 @@ pageextension 87385 "wan Sales Order Excel" extends "Sales Order Subform"
                 ApplicationArea = All;
                 Caption = 'Excel Import';
                 Image = ImportExcel;
+                ToolTip = 'Import the sales order lines from an Excel file.';
                 trigger OnAction()
                 var
                     ExcelLines: Codeunit "wan Excel Sales Lines";

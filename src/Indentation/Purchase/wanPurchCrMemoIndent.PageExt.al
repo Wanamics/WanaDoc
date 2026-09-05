@@ -29,8 +29,8 @@ pageextension 87326 "wan Purch. Cr. Memo Indent" extends "Purch. Cr. Memo Subfor
                 Enabled = wanEnabled and (Rec."wan Indentation" > 0);
                 trigger OnAction()
                 var
-                    wanIndentMgt: Codeunit "wan Purch. Indent. Mgt.";
                     Selection: Record "Purchase Line";
+                    wanIndentMgt: Codeunit "wan Purch. Indent. Mgt.";
                 begin
                     CurrPage.SetSelectionFilter(Selection);
                     wanIndentMgt.Shift(Selection, -1);
@@ -61,6 +61,7 @@ pageextension 87326 "wan Purch. Cr. Memo Indent" extends "Purch. Cr. Memo Subfor
                 Caption = 'Insert Total Lines';
                 Image = Totals;
                 Enabled = wanEnabled;
+                ToolTip = 'Insert missing total line for each title line.';
                 trigger OnAction()
                 var
                     wanIndentMgt: Codeunit "wan Purch. Indent. Mgt.";

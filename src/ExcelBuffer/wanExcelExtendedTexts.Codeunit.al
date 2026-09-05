@@ -1,36 +1,32 @@
 namespace Wanamics.WanaDoc.Excel;
 
-using System.IO;
 using Microsoft.Foundation.ExtendedText;
+using System.IO;
 codeunit 87379 "wan Excel Extended Texts"
 {
-    trigger OnRun()
-    begin
-    end;
-
     var
-        ExcelBuffer: Record "Excel Buffer" temporary;
+        TempExcelBuffer: Record "Excel Buffer" temporary;
+        TempExcelBufferExtended: Record "wan Excel Buffer Extended" temporary;
         RowNo: Integer;
         ColumnNo: Integer;
-        SheetName: Label 'Data';
-        ExcelBufferExtended: Record "wan Excel Buffer Extended" temporary;
+        SheetNameLbl: Label 'Data';
         DescriptionMemo: Text;
 
     procedure Import(pRec: Record "Extended Text Header")
     var
-        ImportFromExcelTitle: Label 'Import Excel File';
-        ExcelFileCaption: Label 'Excel Files (*.xlsx)';
-        ExcelFileExtensionTok: Label '.xlsx', Locked = true;
+        ImportFromExcelTitleLbl: Label 'Import Excel File';
+        // ExcelFileCaptionLbl: Label 'Excel Files (*.xlsx)';
+        // ExcelFileExtensionTok: Label '.xlsx', Locked = true;
         IStream: InStream;
         FileName: Text;
     begin
         if UploadIntoStream('', '', '', FileName, IStream) then begin
-            ExcelBuffer.LOCKTABLE;
-            ExcelBuffer.OpenBookStream(IStream, SheetName);
-            ExcelBuffer.ReadSheet();
+            TempExcelBuffer.LockTable();
+            TempExcelBuffer.OpenBookStream(IStream, SheetNameLbl);
+            TempExcelBuffer.ReadSheet();
             AnalyzeData(pRec);
-            ExcelBuffer.DeleteAll();
-            ExcelBufferExtended.DeleteAll();
+            TempExcelBuffer.DeleteAll();
+            TempExcelBufferExtended.DeleteAll();
         end;
     end;
 
@@ -42,37 +38,37 @@ codeunit 87379 "wan Excel Extended Texts"
 
     local procedure ImportTitles(var pRec: record "Extended text Header")
     begin
-        ExcelBuffer.Get(1, 1);
-        Evaluate(pRec."Table Name", ExcelBuffer."Cell Value as Text");
+        TempExcelBuffer.Get(1, 1);
+        Evaluate(pRec."Table Name", TempExcelBuffer."Cell Value as Text");
         //pRec."Table Name" := pRec."Table Name"::Item;
-        if ExcelBuffer.Get(1, 2) then
-            pRec.Validate("Language Code", ExcelBuffer."Cell Value as Text");
+        if TempExcelBuffer.Get(1, 2) then
+            pRec.Validate("Language Code", TempExcelBuffer."Cell Value as Text");
     end;
 
     local procedure ImportLines(var pRec: record "Extended text Header")
     var
         lRowNo: Integer;
         lNext: Integer;
-        lExists: Boolean;
+        // lExists: Boolean;
         lCount: Integer;
         lProgress: Integer;
         lDialog: Dialog;
-        ltAnalyzing: Label 'Analyzing Data...\\';
+        ltAnalyzingLbl: Label 'Analyzing Data...\\';
 
     begin
         InitLine(pRec);
-        lDialog.Open(ltAnalyzing + '@1@@@@@@@@@@@@@@@@@@@@@@@@@\');
+        lDialog.Open(ltAnalyzingLbl + '@1@@@@@@@@@@@@@@@@@@@@@@@@@\');
         lDialog.Update(1, 0);
-        ExcelBuffer.SetFilter("Row No.", '>1');
-        lCount := ExcelBuffer.Count;
-        if ExcelBuffer.FindSet then
+        TempExcelBuffer.SetFilter("Row No.", '>1');
+        lCount := TempExcelBuffer.Count;
+        if TempExcelBuffer.FindSet() then
             repeat
-                lRowNo := ExcelBuffer."Row No.";
+                lRowNo := TempExcelBuffer."Row No.";
                 repeat
                     lProgress += 1;
-                    ImportCell(pRec, ExcelBuffer."Column No.", ExcelBuffer."Cell Value as Text");
-                    lNext := ExcelBuffer.Next;
-                until (lNext = 0) or (ExcelBuffer."Row No." <> lRowNo);
+                    ImportCell(pRec, TempExcelBuffer."Column No.", TempExcelBuffer."Cell Value as Text");
+                    lNext := TempExcelBuffer.Next();
+                until (lNext = 0) or (TempExcelBuffer."Row No." <> lRowNo);
                 InsertLine(pRec);
                 lDialog.Update(1, Round(lProgress / lCount * 10000, 1));
             until lNext = 0;
@@ -80,14 +76,14 @@ codeunit 87379 "wan Excel Extended Texts"
 
     local procedure InitLine(var pRec: Record "Extended Text Header")
     begin
-        pRec.Init;
+        pRec.Init();
     end;
 
     local procedure InsertLine(var pRec: Record "Extended Text Header")
     begin
-        pRec.Description := ExcelBufferExtended.NextLine(DescriptionMemo, MaxStrLen(pRec.Description));
+        pRec.Description := TempExcelBufferExtended.NextLine(DescriptionMemo, MaxStrLen(pRec.Description));
         pRec.Insert(true);
-        AfterInsert(pRec);
+        // AfterInsert(pRec);
         InsertExtendedTextLines(pRec, DescriptionMemo);
         InitLine(pRec);
     end;
@@ -98,78 +94,76 @@ codeunit 87379 "wan Excel Extended Texts"
     begin
         if pText = '' then
             exit;
-        ExtendedTextLine.Init;
+        ExtendedTextLine.Init();
         ExtendedTextLine."Table Name" := pRec."Table Name";
         ExtendedTextLine."No." := pRec."No.";
         ExtendedTextLine."Language Code" := pRec."Language Code";
         repeat
             ExtendedTextLine."Line No." += 10000;
-            ExtendedTextLine.Text := ExcelBufferExtended.NextLine(pText, MaxStrLen(ExtendedTextLine.Text));
-            ExtendedTextLine.Insert;
+            ExtendedTextLine.Text := TempExcelBufferExtended.NextLine(pText, MaxStrLen(ExtendedTextLine.Text));
+            ExtendedTextLine.Insert();
         until StrLen(pText) = 0;
     end;
 
     local procedure ImportCell(var pRec: Record "Extended Text Header"; pColumnNo: Integer; pCell: Text)
     begin
-        CASE pColumnNo OF
+        case pColumnNo OF
             1:
-                pRec.VALIDATE("No.", pCell);
+                pRec.Validate("No.", pCell);
             2:
-                begin
-                    DescriptionMemo := pCell;
-                    //ExcelBufferExtended.AppendExtendedText(DescriptionMemo, ExcelBuffer);
-                    //ExcelBufferExtended.Split(ExcelBuffer, pCell);
-                end;
-        END;
+                DescriptionMemo := pCell;
+        //ExcelBufferExtended.AppendExtendedText(DescriptionMemo, ExcelBuffer);
+        //ExcelBufferExtended.Split(ExcelBuffer, pCell);
+        end;
     end;
 
-    local procedure AfterInsert(var pRec: Record "Extended Text Header")
-    var
-    //ExtendedTextLine: record "Extended Text Line";
-    begin
-        /*
-        ExtendedTextLine."Table Name" := pRec."Table Name";
-        ExtendedTextLine."No." := pRec."No.";
-        ExtendedTextLine."Text No." := pRec."Text No.";
-        ExtendedTextLine."Language Code" := pRec."Language Code";
-        if ExcelBufferExtended.FINDSET then
-            repeat
-                ExtendedTextLine.Text := ExcelBufferExtended."Extended Text";
-                ExtendedTextLine.Insert;
-            until ExcelBufferExtended.Next = 0;
-        */
-    end;
+    // local procedure AfterInsert(var pRec: Record "Extended Text Header")
+    // // var
+    // //ExtendedTextLine: record "Extended Text Line";
+    // begin
+    //     /*
+    //     ExtendedTextLine."Table Name" := pRec."Table Name";
+    //     ExtendedTextLine."No." := pRec."No.";
+    //     ExtendedTextLine."Text No." := pRec."Text No.";
+    //     ExtendedTextLine."Language Code" := pRec."Language Code";
+    //     if ExcelBufferExtended.FINDSET then
+    //         repeat
+    //             ExtendedTextLine.Text := ExcelBufferExtended."Extended Text";
+    //             ExtendedTextLine.Insert;
+    //         until ExcelBufferExtended.Next = 0;
+    //     */
+    // end;
 
     procedure Export(var pRec: Record "Extended Text Header")
     var
-        lblConfirm: Label 'Do-you want to create an Excel book for %1 %2(s)?', Comment = '%1: Count, %2: TableCaption';
-        ProgressDialog: Codeunit "Excel Buffer Dialog Management";
         lRec: Record "Extended Text Header";
+        ProgressDialog: Codeunit "Excel Buffer Dialog Management";
+        ConfirmLbl: Label 'Do-you want to create an Excel book for %1 %2(s)?', Comment = '%1: Count, %2: TableCaption';
     begin
         lRec.SETRANGE("Table Name", pRec."Table Name");
         lRec.SETRANGE("Language Code", pRec."Language Code");
         lRec.SETFilter("No.", pRec.GetFilter("No."));
-        if not confirm(lblConfirm, true, lRec.Count(), lRec.TableCaption()) then
+        if not confirm(ConfirmLbl, true, lRec.Count(), lRec.TableCaption()) then
             exit;
 
         ProgressDialog.Open('');
         RowNo := 1;
         ColumnNo := 1;
         ExportTitles(pRec);
-        if lRec.FindSet then
+        if lRec.FindSet() then
             repeat
                 ProgressDialog.SetProgress(RowNo);
                 RowNo += 1;
                 ColumnNo := 1;
                 ExportLine(lRec);
-            until lRec.Next = 0;
-        ProgressDialog.Close;
+            until lRec.Next() = 0;
+        ProgressDialog.Close();
 
-        ExcelBuffer.CreateNewBook(SheetName);
-        ExcelBuffer.WriteSheet(format(pRec."Table Name") + ' ' + pRec."Language Code", COMPANYNAME, USERID);
-        ExcelBuffer.CloseBook;
-        ExcelBuffer.SetFriendlyFilename(SafeFileName(pRec));
-        ExcelBuffer.OpenExcel;
+        TempExcelBuffer.CreateNewBook(SheetNameLbl);
+        TempExcelBuffer.WriteSheet(format(pRec."Table Name") + ' ' + pRec."Language Code", COMPANYNAME, USERID);
+        TempExcelBuffer.CloseBook();
+        TempExcelBuffer.SetFriendlyFilename(SafeFileName(pRec));
+        TempExcelBuffer.OpenExcel();
     end;
 
     local procedure SafeFileName(pRec: Record "Extended Text Header"): Text
@@ -181,16 +175,16 @@ codeunit 87379 "wan Excel Extended Texts"
 
     local procedure EnterCell(pRowNo: Integer; var pColumnNo: Integer; pCellValue: Text; pBold: Boolean; pUnderLine: Boolean; pNumberFormat: Text; pCellType: Option)
     begin
-        ExcelBuffer.Init;
-        ExcelBuffer.Validate("Row No.", pRowNo);
-        ExcelBuffer.Validate("Column No.", pColumnNo);
-        ExcelBuffer."Cell Value as Text" := pCellValue;
-        ExcelBuffer.Formula := '';
-        ExcelBuffer.Bold := pBold;
-        ExcelBuffer.Underline := pUnderLine;
-        ExcelBuffer.NumberFormat := pNumberFormat;
-        ExcelBuffer."Cell Type" := pCellType;
-        ExcelBuffer.Insert;
+        TempExcelBuffer.Init();
+        TempExcelBuffer.Validate("Row No.", pRowNo);
+        TempExcelBuffer.Validate("Column No.", pColumnNo);
+        TempExcelBuffer."Cell Value as Text" := pCellValue;
+        TempExcelBuffer.Formula := '';
+        TempExcelBuffer.Bold := pBold;
+        TempExcelBuffer.Underline := pUnderLine;
+        TempExcelBuffer.NumberFormat := pNumberFormat;
+        TempExcelBuffer."Cell Type" := pCellType;
+        TempExcelBuffer.Insert();
         pColumnNo += 1;
     end;
 
@@ -206,7 +200,7 @@ codeunit 87379 "wan Excel Extended Texts"
         ExtendedTextLine.SetRange("Table Name", pRec."Table Name");
         ExtendedTextLine.SetRange("No.", pRec."No.");
         ExtendedTextLine.SetRange("Language Code", ExtendedTextLine."Language Code");
-        if ExtendedTextLine.FindSet then
+        if ExtendedTextLine.FindSet() then
             repeat
                 /*
                 if Separator = 1 then
@@ -214,19 +208,19 @@ codeunit 87379 "wan Excel Extended Texts"
                 else
                 */
                 ReturnValue := ReturnValue + ExtendedTextLine.Text;
-            until ExtendedTextLine.Next = 0;
+            until ExtendedTextLine.Next() = 0;
     end;
 
     local procedure ExportTitles(var pRec: record "Extended text Header")
     begin
-        EnterCell(RowNo, ColumnNo, format(pRec."Table Name"), TRUE, FALSE, '', ExcelBuffer."Cell Type"::Text);
-        EnterCell(RowNo, ColumnNo, prec."Language Code", TRUE, FALSE, '', ExcelBuffer."Cell Type"::Text);
+        EnterCell(RowNo, ColumnNo, format(pRec."Table Name"), TRUE, FALSE, '', TempExcelBuffer."Cell Type"::Text);
+        EnterCell(RowNo, ColumnNo, prec."Language Code", TRUE, FALSE, '', TempExcelBuffer."Cell Type"::Text);
     end;
 
     local procedure ExportLine(pRec: Record "Extended Text Header")
     begin
-        EnterCell(RowNo, ColumnNo, pRec."No.", FALSE, FALSE, '', ExcelBuffer."Cell Type"::Text);
-        EnterCell(RowNo, ColumnNo, FullDescription(pRec), false, false, '', ExcelBuffer."cell type"::Text);
+        EnterCell(RowNo, ColumnNo, pRec."No.", FALSE, FALSE, '', TempExcelBuffer."Cell Type"::Text);
+        EnterCell(RowNo, ColumnNo, FullDescription(pRec), false, false, '', TempExcelBuffer."cell type"::Text);
     end;
 
 }
